@@ -4,12 +4,12 @@
     <title>Логин</title>
 </head>
 <body>
-<iframe src="clock.php" width="240" height="40" align="right"></iframe>
+<iframe src="../clock.php" width="240" height="40" align="right"></iframe>
 </body>
 </html>
 <?php
 $a='Вася';
-$b='c8837b23ff8aaa8a2dde915473ce0991';
+
     if($_SERVER['REQUEST_METHOD']=='GET') {
         if (isset($_COOKIE['visitCount'])) {
             echo "Вы уже авторизовались, как $a!";
@@ -19,7 +19,7 @@ $b='c8837b23ff8aaa8a2dde915473ce0991';
             include "loginForm.html";
     }
 
-    if($_SERVER['REQUEST_METHOD']=='POST'){
+    if($_SERVER['REQUEST_METHOD']=='POST'){$b='c8837b23ff8aaa8a2dde915473ce0991';
         $name=trim(strip_tags($_POST['name']));
         $pswd=$_POST['pswd'];
         if($name==$a && $b==md5($pswd)) {
@@ -44,7 +44,7 @@ $b='c8837b23ff8aaa8a2dde915473ce0991';
     if (isset($_POST['exit'])){
         setcookie('visitCount', $visitCount, time() - 3600);
         setcookie('lastVisit', time() - 3600);
-        header("Location: /index.php");
+        header("Location: /cookie/index.php");
     }
     if (isset($_POST['calc']))
         header("Location: /calc.php");

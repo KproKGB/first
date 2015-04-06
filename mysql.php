@@ -1,10 +1,10 @@
 <?php
-$link = mysqli_connect('localhost', 'root', '3GnnvdRb');
+$link = mysqli_connect('localhost', 'root', '');
 if(!$link)
     echo 'Ошибка соединения: '. mysqli_connect_errno();
 else
     echo "Успешное подключение<br><br>";
-mysql_close($link);
+mysqli_close($link);
 ?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
@@ -12,7 +12,7 @@ mysql_close($link);
     <title>mysql тест</title>
 </head>
 <body>
-<form action="index.php">
+<form action="cookie/index.php">
     <button type="submit">Назад</button>
 </form>
 </body>
