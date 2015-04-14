@@ -7,5 +7,6 @@
 <a href="cookie/index.php">Cookie</a><br>
 <a href="session/index.php">Session</a><br>
 <a href="test/index.php">Test</a><br>
+<a href="gen.php">Генератор паролей</a><br>
 </body>
 </html>
