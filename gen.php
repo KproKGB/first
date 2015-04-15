@@ -1,8 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 include 'inc/data.inc.php';
-define ('PATH_LOG', 'path.log');
-include 'inc/log.inc.php';
 ?>
 <html>
 <head>
