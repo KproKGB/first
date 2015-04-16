@@ -7,4 +7,5 @@
 header('Refresh: 1');
 $date = date('H-i-s');
 echo "Текущее время: ".$date;
+
 ?>

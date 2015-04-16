@@ -8,4 +8,5 @@ $visitCount++;
         $lastVisit = date('d-m-Y H:i:s', $_COOKIE['lastVisit']);
 setcookie('visitCount', $visitCount, time() + 60);
 setcookie('lastVisit', time() + 60);
+
 ?>

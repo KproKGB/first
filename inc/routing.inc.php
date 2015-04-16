@@ -10,4 +10,5 @@ if (isset($id)) {
         default: include 'clock.php';
     }
 }
+
 ?>

@@ -48,4 +48,5 @@ $b='c8837b23ff8aaa8a2dde915473ce0991';
     }
     if (isset($_POST['calc']))
         header("Location: /index.php?id=calc");
+
 ?>

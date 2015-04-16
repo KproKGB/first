@@ -11,4 +11,5 @@ if  (isset ($_SERVER['HTTP_REFERER'])) {
 
     file_put_contents('log/' . PATH_LOG, $path, FILE_APPEND);
 }
+
 ?>

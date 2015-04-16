@@ -19,4 +19,5 @@ else {
 
 if (isset($_POST['exit']))
     session_destroy();
+
 ?>
