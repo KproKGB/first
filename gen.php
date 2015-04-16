@@ -21,12 +21,13 @@ include 'inc/data.inc.php';
                             <input type='checkbox' <?php if(isset($_POST['propis'])) echo 'checked';?> name="propis">Маленькие буквы
                             <input type='checkbox' <?php if(isset($_POST['chisl'])) echo 'checked';?> name="chisl">Цифры</br></br>
                             Длина пароля:
-                            <input name="len" placeholder="Длинна пароля" value="<?php if(isset($_POST['len'])) echo $_POST['len'];?>"
+                            <input name="len" placeholder="Длинна пароля" value="<?php if(isset($_POST['len'])) echo intval($_POST['len']);?>"
                                    autofocus required pattern="(^[0-9]+$)"><br><br>
                             Количество паролей:
-                            <input name="kol" placeholder="Количество паролей" value="<?php if(isset($_POST['kol'])) echo $_POST['kol'];?>"
+                            <input name="kol" placeholder="Количество паролей" value="<?php if(isset($_POST['kol'])) echo intval($_POST['kol']);?>"
                                    autofocus required pattern="(^[0-9]+$)"><br><br>
                             <input type="submit" value="Создать пароль">
+<!-- "><script>alert(99);</script><input value="hacked-->
                         </form>
                     </td>
                 </tr>
