@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 <input name="res" placeholder="Результат" readonly value="<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') echo $result;?>"><br><br>
 <input type="submit" value="Считать">
 </form>
-<form action="cookie/index.php">
+<form action="index.php">
     <button type="submit">Назад</button>
 </form>
 </body>

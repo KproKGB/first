@@ -5,7 +5,7 @@ if (file_exists('log/'.PATH_LOG)){
         echo '<ol>';
         foreach ($log as $line){
             list($dt, $page, $ref) = explode('|', $line);
-            $dt = date ('d-m-Y H:i:s', $dt);
+            $dt = date ('d-m-Y H:i:s', (int)$dt);
             echo <<<LINE
             <li>
             $dt: $ref --> $page
