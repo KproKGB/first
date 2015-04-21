@@ -4,7 +4,7 @@ define('DB_LOGIN', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'gbook');
 
-$link = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_NAME) or die("Error in the consult. " . mysqli_errno($link));
+$link = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_NAME) or die("Error in the consult. " . mysqli_connect_errno($link));
 
 function clearStr ($data){
     global $link;
@@ -54,7 +54,7 @@ while($row = mysqli_fetch_assoc($res)){
     echo <<< HTML
 <hr>
     <p>
-        <a href="mailro:$email">$name</a> @ $dt
+        <a href="mailto:$email">$name</a> @ $dt
         <br> $msg
     </p>
 
