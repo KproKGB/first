@@ -7,8 +7,8 @@ if (isset($id)) {
         case 'test': include 'test/test.php'; break;
         case 'calc': include 'calc.php'; break;
         case 'gen': include 'gen.php'; break;
+        case 'gbook': include 'inc/gbook.inc.php'; break;
         default: include 'clock.php';
     }
 }
-
 ?>

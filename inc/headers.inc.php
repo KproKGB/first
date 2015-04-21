@@ -29,7 +29,10 @@ if (isset($_GET['id'])) {
             $title = "Calculator";
             $header = "Test Calculator";
             break;
+        case"gbook":
+            $title = "Guest Book";
+            $header = "Test Guest Book";
+            break;
     }
 }
-
 ?>
