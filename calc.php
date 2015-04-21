@@ -28,16 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <form action="" method="post">
         Число №1:<br>
         <input name="num1" placeholder="Первое число" value="<?php $nm1?>" autofocus required pattern="(^[0-9]+$)"><br>
-Оператор:<br>
-<input name="oper" placeholder="Оператор ( + - * / )" value="<?php $op?>" autofocus required pattern="[+*/-]"><br>
-Число №2:<br>
-<input name="num2" placeholder="Второе число" value="<?php $nm2?>" autofocus required pattern="(^[0-9]+$)"><br>
-Результат:<br>
-<input name="res" placeholder="Результат" readonly value="<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') echo $result;?>"><br><br>
-<input type="submit" value="Считать">
-</form>
-<form action="index.php">
-    <button type="submit">Назад</button>
-</form>
+        Оператор:<br>
+        <input name="oper" placeholder="Оператор ( + - * / )" value="<?php $op?>" autofocus required pattern="[+*/-]"><br>
+        Число №2:<br>
+        <input name="num2" placeholder="Второе число" value="<?php $nm2?>" autofocus required pattern="(^[0-9]+$)"><br>
+        Результат:<br>
+        <input name="res" placeholder="Результат" readonly value="<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') echo $result;?>"><br><br>
+        <input type="submit" value="Считать">
+    </form>
+    <form action="index.php">
+        <button type="submit">Назад</button>
+    </form>
 </body>
 </html>

@@ -12,7 +12,7 @@ mysqli_close($link);
     <title>mysql тест</title>
 </head>
 <body>
-<form action="cookie/index.php">
+<form action="index.php">
     <button type="submit">Назад</button>
 </form>
 </body>
