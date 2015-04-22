@@ -8,7 +8,7 @@ $link = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_NAME) or die("Error in
 
 function clearStr ($data){
     global $link;
-    return mysqli_real_escape_string($link, trim(strip_tags($data)));
+    return mysqli_real_escape_string($link, trim(strip_tags(htmlspecialchars($data))));
 }
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $name = clearStr($_POST['name']);
