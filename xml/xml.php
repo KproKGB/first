@@ -1,9 +1,9 @@
 <?php
-function clearStr($str){
-    $newstr = preg_replace("/[\s]*/", "", $str);
-    $str = str_replace(",",".", $newstr);
-    return $str;
-}
+/*function clearStr($str){
+    $newstr = str_replace(" ", "", $str);
+    //$str = str_replace(",",".", $newstr);
+    return $newstr;
+}*/
 $price = simplexml_load_file("price.xml");
 $child = $price->children();
 $child2 = $child->children();
@@ -21,7 +21,12 @@ $cnt = count($child3);
         $picture[$i]=strip_tags($child3[$i]->item_picture);
         $description[$i]=strip_tags($child3[$i]->item_description);
         $availability[$i]=strip_tags(intval($child3[$i]->item_availability));
+
     }
+$newxml = new domDocument("1.0", "utf-8");
+$root = $newxml->createElement('Items');
+$q = $newxml->createAttribute('Item');
+$str = $newxml->saveXML()
 ?>
 
 <!DOCTYPE html>
@@ -30,9 +35,9 @@ $cnt = count($child3);
   <meta charset="utf-8">
   <title>xml</title>
  </head>
- <body> 
+ <body>
     <pre>
-    <?php print_r(clearStr($price1));?>
+        <?php print_r($str);?>
     </pre>
  </body>
 </html>
