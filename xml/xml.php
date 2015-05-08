@@ -23,21 +23,19 @@ $cnt = count($child3);
         $availability[$i]=strip_tags(intval($child3[$i]->item_availability));
 
     }
-$newxml = new domDocument("1.0", "utf-8");
-$root = $newxml->createElement('Items');
-$q = $newxml->createAttribute('Item');
-$str = $newxml->saveXML()
-?>
+$newxml = new DOMDocument("1.0", "utf-8");
+$doc = $newxml->createElement('doc');
+$head = $newxml->createElement('header');
+$head->setAttribute('order_date=', '9-10-2015');
+$itms = $newxml->createElement('items');
+$head->appendChild($itms);
+$itm = $newxml->createElement('item');
+$itms->appendChild($itm);
+$iid= $newxml->createElement('item_id');
+$itm->appendChild($iid);
+$text = $newxml->createTextNode($id['1']);
+$iid->appendChild($text);
+$newxml->appendChild($doc);
 
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>xml</title>
- </head>
- <body>
-    <pre>
-        <?php print_r($str);?>
-    </pre>
- </body>
-</html>
+echo $newxml->saveXML();
+?>
