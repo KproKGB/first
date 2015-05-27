@@ -1,0 +1,24 @@
+CREATE TABLE `users` (
+  `id` INTEGER AUTO_INCREMENT,
+  `login` VARCHAR(20) NOT NULL,
+  `pass` CHAR(32) NOT NULL,
+  `name` VARCHAR(235) NOT NULL,
+  `surname` VARCHAR(235) NOT NULL,
+  `class` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `lessons` (
+  `id` INTEGER AUTO_INCREMENT,
+  `title` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `estimates` (
+  `id` INTEGER AUTO_INCREMENT,
+  `value` INTEGER NOT NULL,
+  `lesson_id` INTEGER NOT NULL,
+  `user_id` INTEGER NOT NULL,
+  `date` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`)
+);
