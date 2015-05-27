@@ -5,6 +5,7 @@ CREATE TABLE `users` (
   `name` VARCHAR(235) NOT NULL,
   `surname` VARCHAR(235) NOT NULL,
   `class` VARCHAR(20) NOT NULL,
+  `teacher` CHAR(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 );
 
