@@ -38,3 +38,5 @@ global $link;
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     return true;
+
+    header('location:'.$_SERVER['HTTP_REFERER']);
