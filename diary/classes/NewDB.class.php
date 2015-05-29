@@ -24,6 +24,7 @@ class newDiary
          `pass` CHAR(32) NOT NULL,
           `name` VARCHAR(235) NOT NULL,
           `surname` VARCHAR(235) NOT NULL,
+          `email` VARCHAR(235) NOT NULL,
           `class` VARCHAR(20) NOT NULL,
           PRIMARY KEY (`id`))";
 

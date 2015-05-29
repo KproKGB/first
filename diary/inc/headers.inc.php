@@ -10,8 +10,8 @@ if (isset($_GET['id'])) {
             $header = "Test Reg";
             break;
         case "install":
-            $title = "Inst";
-            $header = "Test Inst";
+            $title = "Установка базы данных для Online-дневника";
+            $header = "Install DB";
             break;
         case "login":
             $title = "LogIn";

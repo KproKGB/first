@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'inc/headers.inc.php';
 ?>
 
@@ -17,7 +18,7 @@ include 'inc/headers.inc.php';
         <h2>Навигация по сайту</h2>
         <ul>
             <li><a href="index.php?id=login">Вход</a></li>
-            <li><a href="index.php?id=registred">Регистрация</a></li>
+            <li><a href="index.php?id=registred">Добавить ученика</a></li>
             <li><a href="index.php?id=install">Установка БД</a></li>
         </ul>
     </div>
