@@ -18,7 +18,9 @@ class Registred{
         return true;
     }
     function checkUsr($login, $email){
-        $sql = "SELECT login FROM users WHERE login='$login' AND email='$email'";
+        $login = mysqli_real_escape_string($this->_link, trim(htmlspecialchars($login)));
+        $email = mysqli_real_escape_string($this->_link, trim(htmlspecialchars($email)));
+        $sql = "SELECT login FROM users WHERE login='$login' OR email='$email'";
         $query = mysqli_query($this->_link, $sql);
         $check = mysqli_num_rows($query);
         if($check>0) {
