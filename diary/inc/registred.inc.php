@@ -19,6 +19,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         if($newUser->checkUsr($reg_login, $reg_email)) {
             $newUser->regUser($reg_login, $reg_pswd1, $reg_name, $reg_surname, $reg_email, $reg_class);
         //header("Location: /diary?id=registred");
+        $newUser->dbClose();
         }
     }
 }else{

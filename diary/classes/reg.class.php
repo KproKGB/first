@@ -29,4 +29,7 @@ class Registred{
         }
         return true;
     }
+    function dbClose(){
+        mysqli_close($this->_link);
+    }
 }

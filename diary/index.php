@@ -9,18 +9,8 @@ include 'inc/headers.inc.php';
     <link rel="stylesheet" type="text/css" href="inc/style.css">
 </head>
     <body>
-    <div id="content">
-        <h1><?= $header?></h1>
         <?php include 'inc/routing.inc.php'; ?>
-    </div>
-    <div id="nav">
-        <h2>Навигация по сайту</h2>
-        <ul>
-            <li><a href="index.php?id=login">Вход</a></li>
-            <li><a href="index.php?id=registred">Добавить ученика</a></li>
-            <li><a href="index.php?id=install">Установка БД</a></li>
-        </ul>
-    </div>
+        <?php include 'inc/startpage.php';?>
     <div id="footer">
         &copy; Тест сайт, 2014 - <?= date('Y')?>
     </div>
