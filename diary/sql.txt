@@ -39,7 +39,7 @@ global $link;
     mysqli_stmt_close($stmt);
     return true;
 
-    header('location:'.$_SERVER['HTTP_REFERER']);
+    header('location: '.$_SERVER['REQUEST_URI']);
 
      <!-- <div id="content">
             <h1><?= $header?></h1>

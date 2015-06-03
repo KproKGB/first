@@ -1,13 +1,13 @@
 <?php
-$title = 'KproKGB test diary';
-$header = "Добро пожаловать на Test-сайт";
+$title = 'Online diary';
+$header = "Welcome";
 if (isset($_GET['id'])) {
     $id = strtolower(strip_tags(trim($_GET['id'])));
 
     switch ($id) {
         case "registred":
-            $title = "Reg";
-            $header = "Test Reg";
+            $title = "Добавление ученика";
+            $header = "Add to DB";
             break;
         case "install":
             $title = "Установка базы данных для Online-дневника";

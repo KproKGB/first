@@ -1,0 +1,37 @@
+<?php
+session_start();
+header('Content-Type: text/html; charset=utf-8');
+
+$a='Вася';
+$b='c8837b23ff8aaa8a2dde915473ce0991';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['lname'] = trim(strip_tags($_POST['name']));
+    $_SESSION['lpswd'] = $_POST['pswd'];
+    header("Location: " .$_SERVER['REQUEST_URI']);
+}
+if (isset($_POST['exit']))
+    session_destroy();
+
+if (isset($_SESSION['lname']) and !empty($_SESSION['lname'])){
+    if ($_SESSION['lname'] == $a and md5($_SESSION['lpswd']) == $b) {
+        echo "Вы авторизовались, как $a!";
+    }
+    ?>
+    <form action="" method="post">
+        <br>
+        <input type="submit" name="exit" value="Выход">
+    </form>
+<?php
+} else {
+        ?>
+        <form action="" method="post">
+            Ваше имя:<br>
+            <input name="name" placeholder="Логин"><br>
+            Ваш пароль:<br>
+            <input type='password' name="pswd" placeholder="Пароль"><br><br>
+            <input type="submit" value="Вход">
+        </form>
+    <?php
+}
+?>
