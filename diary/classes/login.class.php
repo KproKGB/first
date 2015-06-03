@@ -14,11 +14,14 @@ class loginUsers{
             echo "Вы авторизовались как $login!";
         } else {
            echo "Ошибка авторизации!!!";
+            session_destroy();
         }
 
         return !!$count;
 
     }
+
+
 
     function dbClose(){
         mysqli_close($this->_link);

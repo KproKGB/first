@@ -1,10 +1,12 @@
 <?php
 class Registred{
+
     protected $_link;
 
     function dbConnect($dbhost, $dbuser, $dbpass, $dbbase){
         $this->_link = mysqli_connect($dbhost, $dbuser, $dbpass, $dbbase);
     }
+
     function  regUser($login, $pass, $name, $surname, $email, $class)
     {
         $sql = "INSERT INTO users (login, pass, name, surname, email, class)
@@ -17,6 +19,7 @@ class Registred{
         mysqli_stmt_close($stmt);
         return true;
     }
+
     function checkUsr($login, $email){
         $login = mysqli_real_escape_string($this->_link, trim(htmlspecialchars($login)));
         $email = mysqli_real_escape_string($this->_link, trim(htmlspecialchars($email)));
@@ -29,6 +32,7 @@ class Registred{
         }
         return true;
     }
+
     function dbClose(){
         mysqli_close($this->_link);
     }

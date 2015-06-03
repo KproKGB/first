@@ -2,7 +2,7 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nm1 = (int)$_POST['num1'];
     $nm2 = (int)$_POST['num2'];
-    $op = trim(strip_tags($_POST['oper']));
+    $op = trim(htmlspecialchars($_POST['oper']));
     $result = "$nm1 $op $nm2  = ";
 
     switch($op){

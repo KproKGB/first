@@ -7,9 +7,12 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
     $reg_pswd1 = md5(trim(htmlspecialchars($_POST['reg_pswd1'])));
     $reg_pswd2 = md5(trim(htmlspecialchars($_POST['reg_pswd2'])));
     $reg_class = trim(htmlspecialchars($_POST['reg_class']));
+    header("Location: " . $_SERVER['PHP_SELF']);
+}
 
+if(isset($_POST['to_reg'])){
+    session_start();
     include "classes/reg.class.php";
-    include "inc/parse_ini.inc.php";
     if($reg_pswd1 !== $reg_pswd2) {
         echo "Пароли не совпадают!";
         include 'inc/form/registred.html';
@@ -18,8 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         $newUser->dbConnect($host, $user, $pass, $base);
         if($newUser->checkUsr($reg_login, $reg_email)) {
             $newUser->regUser($reg_login, $reg_pswd1, $reg_name, $reg_surname, $reg_email, $reg_class);
-        //header("Location: /diary?id=registred");
-        $newUser->dbClose();
+            $newUser->dbClose();
         }
     }
 }else{

@@ -23,39 +23,3 @@ CREATE TABLE IF NOT EXISTS `estimates` (
   `date` TIMESTAMP NOT NULL,
   PRIMARY KEY (`id`)
 );
-
-
-
-global $link;
-    $sql = 'INSERT INTO catalog (title,
-                                 author,
-                                 pubyear,
-                                 price)
-                    VALUES (?, ?, ?, ?)';
-    if(!$stmt = mysqli_prepare($link, $sql))
-        return false;
-    mysqli_stmt_bind_param($stmt, "ssii", $title, $author, $pubyear, $price);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-    return true;
-
-    header('location: '.$_SERVER['REQUEST_URI']);
-
-     <!-- <div id="content">
-            <h1><?= $header?></h1>
-            <?php include 'inc/routing.inc.php'; ?>
-        </div>
-        <div id="nav">
-            <h2>Навигация по сайту</h2>
-            <ul>
-                <li><a href="index.php?id=login">Вход</a></li>
-                <li><a href="index.php?id=registred">Добавить ученика</a></li>
-                <li><a href="index.php?id=install">Установка БД</a></li>
-                <li><a href="index.php?id=logout">Выход</a></li>
-            </ul>
-        </div> -->
-
-
-        http://www.softtime.ru/info/articlephp.php?id_article=34
-
-        http://htmlweb.ru/php/example/avtorizacija2.php

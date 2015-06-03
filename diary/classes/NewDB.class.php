@@ -14,7 +14,7 @@ class newDiary
     function dbCreate(){
         $_sql = "CREATE DATABASE IF NOT EXISTS diary CHARACTER SET utf8";
         if(mysqli_query($this->_link, $_sql) or die ('Error_sql_db_create'))
-            echo "База данных создана<br><br>";
+            echo "База данных diary создана<br><br>";
     }
 
     function tableCreate(){
