@@ -27,6 +27,7 @@ include 'inc/log.inc.php';
                 <li><a href="index.php?id=calc">Калькулятор</a></li>
                 <li><a href="index.php?id=log">Журнал переходов</a></li>
                 <li><a href="index.php?id=gbook">Гостевая книга</a></li>
+                <li><a href="/diary">Online Diary</a></li>
             </ul>
         </div>
         <div id="footer">

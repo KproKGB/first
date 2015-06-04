@@ -1,5 +1,5 @@
 <?php
-if($_SERVER['REQUEST_METHOD']=='POST') {
+if($_SERVER['REQUEST_METHOD']=='POST'){
     $reg_login = trim(htmlspecialchars($_POST['reg_login']));
     $reg_email = trim(htmlspecialchars($_POST['reg_email']));
     $reg_name = trim(htmlspecialchars($_POST['reg_name']));
@@ -7,16 +7,14 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
     $reg_pswd1 = md5(trim(htmlspecialchars($_POST['reg_pswd1'])));
     $reg_pswd2 = md5(trim(htmlspecialchars($_POST['reg_pswd2'])));
     $reg_class = trim(htmlspecialchars($_POST['reg_class']));
-    header("Location: " . $_SERVER['PHP_SELF']);
+    header("Location: " .$_SERVER['PHP_SELF']);
 }
-
 if(isset($_POST['to_reg'])){
-    session_start();
-    include "classes/reg.class.php";
     if($reg_pswd1 !== $reg_pswd2) {
         echo "Пароли не совпадают!";
         include 'inc/form/registred.html';
     }else{
+        include "classes/reg.class.php";
         $newUser = new Registred();
         $newUser->dbConnect($host, $user, $pass, $base);
         if($newUser->checkUsr($reg_login, $reg_email)) {
