@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['lpswd'] = $_POST['lpswd'];
     header("Location: " .$_SERVER['REQUEST_URI']);
 }
-
 if (isset($_SESSION['lname']) and !empty($_SESSION['lname'])) {
     if($loginUsr->loginUsr($_SESSION['lname'], $_SESSION['lpswd'])){
         include 'inc/form/start.html';

@@ -23,6 +23,9 @@ if(isset($_POST['to_reg'])){
         }
     }
 }else{
+    echo $_SESSION['lname'];
+    echo "<br>";
+    echo $_SESSION['lpswd'];
     include 'inc/form/registred.html';
 }
 ?>

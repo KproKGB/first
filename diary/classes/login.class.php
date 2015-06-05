@@ -11,7 +11,7 @@ class loginUsers{
         $query = mysqli_query($this->_link, $sql);
         $count = mysqli_num_rows($query);
         if ($count) {
-            echo "Вы авторизовались как $login!";
+            echo "Вы авторизовались, как $login!";
         } else {
            echo "Ошибка авторизации!!!";
             session_destroy();
