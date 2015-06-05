@@ -1,5 +1,5 @@
 <?php
-require 'classes/NewDB.class.php';
+require_once 'classes/NewDB.class.php';
 $con = new newDiary();
 $con->dbConnect($host, $user, $pass, $base);
 $con->dbCreate();
