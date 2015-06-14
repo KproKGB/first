@@ -13,6 +13,10 @@ if (isset($_GET['id'])) {
             $title = "Установка базы данных для Online-дневника";
             $header = "Install Dairy DB";
             break;
+        case "table":
+            $title = "Таблица учеников";
+            $header = "Table users";
+            break;
     }
 }
 ?>

@@ -5,21 +5,20 @@
 </head>
 <body>
 <div id="content">
-    <div class="mypanel">
+    <div id="mypanel">
         <form action="" method="post">
-            Логин:<br>
-            <input size="25" name="lname" placeholder="Логин" value="admin"><br>
-            Пароль:<br>
-            <input size="25" type='password' name="lpswd" placeholder="Пароль" value="123321"><br><br>
+            <label for="login">Логин:</label><br>
+            <input size="25" id="login" name="lname" placeholder="Логин" value="admin"><br>
+            <label for="pass">Пароль:</label><br>
+            <input size="25" id="pass" type='password' name="lpswd" placeholder="Пароль" value="123321"><br><br>
             <input type="submit" value="Вход">
         </form>
 </div>
 </div>
             <div id="footer">
                 &copy; Тест сайт, 2014 - <?= date('Y')?>
-                <br>
+                <br />
                 <a href="/inc/installDb.inc.php">InstallDB</a>
-                <a href="/inc/registred.inc.php">Add users</a>
             </div>
 </body>
 </html>
