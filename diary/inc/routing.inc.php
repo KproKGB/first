@@ -5,7 +5,7 @@ if (isset($id)) {
         case 'install': include 'inc/installDb.inc.php'; break;
         case 'table': include 'inc/table.php'; break;
         case 'logout': include 'inc/logout.inc.php'; break;
-        default: include 'index.php';
+        case 'login': include 'inc/login.inc.php'; break;
+        //default: include 'index.php';
     }
 }
-?>

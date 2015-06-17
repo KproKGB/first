@@ -50,4 +50,3 @@ for ($tr=1; $tr<=$rows; $tr++){
 $table .= '</table>';
 echo $table;
 echo '<br />'.$submit;
-?>

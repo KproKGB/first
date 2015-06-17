@@ -1,11 +1,7 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=utf-8');
-include 'inc/parse_ini.inc.php';
-include 'inc/headers.inc.php';
-include 'classes/login.class.php';
-$loginUsr = new loginUsers();
-$loginUsr->dbConnect($host, $user, $pass, $base);
+require_once 'inc/system.inc.php';
+include_once 'inc/headers.inc.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['lname'] = trim(htmlspecialchars($_POST['lname']));
@@ -13,6 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: " .$_SERVER['REQUEST_URI']);
 }
 if (isset($_SESSION['lname']) and !empty($_SESSION['lname'])) {
+    $loginUsr = new LoginUsers();
+    $connect = new DB();
+    $connect->dbConnect();
     if($loginUsr->loginUsr($_SESSION['lname'], $_SESSION['lpswd'])){
         include 'inc/form/start.html';
     }
@@ -20,5 +19,3 @@ if (isset($_SESSION['lname']) and !empty($_SESSION['lname'])) {
 else {
     include 'inc/form/loginForm.html';
 }
-$loginUsr->dbClose();
-?>
