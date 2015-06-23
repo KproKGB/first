@@ -20,6 +20,10 @@
 
 
     header('location: '.$_SERVER['REQUEST_URI']);
+    header ("Location: ".$_SERVER["PHP_SELF"]);
+
+
+    <?php echo $_SERVER["PHP_SELF"];?>
 
 
 

@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $reg_pswd1 = md5(trim(htmlspecialchars($_POST['reg_pswd1'])));
     $reg_pswd2 = md5(trim(htmlspecialchars($_POST['reg_pswd2'])));
     $reg_class = trim(htmlspecialchars($_POST['reg_class']));
-    header("Location: " .$_SERVER['PHP_SELF']);
+    header("Location: " .$_SERVER['REQUEST_URI']);
 }
     if (isset($_POST['to_reg'])) {
         if ($reg_pswd1 !== $reg_pswd2) {
