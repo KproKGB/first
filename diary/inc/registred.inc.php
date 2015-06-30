@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     if (isset($_POST['to_reg'])) {
         if ($reg_pswd1 !== $reg_pswd2) {
             echo "Пароли не совпадают!";
-            include 'inc/form/registred.html';
+            include 'inc/registred.html';
         } else {
             $newUser->dbConnect($host, $user, $pass, $base);
             if ($newUser->checkUsr($reg_login, $reg_email)) {
@@ -21,6 +21,5 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             }
         }
     } else {
-        include 'inc/form/registred.html';
+        include 'inc/registred.html';
     }
-?>
