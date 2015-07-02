@@ -1,5 +1,4 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
 $name = array ('Иванов Иван','Имена', 'учеников', 'из', 'базы', 'данных', '!!!', '111', '...', '***', 'nnn');
 $day=7;
 if(!$day%2==0) {
