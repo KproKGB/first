@@ -13,9 +13,9 @@ if (isset($_SESSION['lname']) and !empty($_SESSION['lname'])) {
     $connect = new DB();
     $connect->dbConnect();
     if($loginUsr->loginUsr($_SESSION['lname'], $_SESSION['lpswd'])){
-        include 'inc/start.html';
+        include 'inc/main.php';
     }
 }
 else {
-    include 'inc/loginForm.html';
+    include 'inc/loginForm.php';
 }
