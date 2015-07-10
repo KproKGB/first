@@ -1,7 +1,8 @@
 <html>
 <head>
+    <title><?= $title?></title>
     <meta charset="utf-8"/>
-    <link href="inc/style.css" type="text/css" rel="stylesheet">
+    <link href="inc/style.css" rel="stylesheet">
 </head>
 <body>
 <div id="content">
@@ -17,8 +18,6 @@
 </div>
             <div id="footer">
                 &copy; Kpro-dev, <?= date('Y')?>
-                <br />
-                <a href="/inc/installDb.inc.php">InstallDB</a>
             </div>
 </body>
 </html>

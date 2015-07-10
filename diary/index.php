@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'inc/system.inc.php';
 include_once 'inc/headers.inc.php';
+require_once 'inc/system.inc.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['lname'] = trim(htmlspecialchars($_POST['lname']));
@@ -15,7 +15,6 @@ if (isset($_SESSION['lname']) and !empty($_SESSION['lname'])) {
     if($loginUsr->loginUsr($_SESSION['lname'], $_SESSION['lpswd'])){
         include 'inc/main.php';
     }
-}
-else {
+} else {
     include 'inc/loginForm.php';
 }

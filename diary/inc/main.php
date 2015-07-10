@@ -2,7 +2,7 @@
 <head>
     <title><?= $title?></title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="inc/style.css">
+    <link rel="stylesheet" href="inc/style.css">
 </head>
 <body>
 <div id="dashed-line"></div>
