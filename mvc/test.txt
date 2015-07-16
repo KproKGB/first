@@ -1,0 +1,9 @@
+#Добавить в конфиг nginx для виртуального хоста
+
+location /mvc/ {
+    if (!-e $request_filename){
+        rewrite ^/mvc/(.*)$ /mvc/index.php?url=$1 last;
+    }
+}
+
+http://myrusakov.ru/php-mvc-engine-print-pages.html
