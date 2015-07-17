@@ -3,9 +3,17 @@
     {
         public function __construct()
         {
-            $url = isset($_GET['url']) && strlen($_GET['url']) ? $_GET['url'] : 'index';
+            //$url = isset($_GET['url']) && strlen($_GET['url']) ? $_GET['url'] : 'index';
+            $url = isset($_GET['url']) ? $_GET['url'] : null;
             $url = rtrim($url, '/');
             $url = explode('/', $url);
+
+            if(empty($url[0])) {
+                require 'controllers/index.php';
+                $controller = new Index();
+                return false;
+            }
+
             $file = 'controllers/' . $url[0] . '.php';
             if (file_exists($file)) {
                 require $file;

@@ -6,4 +6,4 @@ location /mvc/ {
     }
 }
 
-http://myrusakov.ru/php-mvc-engine-print-pages.html
+http://myrusakov.ru/php-mvc-engine-print-pages-3.html
