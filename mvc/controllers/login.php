@@ -1,10 +1,10 @@
 <?php
-class Error extends Controller {
+class Login extends Controller {
     public function __construct() {
         parent::__construct();
     }
 
     public function index() {
-        $this->view->render('help/index');
+        $this->view->render('login/index');
     }
 }
