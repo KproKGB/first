@@ -20,14 +20,16 @@ include 'inc/log.inc.php';
             <h2>Навигация по сайту</h2>
             <ul>
                 <li><a href="index.php">Домой</a> </li>
+                <li><a href="index.php?id=gen">Генератор паролей</a></li>
+                <li><a href="/php2">PHP Уровень 2</a></li>
+                <li><a href="/mvc">MVC</a></li>
+                <li><a href="/diary">Online Diary</a></li>
                 <li><a href="index.php?id=cookie">Cookie</a></li>
                 <li><a href="index.php?id=session">Session</a></li>
                 <li><a href="index.php?id=test">Пройти тест</a></li>
-                <li><a href="index.php?id=gen">Генератор паролей</a></li>
                 <li><a href="index.php?id=calc">Калькулятор</a></li>
                 <li><a href="index.php?id=log">Журнал переходов</a></li>
                 <li><a href="index.php?id=gbook">Гостевая книга</a></li>
-                <li><a href="/diary">Online Diary</a></li>
             </ul>
         </div>
         <div id="footer">
