@@ -6,6 +6,7 @@
 			<input type='radio' name='answer' value='b1'>6<br>
 			<input type='radio' name='answer' value='b2'>8<br>
 			<input type='radio' name='answer' value='b3'>9<br>
+            <input type="hidden" name="q" value="<?= ++$q?>">
 			<input type='hidden' name='title' value='Ответьте на вопрос'>
 			<input type='submit' value='Ответить'>
 		</form>
