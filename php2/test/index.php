@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['test']) and !isset($_SESSION['q'])){
+if(!isset($_SESSION['test']) and !isset($_POST['q'])){
     $q=0;
     $title = 'Пройдите тест';
 } else {
