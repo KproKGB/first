@@ -1,6 +1,8 @@
-<?
-	include 'inc/cookie.inc.php';
-    include 'inc/headers.inc.php';
+<?php
+    ini_set('display_errors','On');
+    error_reporting('E_ALL');
+    require_once 'inc/cookie.inc.php';
+    require_once 'inc/headers.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
