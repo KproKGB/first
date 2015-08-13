@@ -1,0 +1,112 @@
+SQL NOTES
+_________
+
+____________________
+
+ВЫБОРКА ДАННЫХ
+_____________________
+
+SELECT name FROM teachers           //Выбрать записи поля name в таблице teachers
+_______________________________________
+
+SELECT name, addr, city             //Выбрать записи полей  name, addr, city
+    FROM teachers                   //в таблице teachers
+    ORDER BY name                   //сортировать по полю name
+_______________________________________
+
+SELECT title                        //Выбрать записи поля title
+    FROM courses                    //в таблице courses
+    WHERE length > 30               //только те записи у которыхв поле length значение более 30
+_______________________________________
+
+SELECT *                            //Выбрать все поля
+FROM courses                        //в таблице courses
+WHERE length > 30                   //только те записи у которых в поле length значение более 30
+AND title LIKE 'Web%'               //И в поле title значение похоже на 'Web...'
+_______________________________________
+
+SELECT DISTINCT length              //Выбрать уникальных значений поля length
+    FROM courses                    //в таблице courses
+_______________________________________
+
+__________________
+
+Объединение таблиц
+__________________
+
+SELECT t.name, t.code, l.course             //Выбрать поля name code course
+    FROM teachers t                         //в таблице teachers с псевдонимом t
+    INNER JOIN lessons l ON t.id = l.tid    //объединение с таблицой lessons (псевдоним l) по критерию id = tid
+_______________________________________
+
+SELECT t.name, t.code, l.course             //Выбрать поля name code course
+FROM teachers t                             //в таблице teachers с псевдонимом t
+LEFT OUTER JOIN lessons l ON t.id = l.tid   //объединение всех значений с таблицой lessons (псевдоним l)
+                                              по критерию id = tid
+_______________________________________
+
+____________________
+
+Вставка новой записи
+____________________
+
+INSERT INTO courses VALUES (NULL, 'PHP', '...', 40)
+_______________________________________
+
+INSERT INTO courses(title, length) VALUES ('PHP', 40)
+_______________________________________
+
+_______________
+
+Удаление записи
+_______________
+
+
+DELETE FROM lessons WHERE date = '2014-06-11'
+_______________________________________
+
+________________
+
+Изменение записи
+________________
+
+
+UPDATE teachers
+SET
+    zarplata = zarplata * 2,
+    premia = premia * 10
+WHERE name LIKE 'Иванов%'
+    OR name LIKE 'Петров%'
+    OR name LIKE 'Сидоров%'
+_______________________________________
+
+UPDATE teachers
+SET
+zarplata = zarplata * 2,
+premia = premia * 10
+WHERE name IN
+('Иванов', 'Петров', 'Сидоров')
+_______________________________________
+
+____________________
+
+Создание базы данных
+____________________
+
+CREATE DATABASE news
+_______________________________________
+
+_____________________________________________
+
+Создание таблицы и полей (СУБД MySQL диалект)
+_____________________________________________
+
+CREATE TABLE items (
+    id int NOT NULL auto_increment,
+    title varchar(255) NOT NULL default '',
+    description varchar(255) NOT NULL default '',
+    content text,
+    author varchar(50) NOT NULL default '',
+    pubdate timestamp NOT NULL default '',
+    PRIMARY KEY (id)
+    )
