@@ -4,6 +4,7 @@ class User {
     public $login;
     public $password;
 
+
     function drawLine(){
         echo "<hr>";
     }
