@@ -20,7 +20,18 @@
 	<th>В корзину</th>
 </tr>
 <?php
-
+$goods = selectAllItems();
+foreach ($goods as $item) {
+    ?>
+    <tr>
+        <td><?= $item['title'] ?></td>
+        <td><?= $item['author'] ?></td>
+        <td><?= $item['pubyear'] ?></td>
+        <td><?= $item['price'] ?></td>
+        <td>В корзину</td>
+    </tr>
+<?php
+}
 ?>
 </table>
 </body>
