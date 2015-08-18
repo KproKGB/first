@@ -1,7 +1,7 @@
 <?php
 	// подключение библиотек
-	require "inc/lib.inc.php";
-	require "inc/config.inc.php";
+require "inc/lib.inc.php";
+require "inc/config.inc.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 	<th>Название</th>
 	<th>Автор</th>
 	<th>Год издания</th>
-	<th>Цена, руб.</th>
+	<th>Цена, грн.</th>
 	<th>В корзину</th>
 </tr>
 <?php
@@ -28,7 +28,7 @@ foreach ($goods as $item) {
         <td><?= $item['author'] ?></td>
         <td><?= $item['pubyear'] ?></td>
         <td><?= $item['price'] ?></td>
-        <td>В корзину</td>
+        <td><a href="add2basket.php?id=<?= $item['id']?>">В корзину</a></td>
     </tr>
 <?php
 }

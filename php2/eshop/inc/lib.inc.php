@@ -1,13 +1,13 @@
 <?php
-function clearStr ($data){
+function clearStr ($data) {
     return trim(htmlspecialchars($data));
 }
 
-function clearInt ($data){
+function clearInt ($data) {
     return abs((int)$data);
 }
 
-function addItemToCatalog($title, $author, $pubyear, $price){
+function addItemToCatalog($title, $author, $pubyear, $price) {
     global $link;
     $sql = 'INSERT INTO catalog (title, author, pubyear, price) VALUES (?, ?, ?, ?)';
     if(!$stmt = mysqli_prepare($link, $sql))
@@ -18,12 +18,36 @@ function addItemToCatalog($title, $author, $pubyear, $price){
     return true;
 }
 
-function selectAllItems(){
+function selectAllItems() {
     global $link;
     $sql = "SELECT id, title, author, pubyear, price FROM catalog";
-    if(!$result = mysqli_query($link, $sql))
+    if(!$result = mysqli_query($link, $sql)) {
         return false;
+    }
     $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
     mysqli_free_result($result);
     return $items;
+}
+
+function saveBasket() {
+    global $basket;
+    $basket = base64_encode(serialize($basket));
+    setcookie('basket', $basket, 0x7FFFFFFF);
+}
+
+function basketInit() {
+    global $basket, $count;
+    if(!isset($_COOKIE['basket'])) {
+        $basket = ['orderid' => uniqid()];
+        saveBasket();
+    } else {
+        $basket = unserialize(base64_decode($_COOKIE['basket']));
+        $count = count($basket)-1;
+    }
+}
+
+function add2Basket($id) {
+    global $id;
+    $basket[$id] = 1;
+    saveBasket();
 }
