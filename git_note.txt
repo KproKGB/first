@@ -37,8 +37,7 @@ ________________________________________
 
 Алиас hist      // отсортированный log
 
-git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d │
-[%an]" --graph --date=short'
+git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d │ [%an]" --graph --date=short'
 ________________________________________
 
 git push                    //Отправка коммита на удаленный сервер
