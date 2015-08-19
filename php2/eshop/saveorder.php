@@ -1,6 +1,17 @@
 <?php
 	require "inc/lib.inc.php";
 	require "inc/config.inc.php";
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = clearStr($_POST['name']);
+    $email = clearStr($_POST['email']);
+    $phone = clearStr($_POST['phone']);
+    $address = clearStr($_POST['address']);
+    $orderid = $basket['orderid'];
+    $dt = time();
+}
+$str = "|";
+$order = $name . $str . $email . $str . $phone . $str . $address . $str . $orderid . $str . $dt;
+echo $order;
 ?>
 <!DOCTYPE html>
 <html>
