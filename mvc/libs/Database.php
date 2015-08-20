@@ -1,6 +1,6 @@
 <?php
 class Database extends PDO {
     public function __construct() {
-        parent::__construct('mysql:host=localhost;dbname=mvc', 'root', '1811');
+        parent::__construct('mysql:host=localhost;dbname=mvc', 'root', '18111987k');
     }
 }

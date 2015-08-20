@@ -5,6 +5,7 @@ $errMsg = "";
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     require "save_news.inc.php";
 }
+require "delete_news.inc.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     <input type="submit" value="Добавить!" />
 </form>
 <?php
-
+require "get_news.inc.php";
 ?>
 </body>
 </html>
