@@ -9,9 +9,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $orderid = $basket['orderid'];
     $dt = time();
 }
-$str = "|";
-$order = $name . $str . $email . $str . $phone . $str . $address . $str . $orderid . $str . $dt;
-echo $order;
+$order = "$name|$email|$phone|$address|$orderid|$dt\n";
+
+if(!file_put_contents('admin/'.ORDERS_LOG, $order, FILE_APPEND | LOCK_EX)) {
+    echo "Запись в файл не удалась!!!";
+}
+saveOrder($dt);
 ?>
 <!DOCTYPE html>
 <html>
