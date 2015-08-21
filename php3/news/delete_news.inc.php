@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET['del'])) {
-    $del = abs((int)$_GET['del']);
-    if ($del) {
+    $id = abs((int)$_GET['del']);
+    if ($id) {
         if(!$news->deleteNews($id)) {
             echo "Произошла ошибка при удалении новости";
         }

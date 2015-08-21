@@ -12,7 +12,7 @@ if(!$posts){
         echo<<<HTML
     <p><a href="$source">$title</a> в рубрике $category</p>
     <p>$description</p>
-    <p align="right"><a href="{$_SERVER['REQUEST_URI']}&del=$id">Удалить</a></p>
+    <p align="right"><a href="{$_SERVER['REQUEST_URI']}?del=$id">Удалить</a></p>
     <hr>
 HTML;
     }

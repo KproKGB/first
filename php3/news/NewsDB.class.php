@@ -77,6 +77,7 @@ class NewsDB implements INewsDB {
         if(!$this->_db->query($sql)) {
             return false;
         }
+        return true;
     }
 
     function __destruct() {
