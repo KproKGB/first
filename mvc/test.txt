@@ -6,7 +6,17 @@ location /mvc/ {
     }
 }
 
-http://myrusakov.ru/php-mvc-engine-begin-work-with-db.html
+
+create table if not exists mvc character set utf8;
 
 
-http://www.webengineer.pro/php-scripts/15-php-skript-avtorizatsii-s-na-osnove-zapisi-v-cookies
+create table if not exists `users`(
+                                    `id` INTEGER AUTO_INCREMENT,
+                                    `login` VARCHAR(20) NOT NULL,
+                                    `password` VARCHAR(32) NOT NULL,
+                                    PRIMARY KEY (`id`)
+                                    );
+
+insert into users (login, password) values ('jesse', 'a1361cb85be840d6a2d762c68e4910e2');
+
+http://myrusakov.ru/php-mvc-engine-creating-auth.html

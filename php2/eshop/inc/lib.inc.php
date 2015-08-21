@@ -93,7 +93,7 @@ function saveOrder($datetime) {
     $sql = 'INSERT INTO orders (title, author, pubyear, price, quantity, orderid, datetime)
                 VALUES (?, ?, ?, ?, ?, ?, ?)';
     if(!mysqli_stmt_prepare($stmt, $sql)) {
-        return false;
+        die ("false");
     }
     foreach ($goods as $item) {
         mysqli_stmt_bind_param ($stmt, "ssiiisi",  $item['title'], $item['author'],
@@ -102,6 +102,7 @@ function saveOrder($datetime) {
         mysqli_stmt_execute($stmt);
     }
     mysqli_stmt_close($stmt);
+    $basket = base64_encode(serialize($basket));
     setcookie('basket', $basket, time()-3600);
     return true;
 }

@@ -4,6 +4,7 @@ class Controller {
         echo "Это главный контроллер<br/>";
         $this->view = new View();
     }
+
     public function loadModel($name) {
         $path = 'models/'.$name.'_model.php';
         if(file_exists($path)) {
