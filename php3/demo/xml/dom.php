@@ -1,5 +1,12 @@
-<?php 
-  header( "Content-Type: text/html;charset=utf-8"); 
+<?php
+header( "Content-Type: text/html;charset=utf-8");
+$dom = new DOMDocument();
+$dom->load("catalog.xml");
+$root = $dom->documentElement;
+//echo $root->nodeType;
+//echo $root->textContent;
+$books = $root->childNodes;
+//var_dump($books);
 ?>
 <html>
 
@@ -16,8 +23,18 @@
       <th>Год издания</th>
       <th>Цена, руб</th>
     </tr>
-    <?php 
-      //Парсинг 
+    <?php
+    foreach($books as $book) {
+      if($book->nodeType == 1) {
+        echo "<tr>";
+        foreach($book->childNodes as $item) {
+          if($item->nodeType == 1){
+            echo "<td>{$item->textContent}</td>";
+          }
+        }
+        echo "</tr>";
+      }
+    }
     ?>
   </table>
 </body>
