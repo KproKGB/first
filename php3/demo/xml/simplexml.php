@@ -1,5 +1,8 @@
 <?php 
-  header( "Content-Type: text/html;charset=utf-8"); 
+  header( "Content-Type: text/html;charset=utf-8");
+$sxml = simplexml_load_file("catalog.xml");
+$sxml->book[0]->title = "XML и IE11";
+file_put_contents("catalog.xml", $sxml->asXML());
 ?>
 <html>
 
