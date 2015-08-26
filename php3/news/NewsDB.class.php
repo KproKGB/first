@@ -49,7 +49,7 @@ class NewsDB implements INewsDB {
     }
 
     function __get($name) {
-        if($name == "db") {
+        if($name == "_db") {
             return $this->_db;
         }
         throw new Exception ("Unknown property!");
@@ -100,7 +100,7 @@ class NewsDB implements INewsDB {
         return abs((int)$data);
     }
 
-    private function db2Arr($data) {
+    protected function db2Arr($data) {
         $arr = [];
         while($row = $data->fetchArray(SQLITE3_ASSOC)) {
             $arr[] = $row;
