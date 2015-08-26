@@ -13,8 +13,19 @@ if($_SERVER['REQUEST_METHOD']=="POST") {
 	}
 	if($login and $pw) {
 		if($result = userExists($login)) {
-
+			list($_, $hash) = explode(':', $result);
+			if(checkHash($pw, $hash)) {
+				$_SESSION['admin'] = true;
+				header("Location: $ref");
+				exit;
+			} else {
+				$title = 'Неправильное имя пользователя или пароль!';
+			}
+		} else {
+			$title = 'Неправильное имя пользователя или пароль!';
 		}
+	} else {
+		$title = 'Заполните все поля формы!';
 	}
 }
 ?>

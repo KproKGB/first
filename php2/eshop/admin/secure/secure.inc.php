@@ -31,3 +31,9 @@ function userExists($login) {
     }
     return false;
 }
+
+function logOut() {
+    session_destroy();
+    header("Location: secure/login.php");
+    exit;
+}
