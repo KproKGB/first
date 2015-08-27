@@ -23,6 +23,7 @@ include 'inc/log.inc.php';
                 <li><a href="index.php?id=gen">Генератор паролей</a></li>
                 <li><a href="/php2">PHP Уровень 2</a></li>
                 <li><a href="/php3">PHP Уровень 3</a></li>
+                <li><a href="/php4">PHP Уровень 4</a></li>
                 <li><a href="/mvc">MVC</a></li>
                 <li><a href="/diary">Online Diary</a></li>
                 <li><a href="index.php?id=cookie">Cookie</a></li>

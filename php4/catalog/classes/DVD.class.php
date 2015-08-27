@@ -8,7 +8,7 @@ class DVD{
 	
 	function __construct($id=0){
 		$this->_id = $id;
-		$db = new DB();
+		$this->_db = new DB();
 	}
 	
 	public function setTitle($title){
