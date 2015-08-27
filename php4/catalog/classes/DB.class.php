@@ -2,20 +2,29 @@
 class DB{
 	const DB_NAME = 'dvd.db';
 	protected $_db;
-	function __construct(){
+	protected static $_instance = null;
+	protected function __construct(){
 		$this->_db = new SQLite3(self::DB_NAME);
 	}
+    protected function __clone() {}
+
+    public static function getInstance() {
+        if(!self::$_instance instanceof self) {
+            self::$_instance = new self;
+        }
+        return self::$_instance;
+    }
 	function __destruct(){
 		unset($this->_db);
 	}
-	/* Перегоняем объект в массив для удобства использования */
+	/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 	protected function db2Arr($data){
 		$arr = array();
 		while($row = $data->fetchArray(SQLITE3_ASSOC))
 			$arr[] = $row;
 		return $arr;	
 	}
-	/* Выборка каталога */
+	/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 	function selectItems(){
 		try{
 			$sql = "SELECT id, band, title, quantity FROM catalog";
@@ -27,7 +36,7 @@ class DB{
 			return false;
 		}	
 	}
-	/* Выборка треков альбома */
+	/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 	function selectItemsByTitle($id){
 		try{
 			$sql = "SELECT tracks.cid as id, tracks.title as title
@@ -41,7 +50,7 @@ class DB{
 			return false;
 		}	
 	}
-	/* Выборка всех треков по альбомам исполнителя */
+	/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 	function selectItemsByBand($band){
 		try{
 			$sql = "SELECT tracks.id as id, tracks.title as track, catalog.title as title 
@@ -55,7 +64,7 @@ class DB{
 			return false;
 		}	
 	}
-	/* Изменение количества альбомов */
+	/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 	function updateQuantity($id, $number){
 		$sql = "UPDATE catalog SET quantity = quantity + " . (int)$number;
 		$sql .= " WHERE id = ".abs((int)$id);
