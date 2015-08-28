@@ -4,9 +4,18 @@
 есть ли в массиве искомый элемент и вернет TRUE или FALSE.
 Не стоит использовать in_array или array_search */
 
-function searchInArray($a, $b){
-    if ($b > $a[count($a)-1] or $b < $a[0])
+function searchInArray($a, $b) {
+    if (($b > $a[count($a)-1]) or ($b < $a[0])) {
         return false;
-    else
-        return true;
+    }
+    return true;
 }
+
+/*function searchInArray($a, $b) {
+    foreach ($a as $key => $value) {
+        if ($value == $b) {
+            return true;
+        }
+        return false;
+    }
+}*/

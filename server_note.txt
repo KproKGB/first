@@ -14,3 +14,5 @@ location /mvc/ {
     }
 }
 _____________________________________________
+
+http://www.neogenia.cz/programator-junior

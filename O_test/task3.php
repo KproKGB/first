@@ -6,8 +6,10 @@ $a = array( ‘a’ => ‘apple’, ‘b’ => ‘banana’, ‘c’ => ‘cherr
 Результат — ключи идут в обратном порядке:
 $a = array( ‘c’ => ‘apple’, ‘b’ => ‘banana’, ‘a’ => ‘cherry’);
  */
-function arrayReverseKeys($a){
+$a = array( 'a' => 'apple', 'b' => 'banana', 'c' => 'cherry');
 
+function arrayReverseKeys($a){
+    return array_reverse($a);
 }
 
-$a = array( 'a' => 'apple', 'b' => 'banana', 'c' => 'cherry');
+var_dump(arrayReverseKeys($a));
