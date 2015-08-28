@@ -16,7 +16,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 <a href="catalog.php?action=catalog">Каталог</a>
 <hr>
 <?php
-switch($_GET['action']){
+if(empty($_GET['action'])) {
+	$_GET['action'] = '';
+}
+switch($_GET['action']) {
 	case 'anthology':
 		include 'get_anthology.inc.php';break;
 	case 'list':

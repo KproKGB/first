@@ -54,7 +54,38 @@ class DVD{
 			return '�� ��������';
 	}
 	/* ���������� ���������� �� ������� � ������� XML */
-	public function getXML($id){
+	/*public function getXML($id){
+
+	}*/
+	
+	/* ���������� ��������� ������ � ����. ������ ��� ������������ */
+	function __destruct(){
+		if($this->_tracks){
+			file_put_contents(__DIR__.'\tracks.log', time().'|'.serialize($this->_tracks)."\n", FILE_APPEND);
+		}
+	}
+}
+
+class DVDStategy {
+	protected $_strategy;
+	function setStrategy($obj) {
+		$this->_strategy = $obj;
+	}
+	function get() {
+		return $this->_strategy->get();
+	}
+	function __call($method, $args) {
+		$this->_strategy->method($args[0]);
+	}
+
+}
+
+interface DVDFormat {
+	function get();
+}
+
+class DVDAsXML extends DVD implements DVDFormat {
+	function get(){
 		$doc = new DomDocument('1.0', 'utf-8');
 		$doc->formatOutput = true;
 		$doc->preserveWhiteSpace = false;
@@ -64,7 +95,7 @@ class DVD{
 		$root->appendChild($band);
 		$title = $doc->createElement('title', $this->_title);
 		$root->appendChild($title);
-		
+
 		$tracks = $doc->createElement('tracks');
 		$root->appendChild($tracks);
 		$result = $this->_db->selectItemsByTitle($id);
@@ -75,12 +106,21 @@ class DVD{
 		$file_name = $this->_band.'-'.$this->_title.'.xml';
 		file_put_contents('output/'.$file_name, $doc->saveXML());
 	}
-	
-	/* ���������� ��������� ������ � ����. ������ ��� ������������ */
-	function __destruct(){
-		if($this->_tracks){
-			file_put_contents(__DIR__.'\tracks.log', time().'|'.serialize($this->_tracks)."\n", FILE_APPEND);
+
+}
+
+class DVDAsJSON extends DVD implements DVDFormat {
+	function get() {
+		$doc = array();
+		$doc['dvd']['band'] = $this->_band;
+		$doc['dvd']['title'] = $this->_title;
+		$doc['dvd']['tracks'] = array();
+		$result = $this->_db->selectItemsByTitle($this->_id);
+		foreach($result as $item){
+			$track = $doc['dvd']['tracks'][] = $item['title'];
 		}
+		$file_name = $this->_band.'-'.$this->_title.'.json';
+		file_put_contents('output/'.$file_name, json_encode($doc));
 	}
 }
 
