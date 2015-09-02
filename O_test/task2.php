@@ -21,3 +21,20 @@ function checkBrackets($str) {
     }
     return (empty($stack));
 }
+
+/*function checkBrackets($str) {
+    $stack = array();
+    $length = strlen($str);
+    $bracket = array('(', ')', '[', ']', '{', '}', '<', '>');
+    while ($length-- > 0) {
+        $n = array_search($str[$length], $bracket);
+        if ($n !== false) {
+            if ($n % 2) {
+                $stack[] = $bracket[$n - 1];
+            } elseif ($stack[count($stack) - 1] === $bracket[$n]) {
+                array_pop($stack);
+            }
+        }
+    }
+    return empty($stack);
+}*/

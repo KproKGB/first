@@ -9,5 +9,5 @@
 сторону от заданной прямой. */
 
 function isIntersect($k,$b, $x1, $y1, $x2, $y2) {
-
+    return ($k * $x1 + $b - $y1) * ($k * $x2 + $b - $y2) <= 0;
 }
