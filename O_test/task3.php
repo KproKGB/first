@@ -7,10 +7,17 @@ $a = array( ‘a’ => ‘apple’, ‘b’ => ‘banana’, ‘c’ => ‘cherr
 $a = array( ‘c’ => ‘apple’, ‘b’ => ‘banana’, ‘a’ => ‘cherry’);
  */
 
-function arrayReverseKeys($a) {
+/*function arrayReverseKeys($a) {
     foreach ($a as $keys => $values) {
         $key [] = $keys;
         $value [] = $values;
     }
     return array_combine((array_reverse($key)), $value);
+}*/
+
+function arrayReverseKeys($a) {
+    return array_combine((array_reverse(array_keys($a))), array_values($a));
 }
+
+$a = array('a' => 'apple', 'b' => 'banana', 'c' => 'cherry');
+print_r(arrayReverseKeys($a));

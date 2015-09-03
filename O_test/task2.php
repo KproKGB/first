@@ -21,20 +21,8 @@ function checkBrackets($str) {
     }
     return (empty($stack));
 }
+$str1 = "[5] * 3 - ( 4 - 7 * [3-6])";
+$str2 = "( 5 * 3 [ 6 ) - 6]";
 
-/*function checkBrackets($str) {
-    $stack = array();
-    $length = strlen($str);
-    $bracket = array('(', ')', '[', ']', '{', '}', '<', '>');
-    while ($length-- > 0) {
-        $n = array_search($str[$length], $bracket);
-        if ($n !== false) {
-            if ($n % 2) {
-                $stack[] = $bracket[$n - 1];
-            } elseif ($stack[count($stack) - 1] === $bracket[$n]) {
-                array_pop($stack);
-            }
-        }
-    }
-    return empty($stack);
-}*/
+var_dump(checkBrackets($str1));
+var_dump(checkBrackets($str2));

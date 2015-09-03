@@ -11,3 +11,7 @@ function myStrRev($s) {
     }
     return $str;
 }
+
+$s="Hello!";
+
+print_r(myStrRev($s));
