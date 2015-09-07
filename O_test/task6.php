@@ -27,7 +27,5 @@ function luckyTickets($k) {
     return $s;
 }
 $k = 6;
-luckyTickets($k);
 
-
-https://gist.github.com/proxyd
+print_r(luckyTickets($k));

@@ -4,20 +4,11 @@
 есть ли в массиве искомый элемент и вернет TRUE или FALSE.
 Не стоит использовать in_array или array_search */
 
-/*function searchInArray($a, $b) {
-    foreach ($a as $value) {
-        if ($value == $b) {
-            return true;
-        }
-    }
-    return false;
-}*/
-
-$a = array(2, 3, 5, 7, 8, 9, 10);
-$b = 7;
+$a = array(102, 103, 105, 107, 108, 109, 110);
+$b = 106;
 
 function searchInArray($a, $b) {
-    $s = $a[0];
+    $s = 0;
     $e = count($a)-1;
     while($s < $e) {
         $m = intval(($s + $e) / 2);

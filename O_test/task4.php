@@ -4,14 +4,19 @@
 Дано $s=‘Hello!’;
 Функция myStrRev($s) возвращает ‘!olleH’ */
 
-function myStrRev($s) {
-    $str = "";
-    for($i = strlen($s)-1; $i >= 0; $i--) {
-        $str.= $s[$i];
+function myStrRev($s, $encoding = null) {
+    if ($encoding === null) {
+        $encoding = mb_detect_encoding($s);
     }
-    return $str;
+    $length   = mb_strlen($s, $encoding);
+    $reversed = '';
+    while ($length-- > 0) {
+        $reversed .= mb_substr($s, $length, 1, $encoding);
+    }
+    return $reversed;
 }
 
-$s="Hello!";
+$s="Привет!";
 
 print_r(myStrRev($s));
+

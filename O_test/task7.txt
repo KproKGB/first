@@ -1,2 +1,39 @@
 Спроектируйте структуру базы данных, в которой будут храниться товары, клиенты и заказы.
 Результат ожидается в виде DDL команды (SQL запрос на создание таблицы) для MySQL.
+
+CREATE DATABASE eshop;
+
+CREATE TABLE `users` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `login` varchar(255) NOT NULL,
+    `password` varchar(255) NOT NULL,
+    `name` varchar(255) NOT NULL,
+    `email` varchar(50) NOT NULL,
+    `phone` int DEFAULT NULL,
+    `address` varchar(255) NOT NULL DEFAULT '',
+    `date` TIMESTAMP NOT NULL,
+);
+
+CREATE TABLE `catalog` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `category`
+  `title` varchar(255) NOT NULL DEFAULT 'Без названия',
+  `unit_of_measure`
+  `price` int DEFAULT NULL,
+  `quantity` int NOT NULL DEFAULT 1,
+  `description`
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `orders` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `users_id` varchar(255) NOT NULL DEFAULT '',
+  `catalog_id` varchar(255) NOT NULL DEFAULT '',
+  `quantity` int NOT NULL DEFAULT 1,
+  `price_all` int DEFAULT NULL,
+  `datetime` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+Структура БД интернет магазина: http://kdv.atnet.su/img/articles/ecom1.gif
+http://xreferat.com/image/33/1305977409_1.png

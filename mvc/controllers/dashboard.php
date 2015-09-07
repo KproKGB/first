@@ -10,6 +10,7 @@ class Dashboard extends Controller{
             header('Location: ../login');
             exit();
         }
+        $this->view->js = array('dashboard/js/default.js');
     }
 
     public function index(){
