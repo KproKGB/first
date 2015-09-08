@@ -135,3 +135,116 @@ _____________________________________________
 SELECT COUNT(*) FROM courses;       //Проверка числа записей в таблице
 _____________________________________________
 
+
+PDO PHP Data Object
+___________________
+
+MySQL
+ $db = new PDO('mysql:host=host;dbname=db', $user, $pass);
+
+PostgreSQL
+ $db = new PDO('pgsql:host=host;dbname=db', $user, $pass);
+
+SQLite
+ $db = new PDO('sqlite:db');
+
+ Постоянное соединение
+ $db = new PDO('mysql:host=host;dbname=test', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+_____________________________________________
+
+Использование ini-файла
+_______________________
+
+Файл config.ini
+ db.conn = "mysql:host=localhost;dbname=test"
+ db.user = "vasya"
+ db.pass = "parol"
+
+Загрузка конфигурационного файла
+ $params = parse_ini_file('config.ini');
+
+Соединение с СУБД
+ $db = new PDO($params['db.conn'], $params['db.user'], $params['db.pass']);
+_____________________________________________
+
+Выполнение запроса
+__________________
+
+$sql = "INSERT INTO users(name, email) VALUES('john', 'john@smith.com')";
+
+$db = new PDO($params['db.conn'], $params['db.user'], $params['db.pass']);
+$result = $db->exec($sql);
+
+Ошибки проверять как:
+ if($result === false)
+die('ERROR');
+_____________________________________________
+
+Фильтрация значений (mysql_real_escape_string)
+___________________
+
+$name = $_POST["user"];
+
+MySQL, PostgreSQL, SQLite…
+ $db = new PDO($params['db.conn'], $params['db.user'], $params['db.pass']);
+
+$name = $db->quote($name);
+
+$sql = "INSERT INTO users(name) VALUES($name)";
+_____________________________________________
+
+Выборка данных
+______________
+
+$sql = "SELECT id, name FROM users";
+
+MySQL, PostgreSQL, SQLite…
+ $db = new PDO($params['db.conn'], $params['db.user'], $params['db.pass']);
+
+$result = $db->query($sql);
+
+Если возвращается false
+ $db->query($sql) or die('ERROR');
+_____________________________________________
+
+Обработка данных
+________________
+
+MySQL, PostgreSQL, SQLite…
+ $db = new PDO($params['db.conn'], $params['db.user'], $params['db.pass']);
+
+$stmt = $db->query($sql);
+$row = $stmt->fetch(PDO::FETCH_NUM);
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$row = $stmt->fetch(PDO::FETCH_BOTH);
+_____________________________________________
+
+Обработка ошибок
+________________
+
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
+$db->setAttribute(PDO::ATTR_ERRMODE,  PDO::ERRMODE_SILENT);
+
+catch(PDOException $e){
+$e -> getCode() . ":". $e -> getMessage();
+}
+
+echo $db -> errorCode();
+print_r($db -> errorInfo());
+_____________________________________________
+
+Получение объекта
+_________________
+
+$obj = $stmt->fetch(PDO::FETCH_OBJ);
+
+echo $obj -> id . "\n";
+echo $obj -> name . "\n";
+echo $obj -> email . "\n";
+_____________________________________________
+
+$obj = $stmt->fetch(PDO::FETCH_LAZY);       //объединяет ассоциативный массив, упорядоченный и объект.
+_____________________________________________
