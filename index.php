@@ -26,6 +26,7 @@ include 'inc/log.inc.php';
                 <li><a href="/php4">PHP Уровень 4</a></li>
                 <li><a href="/mvc">MVC</a></li>
                 <li><a href="/diary">Online Diary</a></li>
+                <li><a href="adminer.php">SQL manager</a></li>
                 <li><a href="index.php?id=cookie">Cookie</a></li>
                 <li><a href="index.php?id=session">Session</a></li>
                 <li><a href="index.php?id=test">Пройти тест</a></li>
