@@ -3,37 +3,52 @@
 
 CREATE DATABASE eshop;
 
-CREATE TABLE `users` (
+CREATE TABLE customers (
     `id` int NOT NULL AUTO_INCREMENT,
     `login` varchar(255) NOT NULL,
     `password` varchar(255) NOT NULL,
     `name` varchar(255) NOT NULL,
     `email` varchar(50) NOT NULL,
     `phone` int DEFAULT NULL,
-    `address` varchar(255) NOT NULL DEFAULT '',
-    `date` TIMESTAMP NOT NULL,
+    `address` varchar(255) NOT NULL,
+    `date_reg` TIMESTAMP NOT NULL,
+    PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `catalog` (
+CREATE TABLE categoty (
+`id` int NOT NULL AUTO_INCREMENT,
+`title` varchar(255) NOT NULL,
+`description` varchar(255) NOT NULL,
+`date_upd` TIMESTAMP NOT NULL,
+PRIMARY KEY (`id`)
+);
+
+CREATE TABLE goods (
   `id` int NOT NULL AUTO_INCREMENT,
-  `category`
-  `title` varchar(255) NOT NULL DEFAULT 'Без названия',
-  `unit_of_measure`
+  `category_id` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `unit_of_measure` varchar(255) NOT NULL,
   `price` int DEFAULT NULL,
   `quantity` int NOT NULL DEFAULT 1,
-  `description`
+  `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `orders` (
+
+CREATE TABLE orders (
   `id` int NOT NULL AUTO_INCREMENT,
-  `users_id` varchar(255) NOT NULL DEFAULT '',
-  `catalog_id` varchar(255) NOT NULL DEFAULT '',
-  `quantity` int NOT NULL DEFAULT 1,
+  `customers_id` varchar(255) NOT NULL,
   `price_all` int DEFAULT NULL,
-  `datetime` int DEFAULT NULL,
+  `payment method` varchar(255) NOT NULL,
+  `datetime` TIMESTAMP NOT NULL,
   PRIMARY KEY (`id`)
 );
 
-Структура БД интернет магазина: http://kdv.atnet.su/img/articles/ecom1.gif
-http://xreferat.com/image/33/1305977409_1.png
+CREATE TABLE basket (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `customers_id` int NOT NULL,
+    `goods_id` int NOT NULL,
+    `quantity` int NOT NULL,
+    `price_all` int NOT NULL,
+    PRIMARY KEY (`id`)
+);
