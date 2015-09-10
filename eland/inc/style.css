@@ -1,0 +1,37 @@
+body {
+    background: transparent url("../img/bg.png") repeat-x scroll 100% 0;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 990px;
+    min-width: 990px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    list-style: none;
+    margin-left: 10em;
+    padding-left: 0;
+}
+ul li {
+    display:inline-block;
+    font-family: "Times New Roman" ;
+    font-size: 150%;
+    color: #000;
+
+    margin-right: 2px;
+
+}
+#topmenu {
+    border-bottom: 2px solid #f0f0f0;
+    border-top: 2px solid #f0f0f0;
+}
+
+#showHere {
+    padding-top: 5px;
+    margin-top: 5px;
+}
+#footer {
+    border-top: 2px solid #f0f0f0;
+    padding-top: 5px;
+    margin: auto;
+}

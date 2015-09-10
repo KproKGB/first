@@ -248,3 +248,47 @@ _____________________________________________
 
 $obj = $stmt->fetch(PDO::FETCH_LAZY);       //объединяет ассоциативный массив, упорядоченный и объект.
 _____________________________________________
+
+Подготовленные  запросы
+_______________________
+
+$sql = 'SELECT email FROM users WHERE id = :id AND name = :name'; //где :id и :name плейсхолдер, вместо которого приходят параметры
+
+$stmt = $db -> prepare($sql);
+$stmt -> execute( array( ':id' => 5, ':name' => 'John'));
+$john = $stmt->fetchAll();
+
+$sql = 'SELECT email  FROM users WHERE id = ? AND name = ?';
+$stmt = $db -> prepare($sql);
+$stmt -> execute(array(5, 'John'));
+$john = $stmt->fetchAll();
+_____________________________________________
+
+Сравнение параметров
+____________________
+
+Для 'WHERE id = :idAND name = :name'
+ $stmt = $db -> prepare($sql);
+ $stmt -> bindParam(':id', $id, PDO::PARAM_INT);
+ $stmt -> bindParam(':name', $name, PDO::PARAM_STR, 25);
+ $stmt -> execute();
+
+Для 'WHERE id = ?AND name = ?'
+ $stmt = $db -> prepare($sql);
+ $stmt -> bindParam(1, $id, PDO::PARAM_INT);
+ $stmt -> bindParam(2, $name, PDO::PARAM_STR, 25);
+ $stmt -> execute();
+_____________________________________________
+
+Транзакции
+__________
+
+try {
+    $db -> beginTransaction();
+    $db -> exec("INSERT INTO users VALUES(1, 'John', 'Smith')");
+    $db -> exec("INSERT INTO users VALUES(2, 'Mike', 'Doe')");
+    $db->commit();
+}catch (PDOException $e) {
+    $db -> rollBack();
+}
+
