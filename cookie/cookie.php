@@ -4,7 +4,7 @@
     <title>Логин</title>
 </head>
 <body>
-<iframe src="../clock.php" width="240" height="40" align="right" style="border: none;"></iframe>
+<iframe src="../clock.php" width="240" height="50" align="right" style="border: none;"></iframe>
 </body>
 </html>
 <?php
