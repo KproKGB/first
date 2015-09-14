@@ -1,1 +1,3 @@
-http://myrusakov.ru/uslovnyj-operator-javascript.html
+http://myrusakov.ru/javascript-string.html
+
+https://learn.javascript.ru
