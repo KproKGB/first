@@ -22,10 +22,10 @@ $showHere = "Electro-land";
 <!--Верхнее меню-->
 <div id="topmenu">
     <ul>
-        <li><a href="http://first/eland/">ГЛАВНАЯ</a></li>
-        <li><a href="">МАГАЗИН</a></li>
+        <li><a href="http://first/eland/index.php">ГЛАВНАЯ</a></li>
+        <li><a href="../php2/eshop/catalog.php">МАГАЗИН</a></li>
         <li><a href="">ДОСТАВКА И ОПЛАТА</a></li>
-        <li><a href="">ИНФОРМАЦИЯ</a></li>
+        <li><a href="../php2/eshop/admin/index.php">ИНФОРМАЦИЯ</a></li>
     </ul>
 </div>
 <!--Верхнее меню-->
@@ -41,14 +41,18 @@ $showHere = "Electro-land";
 
 <!--Блок основного контента-->
 <div id="main">
-
+    <br />
+    ВСЕМ ПРИВЕТ!!!
+    <br /><br />
+    ОСНОВНОЙ КОНТЕНТ
+    <br /><br />
 </div>
 <!--Блок основного контента-->
 
 <!--Футер-->
 <div id="footer">
    &copy; 05-2015 - <?= date('m-Y')?> Electro-land.dp.ua | Designed by
-    <a href="/"> Kpro</a>
+    <a href="#"> Kpro</a>
 </div>
 <!--Футер-->
 

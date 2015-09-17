@@ -30,13 +30,9 @@ li a {
     text-decoration: none;
 }
 
-li a:visited {
-    color: #999999;
-}
-li a:hover {
-    color: #656363;
-    /*color: #d65c5c;*/
-}
+li a:visited, li a:active, li a:link { color: #999999; }
+li a:hover { color: #656363; /*color: #d65c5c;*/}
+
 #topmenu {
     margin: auto;
     max-width: 990px;
@@ -53,6 +49,15 @@ li a:hover {
     color: #585858;
 
 }
+#main {
+    margin: 15px auto;
+    max-width: 990px;
+    min-width: 990px;
+    min-height: 75%;
+    padding: 10px;
+    border: 1px solid #d65c5c;
+
+}
 #footer {
     position: absolute;
     clear: both;
@@ -67,5 +72,5 @@ li a:hover {
     bottom: 0;
 }
 
-#footer a:visited { color: #fbfbfb; }
+#footer a:visited, #footer a:active, #footer a:link { color: #fbfbfb; }
 #footer a:hover { color: #d65c5c; }
