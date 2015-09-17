@@ -15,17 +15,9 @@ CREATE TABLE customers (
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE categoty (
-`id` int NOT NULL AUTO_INCREMENT,
-`title` varchar(255) NOT NULL,
-`description` varchar(255) NOT NULL,
-`date_upd` TIMESTAMP NOT NULL,
-PRIMARY KEY (`id`)
-);
 
 CREATE TABLE goods (
   `id` int NOT NULL AUTO_INCREMENT,
-  `category_id` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `unit_of_measure` varchar(255) NOT NULL,
   `price` int DEFAULT NULL,
@@ -44,11 +36,8 @@ CREATE TABLE orders (
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE basket (
-    `id` int NOT NULL AUTO_INCREMENT,
-    `customers_id` int NOT NULL,
+CREATE TABLE booking (
+    PRIMARY KEY (`odrders_id`)
+    `odrders_id` int NOT NULL,
     `goods_id` int NOT NULL,
-    `quantity` int NOT NULL,
-    `price_all` int NOT NULL,
-    PRIMARY KEY (`id`)
 );
