@@ -5,7 +5,7 @@ if (isset($id)) {
         case 'session': include 'session/session.php'; break;
         case 'cookie': include 'cookie/cookie.php'; break;
         case 'test': include 'test/test.php'; break;
-        case 'calc': include 'calc.php'; break;
+        case 'calc': include 'calc.html'; break;
         case 'gen': include 'gen.php'; break;
         case 'gbook': include 'inc/gbook.inc.php'; break;
         default: include 'clock.php';
