@@ -4,7 +4,6 @@
 CREATE DATABASE eshop;
 
 CREATE TABLE customers (
-    PRIMARY KEY (`id`)
     `id` int NOT NULL AUTO_INCREMENT,
     `login` varchar(255) NOT NULL,
     `password` varchar(255) NOT NULL,
@@ -13,31 +12,33 @@ CREATE TABLE customers (
     `phone` int DEFAULT NULL,
     `address` varchar(255) NOT NULL,
     `date_reg` TIMESTAMP NOT NULL,
+    PRIMARY KEY (`id`)
 );
 
 
 CREATE TABLE goods (
-  PRIMARY KEY (`id`)
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `unit_of_measure` varchar(255) NOT NULL,
   `price` int DEFAULT NULL,
   `quantity` int NOT NULL DEFAULT 1,
   `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 );
 
 
 CREATE TABLE orders (
-  PRIMARY KEY (`id`)
   `id` int NOT NULL AUTO_INCREMENT,
   `customers_id` varchar(255) NOT NULL,
   `price_all` int DEFAULT NULL,
   `payment method` varchar(255) NOT NULL,
   `datetime` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE booking (
-    PRIMARY KEY (`odrders_id`)
+    `id` int NOT NULL AUTO_INCREMENT,
     `odrders_id` int NOT NULL,
     `goods_id` int NOT NULL,
+    PRIMARY KEY (`id`)
 );
