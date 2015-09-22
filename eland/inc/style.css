@@ -1,7 +1,10 @@
-html, body {
-    margin: auto;
-    width: 100%;
+html {
     background: transparent url("../img/bg.png") repeat-x scroll 100% 0;
+}
+#body {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
 }
 #header {
     margin: 0 auto;
@@ -29,7 +32,7 @@ li a {
 }
 
 li a:visited, li a:active, li a:link { color: #999999; }
-li a:hover { color: #656363; /*color: #d65c5c;*/}
+li a:hover { color: #656363; }
 
 #topmenu {
     margin: auto;
@@ -37,6 +40,9 @@ li a:hover { color: #656363; /*color: #d65c5c;*/}
     min-width: 990px;
     border-bottom: 2px solid #ebebeb;
     border-top: 2px solid #dfdfdf;
+}
+#right_menu {
+    
 }
 
 #showHere {
