@@ -12,7 +12,7 @@ $showHere = "Electro-land";
 <div id="body">
 
     <!--Корзина-->
-    <div id="basket">Корзина</div>
+    <div id="basket">КОРЗИНА</div>
     <!--Корзина-->
 
 

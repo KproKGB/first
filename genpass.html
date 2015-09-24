@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор пароля</title>
+    <style type="text/css">
+        /*body { background: #eee; font-family: Arial, sans-serif }*/
+        #pass_wrapper {
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            background: white;
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+        }
+        .symbols {
+            width: 30px;
+            text-align: center;
+            margin: 0 1px;
+            float: left;
+            position: relative;
+            top: 0
+        }
+        .symbol {
+            width: 30px;
+            height: 40px;
+            border: 1px solid #26ADE4;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            background-color: #2EB5E0;
+            background-image: -webkit-linear-gradient(top, #59E0FF 0%, #048BC2 100%);
+            background-image: -moz-linear-gradient(center top , #59E0FF, #048BC2);
+            background-image: linear-gradient(center top , #59E0FF, #048BC2);
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #000;
+        }
+    </style>
+    <script src="inc/jquery-1.11.3.js"></script>
+    <script>
+        var password_length = 8,
+                symbols = new Array(
+                        'A','B','C','D','E','F','G','H','I','J',
+                        'K','L','M','N','O','P','Q','R','S',
+                        'T','U','V','W','X','Y','Z',
+                        'a','b','c','d','e','f','g','h','i','j',
+                        'k','l','m','n','o','p','q','r','s',
+                        't','u','v','w','x','y','z',
+                        1,2,3,4,5,6,7,8,9,0
+                );
+        $(document).ready(function(){
+            for(var j = 0; j < password_length; j++) {
+                var html = '';
+                for(var i = 0; i < symbols.length; i++) {
+                    html += '<div class="symbol">'+symbols[i]+'</div>';
+                }
+                html = '<div class="symbols">'+html+'</div>';
+                $('#pass_wrapper').append(html);
+            }
+
+            $('#go').click(function(){
+                $('#pass_field').val('');
+                makeSymbol(0);
+            });
+
+            function makeSymbol(num_symbol){
+                if (num_symbol >= password_length) {
+                    return false;
+                }
+                var idx = Math.floor(Math.random() * symbols.length);
+                $('#pass_field').val($('#pass_field').val()+symbols[idx]);
+                var new_pos = - idx * 40;
+                $('#pass_wrapper .symbols').eq(num_symbol).animate({
+                    top: new_pos + 'px'
+                }, function(){
+                    makeSymbol(++num_symbol);
+                });
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Генератор паролей</h1>
+
+    <div id="pass_wrapper"></div>
+    <br/><br/>
+    <button id="go">Сделать мне пароль</button>
+    <br/><br/>
+    <input type="text" readonly name="password" value="" id="pass_field">
+</body>
+</html>

@@ -13,12 +13,18 @@ html body {
 }
 
 #basket {
-    position: inherit;
+    position: absolute;
+    padding: 5px;
+    margin-left: 790px;
+    font-family: "Times New Roman";
+    font-size: 120%;
+    border: 1px dotted #d65c5c;
+    color: #656363;
 }
 
 #header {
-    color: #000000;
-    font-family: Arial, Helvetica, sans-serif;
+    max-width: 500px;
+    border: 1px dotted #d65c5c;
 }
 
 #topmenu {
@@ -31,6 +37,7 @@ html body {
     margin: 5px auto;
     padding-left: 0;
     text-align: center;
+    border: 1px dotted #d65c5c;
 }
 #topmenu ul li {
     display:inline-block;
@@ -43,24 +50,25 @@ html body {
 #topmenu li a:hover { color: #656363; }
 
 #right_menu {
-    width: 200px;
+    width: 197px;
     position: absolute;
-    margin-left: 200px;
+    margin-left: 791px;
+    border: 1px dotted #d65c5c;
+    color: #585858;
 }
 #right_menu  ul { list-style: none; }
 
 #showHere {
-    padding-top: 15px;
+    padding: 10px 0;
     color: #585858;
-
+    border: 1px dotted #d65c5c;
 }
 
 #main {
-    margin: 15px 0;
-    min-height: 75%;
+    max-width: 770px;
+    margin: 0;
     padding: 10px;
     border: 1px dotted #d65c5c;
-
 }
 
 #footer {
