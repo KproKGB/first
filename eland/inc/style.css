@@ -4,7 +4,7 @@ html body {
     background: transparent url("../img/bg.png") repeat-x scroll 100% 0;
 }
 
-#body {
+.body {
     padding: 0;
     margin: 0 auto;
     max-width: 990px;
@@ -12,7 +12,7 @@ html body {
     width: 100%;
 }
 
-#basket {
+.basket {
     position: absolute;
     padding: 5px;
     margin-left: 790px;
@@ -22,16 +22,16 @@ html body {
     color: #656363;
 }
 
-#header {
+.header {
     max-width: 500px;
     border: 1px dotted #d65c5c;
 }
 
-#topmenu {
+.topmenu {
     border-bottom: 2px solid #ebebeb;
     border-top: 2px solid #dfdfdf;
 }
-#topmenu ul {
+.topmenu ul {
     font-family: "Times New Roman";
     list-style: none;
     margin: 5px auto;
@@ -39,39 +39,39 @@ html body {
     text-align: center;
     border: 1px dotted #d65c5c;
 }
-#topmenu ul li {
+.topmenu ul li {
     display:inline-block;
     font-size: 150%;
     padding-left: 10px;
     padding-right: 10px;
 }
-#topmenu li a { text-decoration: none; }
-#topmenu li a:visited, #topmenu li a:active, #topmenu li a:link { color: #999999; }
-#topmenu li a:hover { color: #656363; }
+.topmenu li a { text-decoration: none; }
+.topmenu li a:visited, .topmenu li a:active, .topmenu li a:link { color: #999999; }
+.topmenu li a:hover { color: #656363; }
 
-#right_menu {
-    width: 197px;
-    position: absolute;
+.right_menu {
+    width: 20%;
     margin-left: 791px;
     border: 1px dotted #d65c5c;
     color: #585858;
 }
-#right_menu  ul { list-style: none; }
+.right_menu  ul { list-style: none; }
 
-#showHere {
+.showHere {
     padding: 10px 0;
     color: #585858;
     border: 1px dotted #d65c5c;
 }
 
-#main {
-    max-width: 770px;
+.main {
+    float: left;
+    max-width: 77.5%;
     margin: 0 0 3em 0;
     padding: 10px;
     border: 1px dotted #d65c5c;
     text-align: justify;       /* Выравнивание текста по ширине блока*/
 }
-#main h2 {
+.main h2 {
     text-align: center;
     color: #d65b5b;
     font-size: 100%;
@@ -80,7 +80,7 @@ html body {
     text-shadow: 1px 1px 1px #fff;
 }
 
-#footer {
+.footer {
     position: fixed;
     clear: both;
     text-align: center;
@@ -93,5 +93,5 @@ html body {
     width: 100%;
     bottom: 0;
 }
-#footer a:visited, #footer a:active, #footer a:link { color: #fbfbfb; }
-#footer a:hover { color: #d65c5c; }
+.footer a:visited, .footer a:active, .footer a:link { color: #fbfbfb; }
+.footer a:hover { color: #d65c5c; }
