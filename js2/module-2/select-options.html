@@ -14,24 +14,12 @@
 		links["Яндекс"] = "http://www.yandex.ru";
 		links["Рамблер"] = "http://www.rambler.ru";
 		links["Гугл"] = "http://www.google.ru";
-		
-		// Создадим в списке SELECT элементы OPTION
-		var s = document.myForm.selURL;
-		for (var linkName in links){
-			var o = new Option();
-			o.value = links[linkName];
-			o.text = linkName;
-			/* или 
-				var o = new Option(linkName, links[linkName]); 
-			*/
-			s.add(newOption);
+
+		function goToURL() {
+			var s = document.myForm.selURL;
+			var url = s.options[s.selectedIndex].value;
+			location.assign(url);
 		}
-		// Сделаем все элементы формы доступными
-		var f = document.myForm; // или s.form
-		for (var i=0; i < f.elements.length; i++){
-			f.elements[i].disabled = false;
-		}
-		
 	</script>
 </head>
 
@@ -44,7 +32,27 @@
 	</form>
 	
 	<script type="text/javascript">
-		
+		// Создадим в списке SELECT элементы OPTION
+		var s = document.myForm.selURL;
+		for (var linkName in links){
+			var o = new Option();
+			o.value = links[linkName];
+			o.text = linkName;
+			/* или
+			 var o = new Option(linkName, links[linkName]);
+			 */
+			try {
+				s.add(o, null);
+			} catch (e) {
+				s.add(o);
+			}
+		}
+		// Сделаем все элементы формы доступными
+		var f = document.myForm; // или s.form
+		for (var i=0; i < f.elements.length; i++){
+			f.elements[i].disabled = false;
+		}
+		document.links[0].style.visibility = "visible";
 	</script>
 </body>
 </html>

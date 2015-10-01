@@ -165,5 +165,192 @@ self
 parent - обращение к родителю iframe
 top - обращение к самому главному окну. В случа если множество вложенных iframe
 name
+_____________________________________________
 
+HTML - кллекции
+_______________
+
+forms
+images
+links
+applets
+embeds
+
+<form name="search">
+ document.forms[0]
+ document.forms['search']
+ document.forms.search
+
+document.links[0].style.color = "red"
+_____________________________________________
+
+element.style.padding = '10px';
+
+Правила именования
+border-top-width => borderTopWidth
+
+Разрешение конфликта имен атрибутов
+for => htmlFor
+float => cssFloat
+
+Исключение
+class => className
+_____________________________________________
+
+Элементы HTML
+################
+
+HTMLFormElement
+ Свойства
+ elements
+ length
+ name
+ action
+ enctype
+ method
+ target
+
+  Методы
+ submit()
+ reset()
+_______________
+
+HTMLInputElement
+ Свойства
+ form (JS)
+ defaultValue (JS)
+ defaultChecked
+ checked
+ maxLength
+ type
+ value
+ size
+ name
+
+ Методы
+ select()
+ click()
+ focus()
+ blur()
+_______________
+
+HTMLTextAreaElement
+ Свойства
+ defaultValue (JS)
+ form (JS)
+ value (JS)
+ type (JS)
+ cols
+ rows
+ readOnly
+ tabIndex
+ disabled
+ Методы
+ select()
+ focus()
+ blur()
+_______________
+
+HTMLSelectElement
+ Свойства
+ options (JS)
+ length (JS)
+ type (JS)
+ selectedIndex (JS)  //в случае если не выбран ни один элемент возвращает -1;
+ value (JS)
+ form (JS)
+ disabled и multiple
+ name
+ size и tabIndex
+ Методы
+ add()
+ remove()
+ focus()
+ blur()
+_______________
+
+HTMLOptionElement
+ Свойства
+ form (JS)
+ text (JS)
+ defaultSelected (JS)
+ index (JS)
+ value
+ selected
+ disabled
+ label
+_______________
+
+HTMLImageElement
+ var img = new Image(300, 200);
+
+ Свойства
+ src
+ alt
+ width
+ height
+ border
+_______________
+
+HTMLTableElement
+ Свойства
+ tHead
+ tFoot
+ tBodies[]
+ rows[]
+ caption
+ width
+ border
+ cellPadding
+ cellSpacing
+
+ Методы
+ createCaption()
+ deleteCaption()
+ createTHead()
+ deleteTHead()
+ createTFoot()
+ deleteTFoot()
+ insertRow(index)
+ deleteRow(index)
+_______________
+
+HTMLTableSectionElement
+
+ Свойства
+ rows
+ align
+ vAlign
+
+ Методы
+ insertRow(index)
+ deleteRow(index)
+_______________
+
+HTMLTableRowElement
+
+ Свойства
+ cells
+ rowIndex
+ sectionRowIndex
+ vAlign
+ bgColor
+ Методы
+ insertCell(index)
+ deleteCell(index)
+_______________
+
+HTMLTableCellElement
+
+ Свойства
+ cellIndex
+ colSpan
+ rowSpan
+ align
+ vAlign
+ width
+ height
+ textContent
+ innerHTML             //Свойство, вставляет в виде строки HTML элемент.
+_______________
 
