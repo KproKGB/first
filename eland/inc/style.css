@@ -18,13 +18,13 @@ html body {
     margin-left: 790px;
     font-family: "Times New Roman";
     font-size: 120%;
-    border: 1px dotted #d65c5c;
     color: #656363;
 }
 
 .header {
     max-width: 500px;
-    border: 1px dotted #d65c5c;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .topmenu {
@@ -37,7 +37,6 @@ html body {
     margin: 5px auto;
     padding-left: 0;
     text-align: center;
-    border: 1px dotted #d65c5c;
 }
 .topmenu ul li {
     display:inline-block;
@@ -52,7 +51,6 @@ html body {
 .right_menu {
     width: 20%;
     margin-left: 791px;
-    border: 1px dotted #d65c5c;
     color: #585858;
 }
 .right_menu  ul { list-style: none; }
@@ -60,7 +58,6 @@ html body {
 .showHere {
     padding: 10px 0;
     color: #585858;
-    border: 1px dotted #d65c5c;
 }
 
 .main {
@@ -68,12 +65,10 @@ html body {
     max-width: 77.5%;
     margin: 0 0 3em 0;
     padding: 10px;
-    border: 1px dotted #d65c5c;
     text-align: justify;       /* Выравнивание текста по ширине блока*/
 }
 .main h2 {
     text-align: center;
-    color: #d65b5b;
     font-size: 100%;
     font-family: "Times New Roman",arial,serif;
     text-transform: uppercase;
