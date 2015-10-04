@@ -1,24 +1,53 @@
 html body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif, Helvetica;
+    font-size: 76%;
+    text-align: center;
     background: transparent url("../img/bg.png") repeat-x scroll 100% 0;
 }
 
 .body {
-    padding: 0;
+    text-align: left;
     margin: 0 auto;
     max-width: 990px;
     min-width: 990px;
-    width: 100%;
+    padding: 0;
+    width: auto !important;
 }
 
 .basket {
     position: absolute;
-    padding: 5px;
-    margin-left: 790px;
-    font-family: "Times New Roman";
-    font-size: 120%;
+    left: 70%;
+    top: 0;
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 1px 2px #c0c0c0;
+    margin: -1px 0 0;
+    padding: 10px;
     color: #656363;
+    font-size: 15px;
+    line-height: 21px;
+    cursor: pointer;
+
+}
+
+.basket_order {
+    background: #999999 url("../img/icon-cart.png") no-repeat scroll 10px center;
+    color: #fff;
+    float: left;
+    margin: 0;
+    padding: 3px 18px 2px 36px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.basket_arr {
+    background: #d65c5c url("../img/icon-down.png") no-repeat scroll center center;
+    display: inline-block;
+    height: 26px;
+    width: 30px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .header {
@@ -33,6 +62,7 @@ html body {
 }
 .topmenu ul {
     font-family: "Times New Roman";
+    font-size: 115%;
     list-style: none;
     margin: 5px auto;
     padding-left: 0;
@@ -49,16 +79,26 @@ html body {
 .topmenu li a:hover { color: #656363; }
 
 .right_menu {
+    display:inline-block;
+    text-align: left;
+    white-space: nowrap; /*устанавливает, как отображать пробелы между словами*/
     width: 20%;
-    margin-left: 791px;
     color: #585858;
 }
-.right_menu  ul { list-style: none; }
+
+.rm_top img, .rm_tree img{
+    border: 0 none;
+    vertical-align: middle; /*Выравнивает элемент по вертикали относительно своего родителя, окружающего текста или ячейки таблицы.*/
+}
+.rm_top a, .rm_tree a {text-decoration: none; color: #585858;} /* Убираем подчеркивание у ссылок */
+.rm_top a:hover,.rm_tree a:hover {text-decoration: underline;} /* Добавляем подчеркивание при наведении курсора мыши на ссылку */
 
 .showHere {
     padding: 10px 0;
-    color: #585858;
+    position: relative;
 }
+.showHere a {text-decoration: none; color: #585858;}
+.showHere a:hover {text-decoration: underline;}
 
 .main {
     float: left;
@@ -69,10 +109,14 @@ html body {
 }
 .main h2 {
     text-align: center;
-    font-size: 100%;
+    font-size: 120%;
+    color: #d65b5b;
+    text-shadow: 1px 1px 1px #fff;
     font-family: "Times New Roman",arial,serif;
     text-transform: uppercase;
-    text-shadow: 1px 1px 1px #fff;
+}
+.main p {
+    text-indent: 15px;
 }
 
 .footer {

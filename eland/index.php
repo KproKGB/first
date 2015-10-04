@@ -1,10 +1,6 @@
-<?php
-$title = "Electro-Land";
-$showHere = "Electro-land";
-?>
 <html>
 <head>
-    <title><?= $title?></title>
+    <title>Electro-Land</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="inc/style.css" />
 </head>
@@ -12,13 +8,16 @@ $showHere = "Electro-land";
 <div class="body">
 
     <!--Корзина-->
-    <div class="basket">КОРЗИНА</div>
+    <div class="basket">
+        <div class="basket_order">0 ед.</div>
+        <div class="basket_arr"></div>
+    </div>
     <!--Корзина-->
 
 
     <!--Логотип-->
     <div class="header">
-        <img src="img/logo.png" width="489" height="85" class="logo" />
+        <a href="#"><img src="img/logo.png" width="489" height="85" class="logo" /></a>
     </div>
     <!--Логотип-->
 
@@ -26,10 +25,10 @@ $showHere = "Electro-land";
     <!--Верхнее меню-->
     <div class="topmenu">
         <ul>
-            <li><a href="http://first/eland/index.php">ГЛАВНАЯ</a></li>
-            <li><a href="../php2/eshop/catalog.php">МАГАЗИН</a></li>
-            <li><a href="/eland">ДОСТАВКА И ОПЛАТА</a></li>
-            <li><a href="../php2/eshop/admin/index.php">ИНФОРМАЦИЯ</a></li>
+            <li><a href="#1">ГЛАВНАЯ</a></li>
+            <li><a href="#2">МАГАЗИН</a></li>
+            <li><a href="#3">ДОСТАВКА И ОПЛАТА</a></li>
+            <li><a href="#4">ИНФОРМАЦИЯ</a></li>
         </ul>
     </div>
     <!--Верхнее меню-->
@@ -39,7 +38,7 @@ $showHere = "Electro-land";
     <!--Показываем расположение на сайте (по меню)-->
     <div class="showHere">
         <span>Вы находитесь:</span>
-        <span><?= $showHere?></span>
+        <span><a href='index.php'>Electro-land</a>/<a href='#2'>Shop<a></span>
     </div>
     <!--Показываем расположение на сайте (по меню)-->
 
@@ -76,43 +75,125 @@ $showHere = "Electro-land";
 
     <!--Правое меню-->
     <div class="right_menu">
-        <ul>
-            <li>Меню 1
-                <ul>
-                    <li>Подменю1.1</li>
-                    <li>Подменю1.2</li>
-                    <li>Подменю1.3</li>
-                    <li>Подменю1.4</li>
-                </ul>
-            </li>
-            <li>Меню 2
-                <ul>
-                    <li>Подменю2.1</li>
-                    <li>Подменю2.2</li>
-                    <li>Подменю2.3</li>
-                    <li>Подменю2.4</li>
-                </ul>
-            </li>
-            <li>Меню 3
-                <ul>
-                    <li>Подменю3.1</li>
-                    <li>Подменю3.2</li>
-                    <li>Подменю3.3</li>
-                    <li>Подменю3.4</li>
-                </ul>
-            </li>
-            <li>Меню 4
-                <ul>
-                    <li>Подменю4.1</li>
-                    <li>Подменю4.2</li>
-                    <li>Подменю4.3</li>
-                    <li>Подменю4.4</li>
-                </ul>
-            </li>
-            <li>Меню 5</li>
-            <li>Меню 6</li>
-            <li>Меню 7</li>
-        </ul>
+        <div class="rm_top">
+            <img src="img/tree/base.png">
+            <a href="">Магазин</a>
+        </div>
+
+        <div class="rm_tree">
+            <a href="javascript:";><img src="img/tree/minus.gif"></a>
+            <img src="img/tree/imgfolder.png">
+            <a href="">Меню 1</a>
+        </div>
+
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/join.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 1.1</a>
+                </div>
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/join.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 1.2</a>
+                </div>
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/joinbottom.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 1.3</a>
+                </div>
+
+        <div class="rm_tree">
+            <a href="javascript:";><img src="img/tree/minus.gif"></a>
+            <img src="img/tree/imgfolder.png">
+            <a href="">Меню 2</a>
+        </div>
+
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/join.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 2.1</a>
+                </div>
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/join.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 2.2</a>
+                </div>
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/joinbottom.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 2.3</a>
+                </div>
+
+        <div class="rm_tree">
+            <a href="javascript:";><img src="img/tree/minus.gif"></a>
+            <img src="img/tree/imgfolder.png">
+            <a href="">Меню 3</a>
+        </div>
+
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/join.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 3.1</a>
+                </div>
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/join.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 3.2</a>
+                </div>
+                <div class="rm_tree">
+                    <img src="img/tree/line.gif">
+                    <img src="img/tree/joinbottom.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 3.3</a>
+                </div>
+
+        <div class="rm_tree">
+            <a href="javascript:";><img src="img/tree/plus.gif"></a>
+            <img src="img/tree/folder.png">
+            <a href="">Меню 4</a>
+        </div>
+        <div class="rm_tree">
+            <a href="javascript:";><img src="img/tree/plus.gif"></a>
+            <img src="img/tree/folder.png">
+            <a href="">Меню 5</a>
+        </div>
+        <div class="rm_tree">
+            <a href="javascript:";><img src="img/tree/plus.gif"></a>
+            <img src="img/tree/folder.png">
+            <a href="">Меню 6</a>
+        </div>
+        <div class="rm_tree">
+            <a href="javascript:";><img src="img/tree/minusbottom.gif"></a>
+            <img src="img/tree/imgfolder.png">
+            <a href="">Меню 7</a>
+        </div>
+
+                <div class="rm_tree">
+                    <img src="img/tree/empty.gif">
+                    <img src="img/tree/join.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 7.1</a>
+                </div>
+                <div class="rm_tree">
+                    <img src="img/tree/empty.gif">
+                    <img src="img/tree/join.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 7.2</a>
+                </div>
+                <div class="rm_tree">
+                    <img src="img/tree/empty.gif">
+                    <img src="img/tree/joinbottom.gif">
+                    <img src="img/tree/folder.png">
+                    <a href="">Подменю 7.3</a>
+                </div>
 
     </div>
     <!--Правое меню-->
@@ -122,9 +203,15 @@ $showHere = "Electro-land";
 
     <!--Футер-->
     <div class="footer">
-       &copy; 05-2015 - <?= date('m-Y')?> Electro-land.dp.ua | Designed by <a href="#"> Kpro</a>
+       &copy; 05-2015 - <span id="date"></span> Electro-land.dp.ua | Designed by <a href="http://nickolay-kgb.in.ua"> Kpro</a>
     </div>
-    <!--Футер-->
+<!--Футер-->
+<script>
+    var date = new Date();
+    var m = date.getMonth() + 1;
+    var y = date.getFullYear();
+    document.getElementById('date').innerHTML = m + "-" + y;
+</script>
 
 
 </body>
