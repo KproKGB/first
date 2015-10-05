@@ -203,16 +203,9 @@
 
     <!--Футер-->
     <div class="footer">
-       &copy; 05-2015 - <span id="date"></span> Electro-land.dp.ua | Designed by <a href="http://nickolay-kgb.in.ua"> Kpro</a>
+       &copy; 05-2015 - <?= date('m-Y')?> Electro-land.dp.ua | Designed by <a href="http://nickolay-kgb.in.ua"> Kpro</a>
     </div>
 <!--Футер-->
-<script>
-    var date = new Date();
-    var m = date.getMonth() + 1;
-    var y = date.getFullYear();
-    document.getElementById('date').innerHTML = m + "-" + y;
-</script>
-
 
 </body>
 </html>
