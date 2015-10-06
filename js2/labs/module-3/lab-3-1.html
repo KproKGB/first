@@ -28,8 +28,26 @@
 				1.2 Если это узел-элемент - выведите его название и ...
 					вызовите эту функцию для каждого из дочерних узлов	
 		*/
-		
-		
+		function showDOM() {
+			var w = window.open("", "");
+			w.document.write("<html><body>");
+			showChildNodes(document.body, w.document);
+			w.document.write("</body></html>")
+		}
+
+		function showChildNodes (node, doc) {
+			if(node.nodeType == 3) {
+				doc.write("<i>" + node.nodeValue + "</i><br>");
+			}
+			if(node.nodeType == 1) {
+				doc.write("<b>" + node.nodeName + "</b><br>");
+				for (var i=0; i<node.childNodes.length; i++) {
+					showChildNodes(node.childNodes[i], doc);
+				}
+				doc.write("<br>");
+			}
+		}
+
 	</script>
 </head>
 

@@ -376,10 +376,10 @@ _____________________
  Методы
  hasChildNodes() - возвращает true либо false при наличии детей элемента
  cloneNode(bool) -
- appendChild(e) -
- insertBefore(e, p)
- replaceChild(e, p)
- removeChild(e)
+ appendChild(e) - добавить элемент
+ insertBefore(e, p) - вставить элемент "е" перед элементом "р"
+ replaceChild(e, p) - заменить вместо "е" на "р"
+ removeChild(e) - удалить элемент.
 _____________________________________________
 
 Element - элемент документа
@@ -416,3 +416,21 @@ doctype -
 getElementsByTagName(e) - выбрать элементы по тегу
 getElementById(id) - выбор элемента по идентификатору id
 _____________________________________________
+
+Создание узлов
+______________
+
+ Методы интерфейса Document
+ createElement(element_name)
+ createTextNode(string)
+ createDocumentFragment()
+ createComment(string)
+
+var p = document.createElement("p");        //Создаем элемент
+var t = document.createTextNode("Hello");   //Создаем тескт
+p.appendChild(t);                           //добавляем тескт в элемент, как ребенка
+doc.appendChild(p);                         //добавляем наш элемент с текстом в документ (body или еще куда-то).
+
+doc.insertBefore(p, p2);                    //Добавить наш элемент перед p2
+_____________________________________________
+
