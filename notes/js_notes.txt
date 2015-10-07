@@ -434,3 +434,75 @@ doc.appendChild(p);                         //добавляем наш элем
 doc.insertBefore(p, p2);                    //Добавить наш элемент перед p2
 _____________________________________________
 
+#####################
+## События
+#####################
+
+ Срабатывают на большинстве элементов
+ onclick (можно отменить)
+ onmousedown
+ onmouseup
+ onmousemove
+ onmouseover
+ onmouseout
+______________________________
+
+<body>, <input>, <textarea>
+ onkeydown (можно отменить)
+ onkeypress (можно отменить)
+ onkeyup
+______________________________
+
+<body>, <a>, <area>, <button>, <input>, <label>,
+<select>, <textarea>
+
+ onfocus
+ onblur
+______________________________
+
+<body>, <frameset>, <iframe>, <img>, <object>
+ onload
+
+<body>, <frameset>
+ onunload
+
+<img>, <object>
+ onabort
+
+<body>, <frameset>, <img>, <object>
+ onerror
+
+<body>, <frameset>, <iframe>
+ onresize
+______________________________
+
+<form>
+ onsubmit (можно отменить)
+ onreset (можно отменить)
+
+<input>, <textarea>
+ onselect
+
+<input>, <textarea>, <select>
+ onchange
+
+<body>, элементы с прокруткой
+ onscroll
+______________________________
+
+Window
+ onfocus
+ onblur
+ onload
+ onunload
+ onerror
+ onresize
+ onscroll
+______________________________
+
+Document
+ onkeydown
+ onkeypress
+ onkeyup
+______________________________
+
