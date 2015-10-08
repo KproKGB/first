@@ -76,7 +76,7 @@ html body {
 }
 .topmenu li a { text-decoration: none; }
 .topmenu li a:visited, .topmenu li a:active, .topmenu li a:link { color: #999999; }
-.topmenu li a:hover { color: #656363; }
+.topmenu li a:hover { color: #656363; padding-bottom: 5px; border-bottom: 2px solid;}
 
 .right_menu {
     display:inline-block;
