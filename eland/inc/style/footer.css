@@ -1,0 +1,15 @@
+.footer {
+    position: fixed;
+    clear: both;
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    font: 100% Georgia, "Times New Roman", Times, serif;
+    color: #fbfbfb;
+    background-color: #585858;
+    height: 2em;
+    width: 100%;
+    bottom: 0;
+}
+.footer a:visited, .footer a:active, .footer a:link { color: #fbfbfb; }
+.footer a:hover { color: #d65c5c; }

@@ -2,15 +2,77 @@
 <head>
     <title>Electro-Land</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="inc/style.css" />
+    <link rel="stylesheet" href="inc/style/style.css" />
+    <link rel="stylesheet" href="inc/style/main.css" />
+    <link rel="stylesheet" href="inc/style/basket.css" />
+    <link rel="stylesheet" href="inc/style/topmenu.css" />
+    <link rel="stylesheet" href="inc/style/rmenu.css" />
+    <link rel="stylesheet" href="inc/style/footer.css" />
+
+
+    <script type="text/javascript">
+        function showBasket() {
+            var bask = document.getElementById('basket_empty');
+            bask.style.display = "block";
+        }
+        function hideBasket() {
+            var bask = document.getElementById('basket_empty');
+            bask.style.display = "";
+        }
+    </script>
+    <script type="text/javascript">
+        function setPlusIcon(){
+            var rm = document.getElementById("right_menu");
+            var allDivs = rm.getElementsByTagName("div");
+            for (var i=0; i<allDivs.length; i++) {
+                if(allDivs[i].className == "rm_tree"){
+                var tree = allDivs[i].getElementsByTagName("img");
+                    if(tree.length > 0) {
+                        tree[0].src = "img/tree/plus.gif";
+                    }
+                }
+            }
+            var allA = rm.getElementsByTagName("A");
+            for (var i=0; i<allA.length; i++) {
+                allA[i].addEventListener("click", aClick, false);
+            }
+        }
+        window.onload = setPlusIcon;
+
+        function aClick(e){
+            e = e || event;
+            var odjA = e.target || e.srcElement;
+            var divs = odjA.parentNode;
+            var div = divs.getElementsByTagName("div");
+            var img = divs.getElementsByTagName("img");
+            if(div.length == 0) {
+                return true;
+            }
+            for(var i=0; i<div.length; i++) {
+                if (div[i].style.display == "block") {
+                    div[i].style.display = "";
+                    img[0].src = "img/tree/plus.gif";
+                } else {
+                    div[i].style.display = "block";
+                    img[0].src = "img/tree/minus.gif";
+                }
+                try {
+                    e.preventDefault();
+                } catch (x) {
+                    e.returnValue = false;
+                }
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="body">
 
     <!--Корзина-->
-    <div class="basket">
+    <div class="basket" onmouseover="showBasket()" onmouseout="hideBasket()">
         <div class="basket_order">0 ед.</div>
         <div class="basket_arr"></div>
+        <div class="basket_empty" id="basket_empty"></div>
     </div>
     <!--Корзина-->
 
@@ -38,7 +100,7 @@
     <!--Показываем расположение на сайте (по меню)-->
     <div class="showHere">
         <span>Вы находитесь:</span>
-        <span><a href='index.php'>Electro-land</a>/<a href='#2'>Shop<a></span>
+        <span><a href='index.php'>Electro-land</a><img src="img/arrow.png"><a href='#2'>Shop<a></span>
     </div>
     <!--Показываем расположение на сайте (по меню)-->
 
@@ -74,126 +136,127 @@
     <!--Блок основного контента-->
 
     <!--Правое меню-->
-    <div class="right_menu">
+    <div id="right_menu" class="right_menu">
         <div class="rm_top">
             <img src="img/tree/base.png">
             <a href="">Магазин</a>
         </div>
 
         <div class="rm_tree">
-            <a href="javascript:";><img src="img/tree/minus.gif"></a>
+            <a href="javascript:"><img src="img/tree/minus.gif"></a>
             <img src="img/tree/imgfolder.png">
             <a href="">Меню 1</a>
-        </div>
 
-                <div class="rm_tree">
+
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/join.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 1.1</a>
                 </div>
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/join.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 1.2</a>
                 </div>
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/joinbottom.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 1.3</a>
                 </div>
-
+        </div>
         <div class="rm_tree">
-            <a href="javascript:";><img src="img/tree/minus.gif"></a>
+            <a href="javascript:"><img src="img/tree/minus.gif"></a>
             <img src="img/tree/imgfolder.png">
             <a href="">Меню 2</a>
-        </div>
 
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/join.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 2.1</a>
                 </div>
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/join.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 2.2</a>
                 </div>
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/joinbottom.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 2.3</a>
                 </div>
-
-        <div class="rm_tree">
-            <a href="javascript:";><img src="img/tree/minus.gif"></a>
-            <img src="img/tree/imgfolder.png">
-            <a href="">Меню 3</a>
         </div>
 
-                <div class="rm_tree">
+        <div class="rm_tree">
+            <a href="javascript:"><img src="img/tree/minus.gif"></a>
+            <img src="img/tree/imgfolder.png">
+            <a href="">Меню 3</a>
+
+
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/join.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 3.1</a>
                 </div>
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/join.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 3.2</a>
                 </div>
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/line.gif">
                     <img src="img/tree/joinbottom.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 3.3</a>
                 </div>
+        </div>
 
         <div class="rm_tree">
-            <a href="javascript:";><img src="img/tree/plus.gif"></a>
+            <a href="javascript:"><img src="img/tree/plus.gif"></a>
             <img src="img/tree/folder.png">
             <a href="">Меню 4</a>
         </div>
         <div class="rm_tree">
-            <a href="javascript:";><img src="img/tree/plus.gif"></a>
+            <a href="javascript:"><img src="img/tree/plus.gif"></a>
             <img src="img/tree/folder.png">
             <a href="">Меню 5</a>
         </div>
         <div class="rm_tree">
-            <a href="javascript:";><img src="img/tree/plus.gif"></a>
+            <a href="javascript:"><img src="img/tree/plus.gif"></a>
             <img src="img/tree/folder.png">
             <a href="">Меню 6</a>
         </div>
         <div class="rm_tree">
-            <a href="javascript:";><img src="img/tree/minusbottom.gif"></a>
+            <a href="javascript:"><img src="img/tree/minusbottom.gif"></a>
             <img src="img/tree/imgfolder.png">
             <a href="">Меню 7</a>
-        </div>
 
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/empty.gif">
                     <img src="img/tree/join.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 7.1</a>
                 </div>
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/empty.gif">
                     <img src="img/tree/join.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 7.2</a>
                 </div>
-                <div class="rm_tree">
+                <div class="rm_tree_sub">
                     <img src="img/tree/empty.gif">
                     <img src="img/tree/joinbottom.gif">
                     <img src="img/tree/folder.png">
                     <a href="">Подменю 7.3</a>
                 </div>
+        </div>
 
     </div>
     <!--Правое меню-->

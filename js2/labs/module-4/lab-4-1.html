@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<style type="text/css">
 		ul.expandable li { list-style-image: url('../../images/point.gif') }
-		li ul.expandable { display: block } /* выставить в none */
+		li ul.expandable { display: none } /* выставить в none */
 	</style>
 	<script type="text/javascript">
 		/*
@@ -20,7 +20,22 @@
 			Запустите функцию setPlusIcon() при загрузке страницы
 		*/
 		function setPlusIcon(){
+			var allLIs = document.getElementsByTagName("LI");
+			for (var i=0; i<allLIs.length; i++) {
+				var li = allLIs[i];
+				var allULs = li.getElementsByTagName("UL");
+				if (allULs.length > 0) {
+					if (allULs[0].className == "expandable") {
+						li.style.listStyleImage = "url('../../images/plus.gif')";
+					}
+				}
+			}
+			var allA = document.getElementsByTagName("A");
+			for (var i=0; i<allA.length; i++) {
+				allA[i].addEventListener("click", aClick, false);
+			}
 		}
+		window.onload = setPlusIcon;
 		/*
 			Опишите функцию aClick(), которая обрабатывает щелчок по ссылке
 			1. Получите объект - ссылку, по которой был сделан щелчок 
@@ -31,7 +46,26 @@
 			6. Запретите переход по ссылке
 		*/
 		function aClick(e){
-		}	
+			e = e || event;
+			var odjA = e.target || e.srcElement;
+			var li = odjA.parentNode;
+			var uls = li.getElementsByTagName("UL");
+			if(uls.length == 0) {
+				return true;
+			}
+			if(uls[0].style.display == "block") {
+				uls[0].style.display = "";
+				li.style.listStyleImage = "url('../../images/plus.gif')";
+			} else {
+				uls[0].style.display = "block";
+				li.style.listStyleImage = "url('../../images/minus.gif')";
+			}
+			try {
+				e.preventDefault();
+			} catch(x) {
+				e.returnValue = false;
+			}
+		}
 		
 	</script>
 </head>

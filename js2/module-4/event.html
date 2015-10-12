@@ -9,24 +9,25 @@
 		#result { position: absolute; top: 0px; right: 0px; width: 300px; font-size: 80%; background-color:#cfc; padding: 10px }
 	</style>
 	<script type="text/javascript">
-		 function showEventProperties()
+		 function showEventProperties(e)
 		 {
+			 e = e || event;
 			var result = document.getElementById("result");
 			result.innerHTML = 
-				"x: " + event.x + "<br>" + 
-				"y: " + event.y + "<br>" + 
-				"clientX: " + event.clientX + "<br>" + 
-				"clientY: " + event.clientY + "<br>" + 
-				"offsetX: " + event.offsetX + "<br>" + 
-				"offsetY: " + event.offsetY + "<br>" + 
-				"screenX: " + event.screenX + "<br>" + 
-				"screenY: " + event.screenY + "<br>" + 
-				"button: " + event.button + "<br>" +
-				"keyCode: " + event.keyCode + "<br>" +
-				"altKey: " + event.altKey + "<br>" +
-				"ctrlKey: " + event.ctrlKey + "<br>" +
-				"shiftKey: " + event.shiftKey + "<br>" +
-				"srcElement: " + event.srcElement.tagName;
+				"x: " + e.x + "<br>" +
+				"y: " + e.y + "<br>" +
+				"clientX: " + e.clientX + "<br>" +
+				"clientY: " + e.clientY + "<br>" +
+				"offsetX: " + e.offsetX + "<br>" +
+				"offsetY: " + e.offsetY + "<br>" +
+				"screenX: " + e.screenX + "<br>" +
+				"screenY: " + e.screenY + "<br>" +
+				"button: " + e.button + "<br>" +
+				"keyCode: " + e.keyCode + "<br>" +
+				"altKey: " + e.altKey + "<br>" +
+				"ctrlKey: " + e.ctrlKey + "<br>" +
+				"shiftKey: " + e.shiftKey + "<br>" +
+				"srcElement: " + e.srcElement.tagName;
 		 }
 	</script>
 </head>

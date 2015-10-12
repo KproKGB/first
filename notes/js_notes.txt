@@ -504,5 +504,101 @@ Document
  onkeydown
  onkeypress
  onkeyup
-______________________________
+_____________________________________________
 
+Регистрация событий
+___________________
+
+var el = document.getElementById('x');
+function foo(){
+//Здесь исполняемый код
+}
+try {
+el.addEventListener('click', foo, false);       //DOM 2
+} catch(x) {
+el.attachEvent('onclick', foo);                 //IE
+}
+_____________________________________________
+
+Отмена регистрации событий
+
+
+var el = document.getElementById('x');
+function foo(){
+//Здесь исполняемый код
+}
+
+W3C DOM
+ el.removeEventListener('click',foo);
+IE
+ el.detachEvent('onclick', foo);
+_____________________________________________
+
+Получение ссылки на событие
+
+
+function foo(e){
+e = e || event;
+console.log(e);
+}
+event == window.event
+_____________________________________________
+
+Отмена действий по-умолчанию
+
+ Получение ссылки на событие
+function foo(e){
+    e = e || event;
+}
+
+W3C DOM
+e.preventDefault();
+IE
+e.returnValue = false;
+_____________________________________________
+
+Свойства событий
+________________
+
+
+Любой источник
+type          // тип события, клик, скрол
+target (W3C DOM) / srcElement (IE)        //ссылка на объект, на котором произошло событий
+currentTarget (W3C DOM) / srcElement (IE) //при всплытии событий, указывает на элемент на котором произошло событие
+
+Источник мышь
+ button            //Какая клавиша нажата (левая кнопка мыши = 1 во всех браузерах, остальные в разных браузерах по другому)
+ altKey, ctrlKey, shiftKey     // При нажатии мыши нажата одна из управляющих клавиш, возвращает true или false
+ clientX, clientY          // Координаты мышки относительно окна клиента
+
+Источник клавиатура
+keyCode             // Если источником была клавиатура, возвращает код клавишы.
+_____________________________________________
+
+Отмена всплытия события
+_______________________
+
+Получение ссылки на событие
+function foo(e){
+e = e || event;
+}
+
+W3C DOM
+e.stopPropagation();
+IE
+e.cancelBubble = true;
+_____________________________________________
+
+Кроссбраузерная функция:
+________________________
+
+function addEvent(el, e, handler){
+if (el.addEventListener) {
+el.addEventListener(e, handler);
+} else if (element.attachEvent) {
+el.attachEvent('on' + e, handler);
+} else {
+el['on' + e] = handler; }
+}
+addEvent(element, 'click', function(e){...});
+_____________________________________________
