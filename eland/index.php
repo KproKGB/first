@@ -23,7 +23,7 @@
     <script type="text/javascript">
         function setPlusIcon(){
             var rm = document.getElementById("right_menu");
-            var allDivs = rm.getElementsByTagName("div");
+            var allDivs = rm.getElementsByClassName("rm_tree");
             for (var i=0; i<allDivs.length; i++) {
                 if(allDivs[i].className == "rm_tree"){
                 var tree = allDivs[i].getElementsByTagName("img");
@@ -42,25 +42,25 @@
         function aClick(e){
             e = e || event;
             var odjA = e.target || e.srcElement;
-            var divs = odjA.parentNode;
-            var div = divs.getElementsByTagName("div");
-            var img = divs.getElementsByTagName("img");
-            if(div.length == 0) {
+            var div = odjA.parentNode;
+            var divs = div.getElementsByTagName("div");
+            var img = div.getElementsByTagName("img");
+            if(divs.length == 0) {
                 return true;
             }
-            for(var i=0; i<div.length; i++) {
-                if (div[i].style.display == "block") {
-                    div[i].style.display = "";
-                    img[0].src = "img/tree/plus.gif";
-                } else {
-                    div[i].style.display = "block";
-                    img[0].src = "img/tree/minus.gif";
-                }
-                try {
-                    e.preventDefault();
-                } catch (x) {
-                    e.returnValue = false;
-                }
+            for(var i=0; i<divs.length; i++) {
+                    if (divs[i].style.display == "block") {
+                        divs[i].style.display = "";
+                        img[0].src = "img/tree/plus.gif";
+                    } else {
+                        divs[i].style.display = "block";
+                        img[0].src = "img/tree/minus.gif";
+                    }
+                    try {
+                        e.preventDefault();
+                    } catch (x) {
+                        e.returnValue = false;
+                    }
             }
         }
     </script>
@@ -143,7 +143,7 @@
         </div>
 
         <div class="rm_tree">
-            <a href="javascript:"><img src="img/tree/minus.gif"></a>
+            <img src="img/tree/minus.gif">
             <img src="img/tree/imgfolder.png">
             <a href="">Меню 1</a>
 
@@ -168,7 +168,7 @@
                 </div>
         </div>
         <div class="rm_tree">
-            <a href="javascript:"><img src="img/tree/minus.gif"></a>
+            <img src="img/tree/minus.gif">
             <img src="img/tree/imgfolder.png">
             <a href="">Меню 2</a>
 
@@ -193,7 +193,7 @@
         </div>
 
         <div class="rm_tree">
-            <a href="javascript:"><img src="img/tree/minus.gif"></a>
+            <img src="img/tree/minus.gif">
             <img src="img/tree/imgfolder.png">
             <a href="">Меню 3</a>
 
@@ -219,22 +219,22 @@
         </div>
 
         <div class="rm_tree">
-            <a href="javascript:"><img src="img/tree/plus.gif"></a>
+            <img src="img/tree/plus.gif">
             <img src="img/tree/folder.png">
             <a href="">Меню 4</a>
         </div>
         <div class="rm_tree">
-            <a href="javascript:"><img src="img/tree/plus.gif"></a>
+            <img src="img/tree/plus.gif">
             <img src="img/tree/folder.png">
             <a href="">Меню 5</a>
         </div>
         <div class="rm_tree">
-            <a href="javascript:"><img src="img/tree/plus.gif"></a>
+            <img src="img/tree/plus.gif">
             <img src="img/tree/folder.png">
             <a href="">Меню 6</a>
         </div>
         <div class="rm_tree">
-            <a href="javascript:"><img src="img/tree/minusbottom.gif"></a>
+            <img src="img/tree/minusbottom.gif">
             <img src="img/tree/imgfolder.png">
             <a href="">Меню 7</a>
 
