@@ -1,10 +1,4 @@
 <?php
-require 'config/paths.php';
-require 'config/database.php';
-require 'libs/Database.php';
-require 'libs/Session.php';
-require 'libs/bootstrap.php';
-require 'libs/Controller.php';
-require 'libs/model.php';
-require 'libs/View.php';
+require 'lib/bootstrap.php';
+require 'lib/Controller.php';
 $app = new Bootstrap();

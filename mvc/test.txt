@@ -5,8 +5,15 @@ location /mvc/ {
         rewrite ^/mvc/(.*)$ /mvc/index.php?url=$1 last;
     }
 }
+__________________________________________________________
 
-
+#Для Apache
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+_____________________________________________________________
 create table if not exists mvc character set utf8;
 
 
@@ -18,5 +25,7 @@ create table if not exists `users`(
                                     );
 
 insert into users (login, password) values ('jesse', 'a1361cb85be840d6a2d762c68e4910e2');   //jesse:jesse
+_________________________________________________________________
 
-http://myrusakov.ru/php-mvc-engine-creating-chat.html
+
+http://myrusakov.ru/php-mvc-engine-print-pages.html
