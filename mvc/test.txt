@@ -28,4 +28,4 @@ insert into users (login, password) values ('jesse', 'a1361cb85be840d6a2d762c68e
 _________________________________________________________________
 
 
-http://myrusakov.ru/php-mvc-engine-print-pages.html
+http://myrusakov.ru/php-mvc-engine-begin-work-with-db.html
