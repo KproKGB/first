@@ -15,10 +15,11 @@ class Bootstrap {
 
         $file = 'controllers/' . $url[0] . '.php';
         if(file_exists($file)) {
-            require $file;
+            require_once $file;
         } else {
             require "controllers/error.php";
             $controller = new Error();
+            $controller->index();
             return false;
         }
 
@@ -32,8 +33,8 @@ class Bootstrap {
             }
         } else {
             if (isset($url[1])) {
-               $controller->$url[1]();
-           } else {
+                $controller->$url[1]();
+            } else {
                 $controller->index();
             }
         }

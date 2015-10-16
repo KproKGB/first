@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kprokgb
- * Date: 15.10.15
- * Time: 12:50
- */
+define('DB_TYPE', 'mysql');
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'mvc');
+define('DB_USER', 'root');
+define('DB_PASS', '18111987k');

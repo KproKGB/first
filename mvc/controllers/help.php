@@ -10,9 +10,11 @@ class Help extends Controller {
     }
     public function other($arg = false) {
         echo "Мы в методе other контроллера Help<br>";
-        echo "Параметры: $arg";
-
-        require 'models/help_model.php';
-        $model = new Help_Model();
+        if($arg) {
+            echo "Параметры: $arg <br>";
+        }
+        /*require_once 'models/help_model.php';
+        $model = new Help_Model();*/
+        $this->view->render('help/index');
     }
 }
