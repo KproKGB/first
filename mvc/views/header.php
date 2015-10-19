@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="<?= URL?>/public/css/default.css">
     <script src="<?= URL?>/public/js/jquery-1.11.3.js"></script>
     <script src="<?= URL?>/public/js/custom.js"></script>
+    <?php
+    if(isset($this->js)) {
+        foreach($this->js as $js) {
+            echo '<script src="' . URL . '/views/' . $js . '"></script>';
+        }
+    }
+    ?>
 </head>
 <body>
 <?php Session::init(); ?>
