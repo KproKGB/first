@@ -4,3 +4,5 @@ Dashboard... Login in only...
     <input type="text" name="text">
     <input type="submit">
 </form>
+<br>
+<div id="listInserts"></div>

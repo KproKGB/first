@@ -6,7 +6,7 @@ class Dashboard extends Controller {
         $logged = Session::get('loggedIn');
         if($logged == false) {
             Session::destroy();
-            header('Location: ../login');
+            header('Location: login');
             exit();
         }
         $this->view->js = array('dashboard/js/default.js');
@@ -23,5 +23,9 @@ class Dashboard extends Controller {
 
     public function xhrInsert() {
         $this->model->xhrInsert();
+    }
+
+    public function xhrGetListings() {
+        $this->model->xhrGetListings();
     }
 }
