@@ -1,7 +1,7 @@
 <?php
 class View {
     public function __construct() {
-        echo "Это вид<br>";
+
     }
     public function render($name, $noInclude = false) {
         if($noInclude == true) {
