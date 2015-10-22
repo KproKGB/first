@@ -10,11 +10,16 @@
 <body>
 <?php Session::init(); ?>
 <div id="header">
-    <br>
+    <?php if(Session::get('loggedIn') == false): ?>
     <a href="<?= URL?>/index">Index</a>
     <a href="<?= URL?>/help">Help</a>
+    <?php endif; ?>
     <?php if(Session::get('loggedIn') == true):?>
-        <a href="<?= URL?>/dashboard/logout">Logout</a>
+        <a href="<?= URL ?>/dashboard">Dashboard</a>
+        <?php if(Session::get('role') == 'owner'):?>
+            <a href="<?php echo URL; ?>/user">Users</a>
+        <?php endif; ?>
+        <a href="<?= URL ?>/dashboard/logout">Logout</a>
     <?php else: ?>
         <a href="<?= URL?>/login">Login</a>
     <?php endif; ?>
