@@ -29,11 +29,23 @@ class User extends Controller {
     }
 
     public function edit($id) {
+        $this->view->user = $this->model->userSingleList($id);
+        $this->view->render('user/edit');
+    }
 
+    public function editSave($id) {
+        $data = array();
+        $data['login'] = $_POST['login'];
+        $data['password'] = md5($_POST['password']);
+        $data['role'] = $_POST['role'];
+        $data['id'] = $id;
+        $this->model->editSave($data);
+        header('Location: '. URL . '/user');
     }
 
     public function delete($id) {
-
+        $this->model->delete($id);
+        header('Location: ' . URL . '/user');
     }
 
     public function logout() {

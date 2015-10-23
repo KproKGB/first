@@ -7,7 +7,7 @@ location /mvc/ {
 }
 __________________________________________________________
 
-#Для Apache
+#Для Apache в корне создать файл .htaccess
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -27,5 +27,7 @@ create table if not exists `users`(
 insert into users (login, password) values ('jesse', 'a1361cb85be840d6a2d762c68e4910e2');   //jesse:jesse
 _________________________________________________________________
 
+git remote add kscomp git@github.com:KScomp/ks_engine.git
+_________________________________________________________________
 
-http://myrusakov.ru/php-mvc-engine-adding-user-in-database.html
+http://myrusakov.ru/php-mvc-engine-improving-hash-system.html
