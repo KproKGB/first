@@ -5,7 +5,6 @@ class Error extends Controller {
     }
 
     public function index(){
-        echo "Мы в контроллере ошибок! <br> ";
         $this->view->msg = 'Страницы не существует!';
         $this->view->render('error/index');
     }

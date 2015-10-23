@@ -4,8 +4,8 @@ class Login_Model extends Model {
         parent::__construct();
     }
     public function run() {
-        $sth = $this->database->prepare("SELECT id FROM users WHERE login = :login AND password = MD5(:password) AND role = :role");
-        $sth->execute(array(':login' => $_POST['login'], ':password' => $_POST['password'], ':role' => $_POST['role']));
+        $sth = $this->database->prepare("SELECT id, role FROM users WHERE login = :login AND password = MD5(:password)");
+        $sth->execute(array(':login' => $_POST['login'], ':password' => $_POST['password']));
         $data = $sth->fetch();
         $count = $sth->rowCount();
         if($count > 0) {

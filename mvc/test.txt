@@ -28,4 +28,4 @@ insert into users (login, password) values ('jesse', 'a1361cb85be840d6a2d762c68e
 _________________________________________________________________
 
 
-http://myrusakov.ru/php-mvc-engine-creating-users-role-system.html
+http://myrusakov.ru/php-mvc-engine-adding-user-in-database.html
