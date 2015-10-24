@@ -5,6 +5,7 @@ class Catalog extends Controller {
     }
 
     public function index(){
+        $this->view->selectAllItems = $this->model->selectAllItems();
         $this->view->render('catalog/index');
     }
 }

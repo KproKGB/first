@@ -12,13 +12,16 @@
     <script src="<?= URL?>/public/js/custom.js"></script>
 </head>
 <body>
-<?php Session::init(); ?>
+<?php Session::init();
+$basket = array();
+$count = 0;
+?>
 <div class="body">
 
     <!--Корзина-->
     <div class="basket" onmouseover="showBasket()" onmouseout="hideBasket()">
-        <div class="basket_order">0 ед.</div>
-        <div class="basket_arr"></div>
+        <a href="<?= URL?>/basket" ><div class="basket_order"><?= $count?> ед.</div>
+        <div class="basket_arr"></div></a>
         <div class="basket_empty" id="basket_empty"></div>
     </div>
     <!--Корзина-->
