@@ -1,0 +1,19 @@
+.right_menu {
+    display:inline-block;
+    float: right;
+    text-align: left;
+    white-space: nowrap; /*устанавливает, как отображать пробелы между словами*/
+    width: 20%;
+    color: #585858;
+}
+
+.rm_tree_sub {
+    display: none;
+}
+
+.rm_top img, .rm_tree img, .rm_tree_sub img{
+    border: 0 none;
+    vertical-align: middle; /*Выравнивает элемент по вертикали относительно своего родителя, окружающего текста или ячейки таблицы.*/
+}
+.rm_top a, .rm_tree a, .rm_tree_sub a {text-decoration: none; color: #585858;} /* Убираем подчеркивание у ссылок */
+.rm_top a:hover,.rm_tree a:hover, .rm_tree_sub a:hover {text-decoration: underline;} /* Добавляем подчеркивание при наведении курсора мыши на ссылку */

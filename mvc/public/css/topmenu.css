@@ -1,0 +1,21 @@
+.topmenu {
+    border-bottom: 2px solid #ebebeb;
+    border-top: 2px solid #dfdfdf;
+}
+.topmenu ul {
+    font-family: "Times New Roman";
+    font-size: 115%;
+    list-style: none;
+    margin: 5px auto;
+    padding-left: 0;
+    text-align: center;
+}
+.topmenu ul li {
+    display:inline-block;
+    font-size: 150%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.topmenu li a { text-decoration: none; }
+.topmenu li a:visited, .topmenu li a:active, .topmenu li a:link { color: #999999; }
+.topmenu li a:hover { color: #656363; padding-bottom: 5px; border-bottom: 2px solid;}

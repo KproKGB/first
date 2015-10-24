@@ -1,0 +1,18 @@
+.main {
+    float: left;
+    max-width: 77.5%;
+    margin: 0 0 3em 0;
+    padding: 10px;
+    text-align: justify;       /* Выравнивание текста по ширине блока*/
+}
+.main h2 {
+    text-align: center;
+    font-size: 120%;
+    color: #d65b5b;
+    text-shadow: 1px 1px 1px #fff;
+    font-family: "Times New Roman",arial,serif;
+    text-transform: uppercase;
+}
+.main p {
+    text-indent: 15px;
+}

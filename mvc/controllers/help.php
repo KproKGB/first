@@ -8,11 +8,6 @@ class Help extends Controller {
         $this->view->render('help/index');
     }
     public function other($arg = false) {
-
-        if($arg) {
-
-        }
-
         $this->view->render('help/index');
     }
 }
