@@ -13,7 +13,14 @@ class Session {
         }
     }
     public static function destroy() {
-        //inset($_SESSION);
         session_destroy();
+    }
+
+    public static function clearStr($data) {
+        return trim(htmlspecialchars($data));
+    }
+
+    public static function clearInt($data) {
+        return abs((int)$data);
     }
 }

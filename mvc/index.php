@@ -5,6 +5,7 @@ require 'lib/model.php';
 require 'lib/Database.php';
 require 'lib/Session.php';
 require 'lib/View.php';
+require 'lib/Cart.php';
 require 'config/paths.php';
 require 'config/database.php';
 $app = new Bootstrap();

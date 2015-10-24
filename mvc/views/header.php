@@ -1,3 +1,8 @@
+<?php Session::init();
+Cart::basketInit();
+$basket = array();
+$count = 0;
+?>
 <html>
 <head>
     <title>Electro-Land</title>
@@ -12,10 +17,6 @@
     <script src="<?= URL?>/public/js/custom.js"></script>
 </head>
 <body>
-<?php Session::init();
-$basket = array();
-$count = 0;
-?>
 <div class="body">
 
     <!--Корзина-->

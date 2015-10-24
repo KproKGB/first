@@ -27,7 +27,10 @@ class Bootstrap {
             if(method_exists($controller, $url[1])){
                 $controller->$url[1]($url[2]);
             } else {
-                echo 'Error!';
+                require "controllers/error.php";
+                $controller = new Error();
+                $controller->index();
+                return false;
             }
         } else {
             if (isset($url[1]) and method_exists($controller, $url[1])) {
