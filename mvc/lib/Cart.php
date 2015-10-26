@@ -1,19 +1,19 @@
 <?php
 class Cart {
+    public static $basket = array();
+    public static $count;
     public static function saveBasket() {
-        global $basket;
-        $basket = base64_encode(serialize($basket));
-        setcookie('basket', $basket, 0x7FFFFFFF);
+        self::$basket = base64_encode(serialize(self::$basket));
+        setcookie('basket', self::$basket, 0x7FFFFFFF);
     }
 
     public static function basketInit() {
-        global $basket, $count;
         if(!isset($_COOKIE['basket'])) {
-            $basket = ['orderid' => uniqid()];
+            self::$basket = ['orderid' => uniqid()];
             self::saveBasket();
         } else {
-            $basket = unserialize(base64_decode($_COOKIE['basket']));
-            $count = count($basket)-1;
+            self::$basket = unserialize(base64_decode($_COOKIE['basket']));
+            self::$count = count(self::$basket)-1;
         }
     }
 }

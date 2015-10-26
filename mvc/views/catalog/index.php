@@ -1,4 +1,4 @@
-<p>Товаров в <a href="<?= URL?>/basket">корзине</a>: <?= $count?> (Потом удалить эту строчку)</p>
+<p>Товаров в <a href="<?= URL?>/basket">корзине</a>: <?= Cart::$count?> (Потом удалить эту строчку)</p>
 <table border="1" cellpadding="5" cellspacing="0" width="79%">
     <tr>
         <th>Название</th>
@@ -15,7 +15,7 @@
             <td><?= $value['author'] ?></td>
             <td><?= $value['pubyear'] ?></td>
             <td><?= $value['price'] ?></td>
-            <td><a href="<?= URL?>/basket/add2basket/<?= $value['id']?>">В корзину</a></td>
+            <td><a href="<?= URL?>/basket/add2Basket/<?= $value['id']?>">В корзину</a></td>
         </tr>
         <?php
     }
