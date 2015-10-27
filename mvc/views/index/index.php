@@ -1,5 +1,6 @@
 <!--Блок основного контента-->
 <div class="main">
+    <strong><?/*=$views_count*/?></strong>
     <h2><strong>Дорогой Клиент!</strong></h2>
     <h2><strong>Добро пожаловать в Интернет-магазин «Electro-land»!</strong></h2>
 
