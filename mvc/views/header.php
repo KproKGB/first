@@ -1,7 +1,6 @@
 <?php Session::init();
-Cart::basketInit();
-/*$basket = array();*/
-Cart::$count = 0;
+$basket = array();
+$count = 0;
 ?>
 <html>
 <head>
@@ -21,7 +20,7 @@ Cart::$count = 0;
 
     <!--Корзина-->
     <div class="basket" onmouseover="showBasket()" onmouseout="hideBasket()">
-        <a href="<?= URL?>/basket" ><div class="basket_order"><?= Cart::$count?> ед.</div>
+        <a href="<?= URL?>/basket" ><div class="basket_order"><?= $count?> ед.</div>
         <div class="basket_arr"></div></a>
         <div class="basket_empty" id="basket_empty"></div>
     </div>

@@ -1,4 +1,4 @@
-<p>Товаров в <a href="<?= URL?>/basket">корзине</a>: <?= Cart::$count?> (Потом удалить эту строчку)</p>
+<p>Товаров в <a href="<?= URL?>/basket">корзине</a>: <?= $count?> (Потом удалить эту строчку)</p>
 <table border="1" cellpadding="5" cellspacing="0" width="79%">
     <tr>
         <th>Название</th>
