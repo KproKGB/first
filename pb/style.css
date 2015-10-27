@@ -1,16 +1,16 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: url("bg-main.jpg") 100% 100% no-repeat;
-    background-size: auto 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: url("bg-main.jpg") no-repeat;
+    background-size: 100%;
 }
 
 .header {
     position: fixed;
     right: 0;
     left: 0;
-    background: rgba(101, 164, 73, 0.94);
+    background: rgba(101, 164, 73, 0.75);
     min-width: 50px;
 }
 .header img {
@@ -22,17 +22,35 @@ html, body {
 }
 .header li {
     display: inline;
-    margin: 0 25px;
 }
 .header a {
     text-decoration: none;
     color: white;
+    padding: 13px 25px;
+
 }
 .header a:hover {
     text-decoration: none;
     background-color: #eee;
+    color: grey;
 }
 .header ul {
     float: right;
-    margin-right: 20%;
+    margin-right: 13%;
+    list-style: none;
+}
+
+.main {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    margin-top: -125px;
+    margin-left: -250px;
+    top: 70%;
+    left: 50%;
+}
+.main h1 {
+    text-align: center;
+    font-family: "Times New Roman", arial, serif ;
+    color: #000;
 }
