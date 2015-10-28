@@ -16,11 +16,11 @@
         <?php endif; ?>
 
         <?php if(Session::get('loggedIn') == true):?>
-        <li><a href="<?= URL ?>/dashboard">Личный кабинет</a></li>
+        <li><a href="<?= URL ?>dashboard">Личный кабинет</a></li>
             <?php if(Session::get('role') == 'admin'):?>
-            <li><a href="<?php echo URL; ?>/user">Пользователи</a></li>
+            <li><a href="<?php echo URL; ?>user">Пользователи</a></li>
             <?php endif; ?>
-        <li><a href="<?= URL ?>/dashboard/logout">Выйти</a></li>
+        <li><a href="<?= URL ?>dashboard/logout">Выйти</a></li>
         <?php else: ?>
         <li><a href="login">Войти</a></li>
         <?php endif; ?>
