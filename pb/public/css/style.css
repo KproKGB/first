@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: url("bg-main.jpg") no-repeat;
+    background: url("../../public/img/bg-main.jpg") no-repeat;
     background-size: 100%;
 }
 
@@ -15,7 +15,7 @@ html, body {
 }
 .header img {
     float: left;
-    width: 190px;
+    width: 36px;
     height: 36px;
     margin-top: 7px;
     margin-left: 7%;
@@ -29,28 +29,29 @@ html, body {
     padding: 13px 25px;
 
 }
-.header a:hover {
+.header li a:hover {
     text-decoration: none;
     background-color: #eee;
     color: grey;
 }
 .header ul {
-    float: right;
+    float: left;
     margin-right: 13%;
     list-style: none;
 }
-
-.main {
-    width: 500px;
-    height: 250px;
+.abs {
     position: absolute;
-    margin-top: -125px;
-    margin-left: -250px;
-    top: 70%;
+    border: 1px solid snow;
+    background-color: rgba(238, 238, 238, 0.65);;
+    border-radius: 30px;
+    width: 1200px;
+    min-height: 85%;
+    margin-left: -600px;
     left: 50%;
+    top:10%;
 }
-.main h1 {
+
+.main h1, .main h2 {
     text-align: center;
     font-family: "Times New Roman", arial, serif ;
-    color: #000;
 }
