@@ -6,9 +6,11 @@
 </head>
 <body>
 <nav class="header">
-    <a href="index">
-        <img src="<?=URL?>public/img/logo_big1.png">
-    </a>
+
+        <a href="<?=URL?>index">
+            <img src="<?=URL?>public/img/logo_big1.png">
+        </a>
+
     <ul>
         <?php if(Session::get('loggedIn') == false): ?>
         <li><a href="about">О центре</a></li>

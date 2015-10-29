@@ -4,7 +4,6 @@ class Index extends Controller {
         parent::__construct();
     }
     public function index() {
-        $this->view->msg = 'Главная Страница!';
         $this->view->render('index/index');
     }
 }

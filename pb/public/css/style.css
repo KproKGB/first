@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: url("../../public/img/bg-main.jpg") no-repeat;
+    background: url("../../public/img/bg-main2.jpg") no-repeat;
     background-size: 100%;
 }
 
@@ -27,12 +27,12 @@ html, body {
     text-decoration: none;
     color: white;
     padding: 13px 25px;
-
 }
 .header li a:hover {
     text-decoration: none;
     background-color: #eee;
     color: grey;
+    border-radius: 3px;
 }
 .header ul {
     float: left;
@@ -44,9 +44,9 @@ html, body {
     border: 1px solid snow;
     background-color: rgba(238, 238, 238, 0.65);;
     border-radius: 30px;
-    width: 1200px;
+    width: 1000px;
     min-height: 85%;
-    margin-left: -600px;
+    margin-left: -500px;
     left: 50%;
     top:10%;
 }
@@ -54,4 +54,11 @@ html, body {
 .main h1, .main h2 {
     text-align: center;
     font-family: "Times New Roman", arial, serif ;
+}
+#bottom {
+    text-decoration: none;
+    color: white;
+    padding: 13px 25px;
+    background-color: orange;
+    border-radius: 5px;
 }
