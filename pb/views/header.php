@@ -3,6 +3,7 @@
     <meta charset="UTF-8"/>
     <title>PB test</title>
     <link rel="stylesheet" href="<?=URL?>public/css/style.css" />
+    <script src="<?=URL?>public/js/custom.js"></script>
 </head>
 <body>
 <nav class="header">
