@@ -8,6 +8,11 @@ class Career extends Controller {
         $this->view->render('career/index');
     }
     public function addResume(){
-        $this->view->render('career/addResume');
+        $data = array();
+        $data['name'] = $_POST['name'];
+        $data['surname'] = md5($_POST['surname']);
+        $data['role'] = $_POST['role'];
+        $this->model->addResume($data);
+        header('Location: '. URL . 'career');
     }
 }

@@ -39,7 +39,20 @@ html, body {
     margin-right: 13%;
     list-style: none;
 }
-.abs {
+
+.start{
+    font-family: "Times New Roman", arial, serif;
+    position: absolute;
+    top: 33%;
+    left: 13%;
+    width: 500px;
+    text-align: center;
+    font-size: 24px;
+    color: #000;
+}
+
+.main {
+    padding: 15px;
     position: absolute;
     border: 1px solid snow;
     background-color: rgba(238, 238, 238, 0.65);;
@@ -49,9 +62,6 @@ html, body {
     margin-left: -500px;
     left: 50%;
     top:10%;
-}
-.main {
-    padding: 15px;
 }
 
 .main h1, .main h2 {

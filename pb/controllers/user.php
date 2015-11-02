@@ -25,7 +25,7 @@ class User extends Controller {
         $data['password'] = md5($_POST['password']);
         $data['role'] = $_POST['role'];
         $this->model->create($data);
-        header('Location: '. URL . '/user');
+        header('Location: '. URL . 'user');
     }
 
     public function edit($id) {
@@ -40,12 +40,12 @@ class User extends Controller {
         $data['role'] = $_POST['role'];
         $data['id'] = $id;
         $this->model->editSave($data);
-        header('Location: '. URL . '/user');
+        header('Location: '. URL . 'user');
     }
 
     public function delete($id) {
         $this->model->delete($id);
-        header('Location: ' . URL . '/user');
+        header('Location: ' . URL . 'user');
     }
 
     public function logout() {
