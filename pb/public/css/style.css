@@ -5,13 +5,13 @@ html, body {
     background: url("../../public/img/bg-main2.jpg") no-repeat;
     background-size: 100%;
 }
-
 .header {
     position: fixed;
     right: 0;
     left: 0;
     background: rgba(101, 164, 73, 0.75);
     min-width: 50px;
+    z-index: 1002;
 }
 .header img {
     float: left;

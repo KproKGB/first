@@ -11,6 +11,7 @@ class Dashboard extends Controller {
         }
     }
     public function index() {
+        $this->view->userList = $this->model->userList();
         $this->view->render('dashboard/index');
     }
 

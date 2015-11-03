@@ -10,9 +10,16 @@ class Career extends Controller {
     public function addResume(){
         $data = array();
         $data['name'] = $_POST['name'];
-        $data['surname'] = md5($_POST['surname']);
+        $data['surname'] = $_POST['surname'];
+        $data['email'] = $_POST['email'];
+        $data['phone'] = $_POST['phone'];
         $data['role'] = $_POST['role'];
+        $data['cvv'] = $_POST['cvv'];
+        $data['video'] = $_POST['video'];
+        $data['text'] = $_POST['text'];
         $this->model->addResume($data);
         header('Location: '. URL . 'career');
     }
+
+
 }

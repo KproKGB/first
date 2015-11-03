@@ -24,13 +24,13 @@
 </div>
 <div class="front" id="front"></div>
 <div class="popup" id="popup">
-    <p style="cursor: pointer; text-align: right" onclick="hide()">Закрыть</p>
+    <p style="cursor: pointer; text-align: right;" onclick="hide()">Закрыть</p>
     <form method="post" action="<?php echo URL;?>career/addResume">
-        <label>Имя</label><input type="text" name="name" required>
-        <label>Фамилия</label><input type="text" name="surname" required><br>
-        <label>Email</label><input type="email" name="email" required>
-        <label>Телефон</label><input type="tel" name="phone" placeholder="+380" required><br>
-        <label>Прикрепить резюме:</label><input type="file" name="cvv" required><br>
+        <label>Имя</label><input type="text" name="name" required value="name">
+        <label>Фамилия</label><input type="text" name="surname" required value="surname"><br>
+        <label>Email</label><input type="email" name="email" required value="admin@admin.com">
+        <label>Телефон</label><input type="tel" name="phone" placeholder="+380" required value="380501234567"><br>
+        <label>Прикрепить резюме:</label><input type="file" name="cvv"><br>
         <label>Должность</label>
         <select name="role" required>
             <option selected disabled>Выберите вакансию</option>
@@ -38,9 +38,10 @@
             <option value="owner">Owner</option>
             <option value="admin">Admin</option>
         </select><br>
-        <label>Cсылка на видеорезюме (Youtube):</label><input type="url" name="video" placeholder="youtube.com" required><br>
+        <label>Cсылка на видеорезюме (Youtube):</label>
+        <input type="url" name="video" placeholder="youtube.com" required value="http://first/pb/career"><br>
         <label>Сопроводительный текст</label><br>
         <textarea name="text"></textarea><br>
-        <label> </label><input type="submit">
+        <label></label><input type="submit">
     </form>
 </div>
