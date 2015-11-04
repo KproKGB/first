@@ -10,8 +10,8 @@
         echo '<td>'.$value['date'].'</td>';
         echo '<td>'.$value['name'].'</td>';
         echo '<td>'.$value['surname'].'</td>';
-        echo '<td><a href="' . URL .'dashboard/view/'. $value['id'] .'">Просмотр</a>
-                  <a href="' . URL .'dashboard/delete/'. $value['id'] .'">Удалить</a>
+        echo '<td><a href="' . URL .'dashboard/usercvv/'. $value['id'] .'">Просмотр</a>
+                  <a href="' . URL .'dashboard/deletecvv/'. $value['id'] .'">Удалить</a>
               </td>';
     }
     ?>

@@ -44,18 +44,18 @@ html, body {
     font-family: "Times New Roman", arial, serif;
     position: absolute;
     top: 33%;
-    left: 13%;
+    left: 18%;
     width: 500px;
     text-align: center;
     font-size: 24px;
-    color: #000;
+    color: white;
 }
 
 .main {
     padding: 15px;
     position: absolute;
     border: 1px solid snow;
-    background-color: rgba(238, 238, 238, 0.65);;
+    background-color: rgba(238, 238, 238, 0.65);
     border-radius: 30px;
     width: 1000px;
     min-height: 85%;
@@ -106,8 +106,17 @@ html, body {
     float: left;
     width: 50%;
     text-align: justify;
-    padding-right: 30px;
+    padding-right: 50px;
 }
 .career_right {
-    padding-left: 30px;
+    padding-left: 50px;
 }
+.about {
+    overflow-y: scroll;
+    height: 400px;
+}
+.about td, .about th {
+    text-align: justify;
+    padding: 7px;
+}
+.about th { text-align: center;}

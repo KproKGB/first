@@ -4,7 +4,6 @@ class About extends Controller {
         parent::__construct();
     }
     public function index() {
-        $this->view->msg = 'ABOUT';
         $this->view->render('about/index');
     }
 }

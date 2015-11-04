@@ -7,10 +7,11 @@
 </head>
 <body>
 <nav class="header">
-
-        <a href="<?=URL?>index">
+        <?php if(Session::get('loggedIn') == true): ?>
             <img src="<?=URL?>public/img/logo_big1.png">
-        </a>
+        <?php else: ?>
+            <a href="<?=URL?>index"><img src="<?=URL?>public/img/logo_big1.png"></a>
+        <?php endif; ?>
 
     <ul>
         <?php if(Session::get('loggedIn') == false): ?>

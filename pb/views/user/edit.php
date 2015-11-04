@@ -1,3 +1,4 @@
+<div class="main">
 <h1>User: edit</h1>
 <form method="post" action="<?= URL;?>user/editSave/<?= $this->user['id']?>">
     <label>Login</label><input type="text" name="login" value="<?= $this->user['login']?>"><br>
@@ -11,3 +12,4 @@
     <label> </label><input type="submit">
 </form>
 <hr>
+</div>
