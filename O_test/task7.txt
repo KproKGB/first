@@ -14,7 +14,8 @@ CREATE TABLE customers (
     `date_reg` TIMESTAMP NOT NULL,
     PRIMARY KEY (`id`)
 );
-
+CREATE INDEX login ON customers (login(10));
+CREATE INDEX email ON customers (email(20));
 
 CREATE TABLE goods (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -25,16 +26,17 @@ CREATE TABLE goods (
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 );
-
+CREATE INDEX title ON goods (title(20));
 
 CREATE TABLE orders (
   `id` int NOT NULL AUTO_INCREMENT,
-  `customers_id` varchar(255) NOT NULL,
+  `customers_id` int NOT NULL,
   `price_all` int DEFAULT NULL,
   `payment method` varchar(255) NOT NULL,
   `datetime` TIMESTAMP NOT NULL,
   PRIMARY KEY (`id`)
 );
+CREATE INDEX customers_id ON orders (customers_id);
 
 CREATE TABLE booking (
     `id` int NOT NULL AUTO_INCREMENT,
@@ -42,3 +44,5 @@ CREATE TABLE booking (
     `goods_id` int NOT NULL,
     PRIMARY KEY (`id`)
 );
+CREATE INDEX odrders_id ON booking (odrders_id);
+CREATE INDEX goods_id ON booking (goods_id);
