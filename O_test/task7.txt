@@ -29,7 +29,7 @@ CREATE TABLE goods (
 
 CREATE TABLE orders (
   `id` int NOT NULL AUTO_INCREMENT,
-  `customers_id` varchar(255) NOT NULL,
+  `customers_id` int NOT NULL,
   `price_all` int DEFAULT NULL,
   `payment method` varchar(255) NOT NULL,
   `datetime` TIMESTAMP NOT NULL,
