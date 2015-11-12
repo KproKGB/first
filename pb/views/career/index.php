@@ -34,14 +34,14 @@
         <label>Должность</label>
         <select name="role" required>
             <option selected disabled>Выберите вакансию</option>
-            <option value="default">Default</option>
-            <option value="owner">Owner</option>
-            <option value="admin">Admin</option>
+            <option value="cvv1">Вакансия 1</option>
+            <option value="cvv2">Вакансия 2</option>
+            <option value="cvv3">Вакансия 3</option>
         </select><br>
         <label>Cсылка на видеорезюме (Youtube):</label>
-        <input type="url" name="video" placeholder="youtube.com" required value="http://first/pb/career"><br>
+        <input type="url" name="video" placeholder="youtube.com" required value="https://youtu.be/Et-mM92HPxQ"><br>
         <label>Сопроводительный текст</label><br>
-        <textarea name="text"></textarea><br>
+        <textarea cols="70" rows="5" name="text"></textarea><br>
         <label></label><input type="submit">
     </form>
 </div>
