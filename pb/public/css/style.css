@@ -42,6 +42,7 @@ html, body {
 .login {
     position: fixed;
     right: 5%;
+    top: 16px;
 }
 .start{
     font-family: "Times New Roman", arial, serif;
