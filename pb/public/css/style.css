@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: url("../../public/img/bg-main2.jpg") no-repeat;
+    background: #CA9660 url("../../public/img/bg-main2.jpg") no-repeat;
     background-size: 100%;
 }
 .header {
@@ -39,15 +39,21 @@ html, body {
     margin-right: 13%;
     list-style: none;
 }
-
+.login {
+    position: fixed;
+    right: 5%;
+}
 .start{
     font-family: "Times New Roman", arial, serif;
     position: absolute;
-    top: 33%;
-    left: 18%;
-    width: 500px;
+    top: 50%;
+    left: 30%;
+    margin-top: -130px;
+    margin-left: -280px;
+    width: 560px;
+    height: 260px;
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
     color: white;
 }
 
@@ -61,7 +67,7 @@ html, body {
     min-height: 85%;
     margin-left: -500px;
     left: 50%;
-    top:10%;
+    top:60px;
 }
 
 .main h1, .main h2 {
@@ -69,6 +75,7 @@ html, body {
     font-family: "Times New Roman", arial, serif ;
 }
 #bottom {
+    float: left;
     cursor: pointer;
     width: 150px;
     color: white;
@@ -76,8 +83,20 @@ html, body {
     background-color: orange;
     border-radius: 5px;
     text-align: center;
+    font-size: 16px;
 }
-
+.mybottom span {
+    float: right;
+    width: 450px;
+    font-size: 10px;
+}
+.push {
+    text-align: center;
+    font-size: 16px;
+    width: 250px;
+    color: white;
+    background-color: orange;
+}
 .front {
     display: none;
     background: rgba(255,255,255,0.5);
@@ -88,6 +107,9 @@ html, body {
     z-index: 1000;
     top: 0;
     left: 0;
+}
+.popup span {
+    font-size: 12px;
 }
 .popup {
     display: none;
@@ -111,14 +133,28 @@ html, body {
     box-shadow: none;
     margin: 5px 15px;
 }
+.popup img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    float: right;
+}
 .career_left {
     float: left;
     width: 50%;
+    height: 500px;
     text-align: justify;
+    font-size: 13px;
     padding-right: 50px;
+}
+.career_left img {
+    margin-top: 40px;
+    width:500px;
+    height:300px;
 }
 .career_right {
     padding-left: 50px;
+    font-size: 13px;
 }
 .about {
     overflow-y: scroll;
