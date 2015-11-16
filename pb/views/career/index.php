@@ -45,24 +45,24 @@
 <div class="popup" id="popup">
     <img onclick="hide()" src="<?=URL?>public/img/cross.png">
     <form method="post" action="<?php echo URL;?>career/addResume">
-        <label>Фамилия</label><input type="text" name="surname" required value="surname">
+        <label>Фамилия</label><input type="text" name="surname" required value="surname"><br>
         <label>Имя</label><input type="text" name="name" required value="name"><br>
-        <label>Телефон</label><input type="tel" name="phone" placeholder="+380" required value="380501234567">
-        <label>Email</label><input type="email" name="email" required value="admin@admin.com"><br>
+        <label>Телефон</label><input type="tel" name="phone" placeholder="+380" required value="380501234567"><br>
+        <label>Email</label><input type="email" name="email" required value="admin@admin.com"><br><br>
         <label>Должность</label>
         <select name="role" required>
             <option selected disabled>Выберите вакансию</option>
             <option value="cvv1">Вакансия 1</option>
             <option value="cvv2">Вакансия 2</option>
             <option value="cvv3">Вакансия 3</option>
-        </select>
+        </select><br><br>
         <label>График работы</label>
         <select name="workt" required>
             <option selected disabled>Выберите время</option>
             <option value="workt1">5-дневная рабочая неделя</option>
             <option value="workt2">ночной, 2 через 2</option>
         </select>
-        <br>
+        <br><br>
         <label>Прикрепить резюме:</label><input type="file" name="cvv"><br>
         <label>Cсылка на видеорезюме (Youtube):</label>
         <input type="url" name="video" placeholder="youtube.com" required value="https://youtu.be/Et-mM92HPxQ"><br><br>

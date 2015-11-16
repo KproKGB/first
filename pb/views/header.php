@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>PB test</title>
+    <title>Центр претензионно-исковой работы ПАТ КБ "ПриватБанк"</title>
     <link rel="stylesheet" href="<?=URL?>public/css/style.css" />
     <script src="<?=URL?>public/js/custom.js"></script>
 </head>
