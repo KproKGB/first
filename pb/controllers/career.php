@@ -4,19 +4,18 @@ class Career extends Controller {
         parent::__construct();
     }
     public function index() {
-        $this->view->msg = "Здесь оставлять свои резюме";
         $this->view->render('career/index');
     }
     public function addResume(){
         $data = array();
-        $data['name'] = $_POST['name'];
         $data['surname'] = $_POST['surname'];
-        $data['email'] = $_POST['email'];
+        $data['name'] = $_POST['name'];
         $data['phone'] = $_POST['phone'];
+        $data['email'] = $_POST['email'];
         $data['role'] = $_POST['role'];
+        $data['workt'] = $_POST['workt'];
         $data['cvv'] = $_POST['cvv'];
         $data['video'] = $_POST['video'];
-        $data['text'] = $_POST['text'];
         $this->model->addResume($data);
         header('Location: '. URL . 'career');
     }

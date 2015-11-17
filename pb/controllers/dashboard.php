@@ -16,7 +16,6 @@ class Dashboard extends Controller {
     }
 
     public function userCvv($id) {
-        $this->view->msg = "Резюме чувака";
         $this->view->userCvv = $this->model->userCvv($id);
         $this->view->render('dashboard/view');
     }

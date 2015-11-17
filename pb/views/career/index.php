@@ -45,10 +45,10 @@
 <div class="popup" id="popup">
     <img onclick="hide()" src="<?=URL?>public/img/cross.png">
     <form method="post" action="<?php echo URL;?>career/addResume">
-        <label>Фамилия</label><input type="text" name="surname" required value="surname"><br>
-        <label>Имя</label><input type="text" name="name" required value="name"><br>
-        <label>Телефон</label><input type="tel" name="phone" placeholder="+380" required value="380501234567"><br>
-        <label>Email</label><input type="email" name="email" required value="admin@admin.com"><br><br>
+        <label>Фамилия</label><input type="text" name="surname" required placeholder="Ваша фамилия" value=""><br>
+        <label>Имя</label><input type="text" name="name" placeholder="Ваше имя" required value=""><br>
+        <label>Телефон</label><input type="tel" name="phone" placeholder="Ваш телефон в формате +380" required value=""><br>
+        <label>Email</label><input type="email" name="email" required placeholder="Ваш email" value=""><br><br>
         <label>Должность</label>
         <select name="role" required>
             <option selected disabled>Выберите вакансию</option>
@@ -65,7 +65,7 @@
         <br><br>
         <label>Прикрепить резюме:</label><input type="file" name="cvv"><br>
         <label>Cсылка на видеорезюме (Youtube):</label>
-        <input type="url" name="video" placeholder="youtube.com" required value="https://youtu.be/Et-mM92HPxQ"><br><br>
+        <input type="url" name="video" placeholder="youtube.com" value="https://youtu.be/Et-mM92HPxQ"><br><br>
         <span>* Внимание!!! Письма, в которых кроме текстовой версии прикреплено и видео резюме,
        рассматриваются в первую очередь.</span><br><br>
         <input class="push" type="submit" value="Отправить резюме">

@@ -24,9 +24,9 @@
             <?php if(Session::get('role') == 'admin'):?>
             <li><a href="<?php echo URL; ?>user">Пользователи</a></li>
             <?php endif; ?>
-        <li class="login"><a href="<?= URL ?>dashboard/logout">Выйти</a></li>
+        <li class="login_bot"><a href="<?= URL ?>dashboard/logout">Выйти</a></li>
         <?php else: ?>
-        <li class="login"><a href="login">Войти</a></li>
+        <li class="login_bot"><a href="login">Войти</a></li>
         <?php endif; ?>
     </ul>
 </nav>
