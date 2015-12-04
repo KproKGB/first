@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `career` (
   `name` varchar(32) NOT NULL,
   `surname` varchar(32) NOT NULL,
   `email` varchar(32) NOT NULL,
-  `phone` varchar(16) NOT NULL,
+  `phone` varchar(18) NOT NULL,
   `cvv` blob NOT NULL,
   `video` varchar(255) NOT NULL,
   `role` varchar(32) NOT NULL,

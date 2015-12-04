@@ -3,7 +3,9 @@
     <meta charset="UTF-8"/>
     <title>Центр претензионно-исковой работы ПАТ КБ "ПриватБанк"</title>
     <link rel="stylesheet" href="<?=URL?>public/css/style.css" />
-    <script src="<?=URL?>public/js/custom.js"></script>
+    <script type="text/javascript" src="<?=URL?>public/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="<?=URL?>public/js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="<?=URL?>public/js/custom.js"></script>
 </head>
 <body>
 <nav class="header">

@@ -8,9 +8,21 @@ class Career extends Controller {
     }
     public function addResume(){
         $data = array();
-        $data['surname'] = $_POST['surname'];
+        if (preg_match('/^[а-яА-Яa-zA-Z]{1,15}$/ui', $_POST['surname'])) {
+            $data['surname'] = $_POST['surname'];
+        } else {
+            header('Location: '. URL . 'career');
+            return false;
+        }
+
         $data['name'] = $_POST['name'];
-        $data['phone'] = $_POST['phone'];
+
+        if (preg_match('/^\+38\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
+            $data['phone'] = $_POST['phone'];
+        } else {
+            header('Location: '. URL . 'career');
+            return false;
+        }
         $data['email'] = $_POST['email'];
         $data['role'] = $_POST['role'];
         $data['workt'] = $_POST['workt'];

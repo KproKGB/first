@@ -45,10 +45,10 @@
 <div class="popup" id="popup">
     <img onclick="hide()" src="<?=URL?>public/img/cross.png">
     <form method="post" action="<?php echo URL;?>career/addResume">
-        <label>Фамилия</label><input type="text" name="surname" required placeholder="Ваша фамилия" value=""><br>
-        <label>Имя</label><input type="text" name="name" placeholder="Ваше имя" required value=""><br>
-        <label>Телефон</label><input type="tel" name="phone" placeholder="Ваш телефон в формате +380" required value=""><br>
-        <label>Email</label><input type="email" name="email" required placeholder="Ваш email" value=""><br><br>
+        <label>Фамилия</label><input type="text" name="surname" required placeholder="Ваша фамилия" value="" pattern="(^[а-яА-Яa-zA-Z]{1,15}$)"><br>
+        <label>Имя</label><input type="text" name="name" placeholder="Ваше имя" required value="" pattern="(^[а-яА-Яa-zA-Z]{1,15}$)"><br>
+        <label>Телефон</label><input id="phone" type="text" name="phone" placeholder="+38 (___) ___-____" required value=""><br>
+        <label>E-mail</label><input type="email" name="email" required placeholder="exemple@email.com" value=""><br><br>
         <label>Должность</label>
         <select name="role" required>
             <option selected disabled>Выберите вакансию</option>
