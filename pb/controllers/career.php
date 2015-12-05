@@ -15,7 +15,12 @@ class Career extends Controller {
             return false;
         }
 
-        $data['name'] = $_POST['name'];
+        if (preg_match('/^[а-яА-Яa-zA-Z]{1,15}$/ui', $_POST['name'])) {
+            $data['name'] = $_POST['name'];
+        } else {
+            header('Location: '. URL . 'career');
+            return false;
+        }
 
         if (preg_match('/^\+38\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
             $data['phone'] = $_POST['phone'];
@@ -23,14 +28,24 @@ class Career extends Controller {
             header('Location: '. URL . 'career');
             return false;
         }
-        $data['email'] = $_POST['email'];
-        $data['role'] = $_POST['role'];
+
+        if (preg_match('/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/', $_POST['email'])) {
+			$data['email'] = $_POST['email'];
+		} else {
+			header('Location: '. URL . 'career');
+			return false;
+		}
+
+        if ($_POST['role']== 'cvv') {
+			$data['role'] = $_POST['role'];
+		} else {
+			header('Location: '. URL . 'career');
+			return false;
+		}
         $data['workt'] = $_POST['workt'];
         $data['cvv'] = $_POST['cvv'];
         $data['video'] = $_POST['video'];
         $this->model->addResume($data);
         header('Location: '. URL . 'career');
     }
-
-
 }

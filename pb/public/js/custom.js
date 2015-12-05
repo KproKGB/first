@@ -8,4 +8,5 @@ function hide() {
 }
 jQuery(function($) {
     $('#phone').mask('+38 (999) 999-9999');
+    $('#video').mask('https://www.youtube.com/');
 });

@@ -76,7 +76,8 @@ html, body {
     font-family: "Times New Roman", arial, serif ;
 }
 .mybottom p {
-    float: left;
+    float: right;
+    margin-right: 150px;
     cursor: pointer;
     width: 150px;
     color: white;
@@ -85,18 +86,6 @@ html, body {
     border-radius: 5px;
     text-align: center;
     font-size: 16px;
-}
-.mybottom span {
-    float: right;
-    width: 450px;
-    font-size: 10px;
-}
-.popup input:last-child {
-    box-shadow: none;
-    text-align: center;
-    font-size: 16px;
-    color: white;
-    background-color: orange;
 }
 .front {
     display: none;
@@ -135,6 +124,26 @@ html, body {
     padding:5px 8px;
     height: 30px;
     margin: 5px 15px;
+}
+.popup input:last-child {
+    box-shadow: none;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    height: 50px;
+    border-radius:3px;
+    background-color: orange;
+    margin-left: 215px;
+    cursor: pointer;
+}
+.popup select {
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    margin: 5px 15px;
+    width:220px;
+    height: 30px;
 }
 .login input {text-align: center}
 .login {
@@ -175,6 +184,10 @@ html, body {
 .career_right {
     padding-left: 50px;
     font-size: 13px;
+}
+.career_right li {
+    position: relative;
+    left: 30px;
 }
 .about {
     overflow-y: scroll;
