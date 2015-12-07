@@ -30,4 +30,8 @@ class Dashboard extends Controller {
         header('Location: ' . URL . 'index');
         exit();
     }
+
+    public function resume () {
+        $this->view->render('dashboard/resume');
+    }
 }

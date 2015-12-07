@@ -1,7 +1,7 @@
 <div class="main">
     <h2 style="text-align: center">Личный кабинет</h2>
 <hr>
-    <h3>Добавленные резюме</h3>
+    <h3>Список оставленных резюме</h3>
 <table>
     <?php
     foreach($this->userList as $key => $value) {

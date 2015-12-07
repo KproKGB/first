@@ -22,7 +22,8 @@
         <?php endif; ?>
 
         <?php if(Session::get('loggedIn') == true):?>
-        <li><a href="<?= URL ?>dashboard">Личный кабинет</a></li>
+        <li><a href="<?= URL ?>dashboard">Просмотр резюме</a></li>
+        <li><a href="<?= URL ?>dashboard/resume">Добавить ваккансию</a></li>
             <?php if(Session::get('role') == 'admin'):?>
             <li><a href="<?php echo URL; ?>user">Пользователи</a></li>
             <?php endif; ?>
