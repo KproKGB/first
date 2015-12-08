@@ -12,9 +12,9 @@
         echo '<li>'.$value['surname'].'</li>';
         echo '<li>'.$value['phone'].'</li>';
         echo '<li>'.$value['email'].'</li>';
-        echo '<li><a href="'.$value['video'].'">Видео</a></li>';
+        echo '<li><a href="' . $value['video'] . '">Видео</a></li>';
         echo '<li>'.$value['role'].'</li>';
-        echo '<li>'.$value['cvv'].'</li>';
+        echo '<li><a href="'. URL . $value['cvv'] . '">Резюме</a></li>';
         echo '<li>'.$value['date'].'</li>';
         echo '<li>'.$value['workt'].'</li>';
     }

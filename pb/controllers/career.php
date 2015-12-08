@@ -36,15 +36,36 @@ class Career extends Controller {
 			return false;
 		}
 
-        if ($_POST['role']== 'cvv') {
+        if ($_POST['role']== 'role') {
 			$data['role'] = $_POST['role'];
 		} else {
 			header('Location: '. URL . 'career');
 			return false;
 		}
+
         $data['workt'] = $_POST['workt'];
-        $data['cvv'] = $_POST['cvv'];
-        $data['video'] = $_POST['video'];
+
+        $blacklist = array (".php", ".phtml", ".php3", ".php4", ".html", ".htm");
+		foreach($blacklist as $item) {
+			if(preg_match("/$item\$/i", $_FILES['cvv']['name'])) {
+				header('Location: '. URL . 'career');
+				return false;
+			}
+		}
+		$type = $_FILES['cvv']['type'];
+		$size = $_FILES['cvv']['size'];
+		if (($type != "application/msword") && ($type != "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
+			header('Location: '. URL . 'career');
+			return false;
+		}
+		if ($size > 204800) {
+			header('Location: '. URL . 'career');
+			return false;
+		}
+		$data['cvv'] = 'public/files/' . $_FILES['cvv']['name'];
+		$data['cvv'] = iconv('utf-8','windows-1251', $data['cvv']);
+
+		$data['video'] = $_POST['video'];
         $this->model->addResume($data);
         header('Location: '. URL . 'career');
     }

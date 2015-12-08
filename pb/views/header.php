@@ -8,6 +8,7 @@
     <script type="text/javascript" src="<?=URL?>public/js/custom.js"></script>
 </head>
 <body>
+
 <nav class="header">
         <?php if(Session::get('loggedIn') == true): ?>
             <img src="<?=URL?>public/img/logo_big1.png">
@@ -17,8 +18,8 @@
 
     <ul>
         <?php if(Session::get('loggedIn') == false): ?>
-        <li><a href="about">О центре</a></li>
-        <li><a href="career">Присоединится к команде</a></li>
+        <li><a href="<?=URL?>about">О центре</a></li>
+        <li><a href="<?=URL?>career">Присоединится к команде</a></li>
         <?php endif; ?>
 
         <?php if(Session::get('loggedIn') == true):?>
@@ -29,7 +30,7 @@
             <?php endif; ?>
         <li class="login_bot"><a href="<?= URL ?>dashboard/logout">Выйти</a></li>
         <?php else: ?>
-        <li class="login_bot"><a href="login">Войти</a></li>
+        <li class="login_bot"><a href="<?=URL?>login">Войти</a></li>
         <?php endif; ?>
     </ul>
 </nav>

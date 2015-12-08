@@ -46,7 +46,7 @@
 <div class="front" id="front"></div>
 <div class="popup" id="popup">
     <img onclick="hide()" src="<?=URL?>public/img/cross.png">
-    <form method="post" action="<?php echo URL;?>career/addResume"><br><br>
+    <form method="post" enctype = "multipart/form-data" action="<?php echo URL;?>career/addResume"><br><br>
         <label>Фамилия *</label>
         <input type="text" name="surname" required placeholder="Ваша фамилия" value="" pattern="(^[а-яА-Яa-zA-Z]{1,15}$)"><br>
         <label>Имя *</label>
@@ -58,7 +58,7 @@
         <label>Должность *</label>
         <select name="role" required>
             <option selected disabled>Выберите вакансию</option>
-            <option value="cvv">Специалист по претензионно-исковой работе</option>
+            <option value="role">Специалист по претензионно-исковой работе</option>
         </select><br>
         <label>График работы *</label>
         <select name="workt" required>

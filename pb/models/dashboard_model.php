@@ -12,7 +12,7 @@ class Dashboard_model extends Model {
     }
 
     public function userCvv($id){
-        $sth = $this->database->prepare('SELECT id, name, surname, phone, email, cvv, video, role, workt, date FROM career WHERE id = :id');
+        $sth = $this->database->prepare('SELECT id, name, surname, phone, email, video, role, cvv, workt, date FROM career WHERE id = :id');
         $sth->execute(array(':id' => $id));
         $sth->setFetchMode(PDO::FETCH_ASSOC);
         $fetch = $sth->fetchAll();

@@ -4,12 +4,11 @@ class Career_Model extends Model {
         parent::__construct();
     }
     public function addResume($data) {
-
-
-        $sth = $this->database->prepare('INSERT INTO career (name, surname, email, phone, cvv, video, role, workt)
-                                        VALUES (:name, :surname, :email, :phone, :cvv, :video, :role, :workt)');
-        $sth->execute(array(':name' => $data['name'], ':surname' => $data['surname'], ':role' => $data['role'],
+		move_uploaded_file($_FILES['cvv']['tmp_name'], $data['cvv']);
+		$sth = $this->database->prepare('INSERT INTO career (name, surname, email, phone, video, cvv, role, workt)
+                                        VALUES (:name, :surname, :email, :phone, :video, :cvv, :role, :workt)');
+		$sth->execute(array(':name' => $data['name'], ':surname' => $data['surname'], ':role' => $data['role'],
             ':email' => $data['email'], ':phone' => $data['phone'], ':cvv' => $data['cvv'], ':video' => $data['video'],
             ':workt' => $data['workt']));
-    }
+	}
 }
