@@ -20,6 +20,7 @@ include 'inc/log.inc.php';
             <h2>Навигация по сайту</h2>
             <ul>
                 <li><a href="index.php">Домой</a> </li>
+                <li><a href="/pb">Приват</a> </li>
                 <li><a href="index.php?id=gen">Генератор паролей</a></li>
                 <li><a href="/php2">PHP Уровень 2</a></li>
                 <li><a href="/php3">PHP Уровень 3</a></li>
