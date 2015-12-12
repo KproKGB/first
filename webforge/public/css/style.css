@@ -90,3 +90,7 @@ nav li a:hover { color: #656363; padding-bottom: 5px; border-bottom: 2px solid;}
     float:left;
     padding:3px;
 }
+.dash img {
+    float: left;
+    margin-right: 50px;
+}

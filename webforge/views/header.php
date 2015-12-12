@@ -1,3 +1,4 @@
+<?php if(empty($_COOKIE['lang']))$_COOKIE['lang'] = 'en';?>
 <html>
 <head>
 	<meta charset="UTF-8"/>
@@ -31,12 +32,11 @@
 			<li><a href="<?=URL?>login">
 					<?php if($_COOKIE['lang'] == 'ru')echo "ВОЙТИ"; else echo "LOG IN";?>
 				</a></li>
-		<?php endif; ?>
-
-		<?php if($_COOKIE['lang'] == 'ru'): ?>
-		<li class="lang" onclick="enMenu()"><a href="">EN</a></li>
-		<?php else: ?>
-		<li class="lang" onclick="ruMenu()"><a href="">РУС</a></li>
+			<?php if($_COOKIE['lang'] == 'ru'): ?>
+				<li class="lang" onclick="enMenu()"><a href="">EN</a></li>
+			<?php else: ?>
+				<li class="lang" onclick="ruMenu()"><a href="">РУС</a></li>
+			<?php endif; ?>
 		<?php endif; ?>
 	</ul>
 </nav>
