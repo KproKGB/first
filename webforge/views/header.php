@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="<?=URL?>public/js/jquery.maskedinput.min.js"></script>
 	<script type="text/javascript" src="<?=URL?>public/js/custom.js"></script>
 </head>
-<body onload="setLang()">
+<body>
 
 <nav class="header">
 	<ul>
