@@ -16,12 +16,8 @@ function setLang() {
     }
 }
 function enMenu() {
-	document.getElementById('en').style.display = "block";
-	document.getElementById('ru').style.display = "none";
     document.cookie = "lang=en";
 }
 function ruMenu() {
-	document.getElementById('ru').style.display = "block";
-	document.getElementById('en').style.display = "none";
     document.cookie = "lang=ru";
 }

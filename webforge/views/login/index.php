@@ -1,15 +1,7 @@
-<div id="ru" class="main">
+<div class="main">
 	<form class="login" action="login/run" method="post">
-		<input type="text" name="login" placeholder="Логин"><br>
-		<input type="password" name="password" placeholder="Пароль"><br>
-		<input type="submit" value="Войти">
-	</form>
-</div>
-
-<div id="en" class="main" style="display: none">
-	<form class="login" action="login/run" method="post">
-		<input type="text" name="login" placeholder="Login"><br>
-		<input type="password" name="password" placeholder="Password"><br>
-		<input type="submit" value="Sing In">
+		<input type="text" name="login" placeholder="<?= $array['LLOGIN']?>"><br>
+		<input type="password" name="password" placeholder="<?= $array['LPASS']?>"><br>
+		<input type="submit" value="<?= $array['LSUBM']?>">
 	</form>
 </div>

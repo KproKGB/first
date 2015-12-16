@@ -1,4 +1,7 @@
-<?php if(empty($_COOKIE['lang']))$_COOKIE['lang'] = 'en';?>
+<?php
+	$lang = isset($_COOKIE["lang"])? $_COOKIE["lang"]: "ru";
+	$array = parse_ini_file('config/lang/' .$lang.".ini");
+?>
 <html>
 <head>
 	<meta charset="UTF-8"/>
@@ -13,26 +16,16 @@
 <nav class="header">
 	<ul>
 		<?php if(Session::get('loggedIn') == false): ?>
-			<li><a href="<?=URL?>">
-					<?php if($_COOKIE['lang'] == 'ru')echo "ГЛАВНАЯ"; else echo "MAIN";?>
-				</a></li>
-			<li><a href="<?=URL?>registred">
-					<?php if($_COOKIE['lang'] == 'ru')echo "РЕГИСТРАЦИЯ"; else echo "CHECK IN";?>
-				</a></li>
+			<li><a href="<?=URL?>"><?= $array['MAIN']?></a></li>
+			<li><a href="<?=URL?>registred"><?= $array['CHECK']?></a></li>
 		<?php endif; ?>
 
 		<?php if(Session::get('loggedIn') == true):?>
-			<li><a href="<?= URL ?>dashboard">
-					<?php if($_COOKIE['lang'] == 'ru')echo "ЛИЧНЫЙ КАБИНЕТ"; else echo "DASHBOARD";?>
-				</a></li>
-			<li><a href="<?= URL ?>dashboard/logout">
-					<?php if($_COOKIE['lang'] == 'ru')echo "ВЫЙТИ"; else echo "LOG OUT";?>
-				</a></li>
+			<li><a href="<?= URL ?>dashboard"><?= $array["DASHBOARD"]?></a></li>
+			<li><a href="<?= URL ?>dashboard/logout"><?= $array["OUT"]?></a></li>
 		<?php else: ?>
-			<li><a href="<?=URL?>login">
-					<?php if($_COOKIE['lang'] == 'ru')echo "ВОЙТИ"; else echo "LOG IN";?>
-				</a></li>
-			<?php if($_COOKIE['lang'] == 'ru'): ?>
+			<li><a href="<?=URL?>login"><?= $array["IN"]?></a></li>
+			<?php if($lang == 'ru'): ?>
 				<li class="lang" onclick="enMenu()"><a href="">EN</a></li>
 			<?php else: ?>
 				<li class="lang" onclick="ruMenu()"><a href="">РУС</a></li>
