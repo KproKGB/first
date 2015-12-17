@@ -2,3 +2,4 @@
 2.  http://megakolyan.ru/prestashop-stranica-nastroek-modulya/
 3.  http://megakolyan.ru/prestashop-sozdanie-prostoj-formy-nastroek-modulya/
 4.  http://megakolyan.ru/prestashop-sozdanie-modulya-xuki-hooks/
+5. http://www.khtulhu.org.ua/veb-programmirovanie/171-sozdanie-prostogo-modulya-prestashop-1-5-s-bazoj-dannykh.html

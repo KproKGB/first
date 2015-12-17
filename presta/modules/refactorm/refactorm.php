@@ -4,21 +4,43 @@ if (!defined('_PS_VERSION_')) {
 }
 
 class refactorM extends Module {
+
+	public $html = '';
+
 	public function __construct() {
 		$this->name = 'refactorm';
-		$this->displayName = 'refactorm';
+		$this->tab = 'other';
 		$this->version = '0.1';
+		$this->author = 'Kpro_KGB';
 		$this->need_instance = 0;
 		$this->bootstrap = true;
-		$this->tab = 'other';
-		$this->author = 'Kpro_KGB';
-		$this->description = 'refactorm';
+
 		parent::__construct();
+
+		$this->displayName = $this->l('refactorm');
+		$this->description = $this->l('My Mystery Buttom');
 	}
 
 	public function install() {
-		parent::install();
+
+		if (!parent::install() OR
+			!Db::getInstance()->execute('CREATE TABLE IF NOT EXISTS ps_mymod (
+										`id` int(2) NOT NULL AUTO_INCREMENT,
+ 										`text` varchar(255),
+										`date` TIMESTAMP NOT NULL,
+										 PRIMARY KEY(`id`)) ENGINE='._MYSQL_ENGINE_.' default CHARSET=utf8'))
+		{
+			return false;
+		}
 		$this->registerHook('displayProductTabContent');
+		return true;
+	}
+
+	public function uninstall()
+	{
+		if (!parent::uninstall() ||
+			!Db::getInstance()->execute('DROP TABLE ps_mymod'))
+			return false;
 		return true;
 	}
 
