@@ -3,12 +3,12 @@ if (!defined('_PS_VERSION_')) {
 	exit;
 }
 
-class refactorM extends Module {
+class kgbButtom extends Module {
 
 	public $html = '';
 
 	public function __construct() {
-		$this->name = 'refactorm';
+		$this->name = 'kgbbuttom';
 		$this->tab = 'other';
 		$this->version = '0.1';
 		$this->author = 'Kpro_KGB';
@@ -17,7 +17,7 @@ class refactorM extends Module {
 
 		parent::__construct();
 
-		$this->displayName = $this->l('refactorm');
+		$this->displayName = $this->l('Mystery Buttom');
 		$this->description = $this->l('My Mystery Buttom');
 	}
 
@@ -28,11 +28,11 @@ class refactorM extends Module {
 										`id` int(2) NOT NULL AUTO_INCREMENT,
  										`text` varchar(255),
 										`date` TIMESTAMP NOT NULL,
-										 PRIMARY KEY(`id`)) ENGINE='._MYSQL_ENGINE_.' default CHARSET=utf8'))
-		{
+										 PRIMARY KEY(`id`)) ENGINE='._MYSQL_ENGINE_.' default CHARSET=utf8')
+		OR !$this->registerHook('displayProductTabContent')) {
 			return false;
 		}
-		$this->registerHook('displayProductTabContent');
+
 		return true;
 	}
 
