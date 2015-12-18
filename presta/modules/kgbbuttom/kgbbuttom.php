@@ -39,7 +39,8 @@ class kgbButtom extends Module {
 	public function uninstall()
 	{
 		if (!parent::uninstall() ||
-			!Db::getInstance()->execute('DROP TABLE ps_mymod'))
+			!Db::getInstance()->execute('DROP TABLE ps_mymod') ||
+		!Configuration::deleteByName('MYMOD_BUTTOM'))
 			return false;
 		return true;
 	}
@@ -50,20 +51,16 @@ class kgbButtom extends Module {
 
 	public function processConfiguration() {
 		if (Tools::isSubmit('mymod_pc_form')) {
-			$enable_grades = Tools::getValue('enable_grades');
-			$enable_comments = Tools::getValue('enable_comments');
-			Configuration::updateValue('MYMOD_GRADES', $enable_grades);
-			Configuration::updateValue('MYMOD_COMMENTS', $enable_comments);
+			$enable_buttom = Tools::getValue('enable_buttom');
+			Configuration::updateValue('MYMOD_BUTTOM', $enable_buttom);
 			$this->context->smarty->assign('confirmation', 'ok');
 		}
 	}
 
 	public function assignConfiguration()
 	{
-		$enable_grades = Configuration::get('MYMOD_GRADES');
-		$enable_comments = Configuration::get('MYMOD_COMMENTS');
-		$this->context->smarty->assign('enable_grades', $enable_grades);
-		$this->context->smarty->assign('enable_comments', $enable_comments);
+		$enable_buttom = Configuration::get('MYMOD_BUTTOM');;
+		$this->context->smarty->assign('enable_buttom', $enable_buttom);
 	}
 
 	public function getContent() {
