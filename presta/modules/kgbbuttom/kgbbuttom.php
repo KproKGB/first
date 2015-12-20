@@ -26,10 +26,10 @@ class kgbButtom extends Module {
 		if (!parent::install() OR
 			!Db::getInstance()->execute('CREATE TABLE IF NOT EXISTS ps_mymod (
 										`id` int(2) NOT NULL AUTO_INCREMENT,
- 										`text` varchar(255),
+ 										`ip` varchar(50),
 										`date` TIMESTAMP NOT NULL,
 										 PRIMARY KEY(`id`)) ENGINE='._MYSQL_ENGINE_.' default CHARSET=utf8')
-		OR !$this->registerHook('displayProductTabContent')) {
+		OR !$this->registerHook('displayHomeTab')) {
 			return false;
 		}
 
@@ -45,8 +45,32 @@ class kgbButtom extends Module {
 		return true;
 	}
 
-	public function hookDisplayProductTabContent($params) {
-		return '<b>Display me on product page</b>';
+	public function hookDisplayHomeTab($params) {
+		$enable_buttom = Configuration::get('MYMOD_BUTTOM');
+		if($enable_buttom) {
+			$this->html = <<<HTML
+<br><br>
+<form action="" method="post">
+	<input class='btn btn-default pull-left' name='mysterybut' type='submit' value='Нажми меня'">
+</form><br>
+HTML;
+		}
+		$this->clickButtom();
+		return $this->html;
+	}
+
+	public function clickButtom() {
+		if(Tools::isSubmit('mysterybut')) {
+			$rem_ip = $_SERVER['REMOTE_ADDR'];
+			$sql = "INSERT INTO ps_mymod( ip ) VALUES ( '$rem_ip' )";
+			if(!Db::getInstance()->execute($sql)) {
+				die("Error sql query");
+			} else {
+				$sql = 'SELECT COUNT(id) FROM ps_mymod';
+				$num = Db::getInstance()->getValue($sql);
+				$this->html = "<br><br><h3>Вы ". $num ."-й, сделавший это</h3><br>";
+			}
+		}
 	}
 
 	public function processConfiguration() {
@@ -59,7 +83,7 @@ class kgbButtom extends Module {
 
 	public function assignConfiguration()
 	{
-		$enable_buttom = Configuration::get('MYMOD_BUTTOM');;
+		$enable_buttom = Configuration::get('MYMOD_BUTTOM');
 		$this->context->smarty->assign('enable_buttom', $enable_buttom);
 	}
 
