@@ -23,13 +23,14 @@ class kgbButtom extends Module {
 
 	public function install() {
 
-		if (!parent::install() OR
-			!Db::getInstance()->execute('CREATE TABLE IF NOT EXISTS ps_mymod (
+		if (!parent::install()
+			|| !Db::getInstance()->execute('CREATE TABLE IF NOT EXISTS ps_mymod (
 										`id` int(2) NOT NULL AUTO_INCREMENT,
  										`ip` varchar(50),
 										`date` TIMESTAMP NOT NULL,
 										 PRIMARY KEY(`id`)) ENGINE='._MYSQL_ENGINE_.' default CHARSET=utf8')
-		OR !$this->registerHook('displayHomeTab')) {
+		|| !$this->registerHook('displayHomeTab'))
+		{
 			return false;
 		}
 
@@ -38,10 +39,12 @@ class kgbButtom extends Module {
 
 	public function uninstall()
 	{
-		if (!parent::uninstall() ||
-			!Db::getInstance()->execute('DROP TABLE ps_mymod') ||
-		!Configuration::deleteByName('MYMOD_BUTTOM'))
+		if (!parent::uninstall()
+			|| !Db::getInstance()->execute('DROP TABLE ps_mymod')
+			|| !Configuration::deleteByName('MYMOD_BUTTOM'))
+		{
 			return false;
+		}
 		return true;
 	}
 

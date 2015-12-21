@@ -4,4 +4,6 @@ http://amida.software/testwork/junior_presta.html
 2.  http://megakolyan.ru/prestashop-stranica-nastroek-modulya/
 3.  http://megakolyan.ru/prestashop-sozdanie-prostoj-formy-nastroek-modulya/
 4.  http://megakolyan.ru/prestashop-sozdanie-modulya-xuki-hooks/
-5. http://www.khtulhu.org.ua/veb-programmirovanie/171-sozdanie-prostogo-modulya-prestashop-1-5-s-bazoj-dannykh.html
+5.  http://www.khtulhu.org.ua/veb-programmirovanie/171-sozdanie-prostogo-modulya-prestashop-1-5-s-bazoj-dannykh.html
+6.  http://doc.prestashop.com/display/PS16/Creating%20a%20Dashboard%20Module
+7.  http://phpinter.blogspot.com/2011/08/how-to-add-tab-in-back-office.html
