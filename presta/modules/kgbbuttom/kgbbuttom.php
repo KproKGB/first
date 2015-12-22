@@ -29,7 +29,8 @@ class kgbButtom extends Module {
  										`ip` varchar(50),
 										`date` TIMESTAMP NOT NULL,
 										 PRIMARY KEY(`id`)) ENGINE='._MYSQL_ENGINE_.' default CHARSET=utf8')
-		|| !$this->registerHook('displayHomeTab'))
+			|| !$this->registerHook('displayHomeTab')
+			|| !$this->installModuleTab('MysteryButtom', 'Нажавшие кнопку', 0))
 		{
 			return false;
 		}
@@ -41,7 +42,8 @@ class kgbButtom extends Module {
 	{
 		if (!parent::uninstall()
 			|| !Db::getInstance()->execute('DROP TABLE ps_mymod')
-			|| !Configuration::deleteByName('MYMOD_BUTTOM'))
+			|| !Configuration::deleteByName('MYMOD_BUTTOM')
+			|| !$this->uninstallModuleTab('MysteryButtom'))
 		{
 			return false;
 		}
@@ -96,6 +98,30 @@ HTML;
 		return $this->display(__FILE__, 'getContent.tpl');
 	}
 
+	public function installModuleTab($tabClass, $tabName, $id_parent) {
+		$tab = new Tab();
+		$langs = Language::getLanguages();
+		foreach ($langs as $lang) {
+			$tab->name[$lang['id_lang']] = $tabName;
+		}
+		$tab->class_name = $tabClass;
+		$tab->module = $this->name;
+		$tab->id_parent = $id_parent;
+		if (!$tab->save()) {
+			return false;
+		}
+		return true;
+	}
+
+	public function uninstallModuleTab($tabClass) {
+		$idTab = Tab::getIdFromClassName($tabClass);
+		if($idTab != 0) {
+			$tab = new Tab($idTab);
+			$tab->delete();
+			return true;
+		}
+		return false;
+	}
 
 
 
