@@ -7,23 +7,49 @@ class MysteryButtom extends AdminTab {
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tr>
 	<th>id</th>
-	<th>IP-address</th>
-	<th>Date</th>
+	<th>Дата и время нажатия</th>
+	<th>IP-адрес нажавшего</th>
 </tr>
 TABLE;
 	public $row = array();
-	public $limit = "LIMIT 0, 25";
+	public $minlimit = 0;
+	public $col_rows = 30;
+	public $maxpage = 1;
 
 
 	public function getTable(){
-		$sql = "SELECT id, ip, date FROM ps_mymod $this->limit";
+		$sql = "SELECT id, ip, date FROM ps_mymod LIMIT $this->minlimit, $this->col_rows";
 		$this->row = Db::getInstance()->executeS($sql);
-		print_r($this->row);
+		for($i=0; $i<count($this->row); $i++) {
+			$this->table .= '<tr>';
+			$this->table .= '<td>'.$this->row[$i]['id'].'</td>';
+			$this->table .= '<td>'.$this->row[$i]['date'].'</td>';
+			$this->table .= '<td>'.$this->row[$i]['ip'].'</td>';
+			$this->table .= '</tr>';
+		}
 		$this->table .= "</table>";
 	}
 
+	public function changeNextPage() {
+		$this->col_rows = $this->minlimit + 30;
+	}
+
+	public function showNextPage() {
+		$sql = 'SELECT COUNT(id) FROM ps_mymod';
+		$num = Db::getInstance()->getValue($sql);
+		$this->maxpage = $num / $this->col_rows;
+		if ($num%$this->col_rows) {
+			$this->maxpage = (int)$this->maxpage + 1;
+		}
+		print_r($this->maxpage);
+	}
+
 	public function display() {
+		$this->changeNextPage();
 		$this->getTable();
 		echo $this->table;
+		$this->showNextPage();
 	}
+
+
 }
