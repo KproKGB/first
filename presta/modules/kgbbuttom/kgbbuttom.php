@@ -54,9 +54,9 @@ class kgbButtom extends Module {
 		$enable_buttom = Configuration::get('MYMOD_BUTTOM');
 		if($enable_buttom) {
 			$this->html = <<<HTML
-<br><br>
+<br><br><br>
 <form action="" method="post">
-	<input class='btn btn-default pull-left' name='mysterybut' type='submit' value='Нажми меня'">
+	<input style="height: 50px; width: 200px; background-color: orange; color: white; border-radius: 3px; font-size: 20px;" name='mysterybut' type='submit' value='Нажми меня'">
 </form><br>
 HTML;
 		}
