@@ -20,6 +20,11 @@ class Dashboard_model extends Model {
     }
 
     public function deleteCvv($id) {
+        $file_cvv = $this->database->prepare('SELECT cvv FROM career WHERE id = :id');
+        $file_cvv->execute(array(':id' => $id));
+        $file_cvv->setFetchMode(PDO::FETCH_ASSOC);
+        $fetch = $file_cvv->fetch();
+        unlink($fetch['cvv']);
         $sth = $this->database->prepare('DELETE FROM career WHERE id = :id');
         $sth->execute(array(':id' => $id));
     }

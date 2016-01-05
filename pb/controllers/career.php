@@ -52,13 +52,15 @@ class Career extends Controller {
 		}
 		$type = $_FILES['cvv']['type'];
 		$size = $_FILES['cvv']['size'];
-		if (($type != "application/msword") && ($type != "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
+		if (($type != "application/msword") &&
+			($type != "application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
+		{
             $this->errorHeader();
 		}
 		if ($size > 204800) {
             $this->errorHeader();
 		}
-		$data['cvv'] = 'public/files/' . $_FILES['cvv']['name'];
+		$data['cvv'] = 'public/files/' . time() . '_' .$_FILES['cvv']['name'];
 		//$data['cvv'] = iconv('utf-8','cp1251', $data['cvv']);  //Для Windows
 
 		$data['video'] = $_POST['video'];
