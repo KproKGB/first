@@ -1,4 +1,5 @@
 <?php
-require_once 'lib/Database.php';
-require_once 'config/database.php';
-echo "Hello";
+require 'lib/lessons.class.php';
+function __autoload($class_name) {
+    require 'lib/' . $class_name . '.class.php';
+}

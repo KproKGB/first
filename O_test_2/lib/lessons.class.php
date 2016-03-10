@@ -1,8 +1,12 @@
+<?php
+
 abstract class Lessons {
 
-  public $duration; //dlitel'nost'
-  public $rate; //tarif
+    public $duration; //dlitel'nost'
+    public $hour = 0;
+    public $rate_hour = 100; //tarif pochasovoj
+    public $rate_less = 200; //tarif za zanyatie
 
-  public function getPrice() {}
+    abstract public function getPrice();
 
 }
