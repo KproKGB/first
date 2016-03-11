@@ -2,19 +2,19 @@
 
 abstract class Lesson {
     public $duration;
-    public $costSummary;
+    public $costLesson;
 
     public function __construct($duration, CostSummary $set_cost) {
         $this->duration = $duration;
-        $this->costSummary = $set_cost;
+        $this->costLesson = $set_cost;
     }
 
     public function cost() {
-        return $this->costSummary->cost($this);
+        return $this->costLesson->cost($this);
     }
 
     public function chargeType() {
-        return $this->costSummary->chargeType();
+        return $this->costLesson->chargeType();
     }
 
     public function getDuration() {
