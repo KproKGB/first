@@ -1,5 +1,5 @@
 <?php
-class TimedCostStrategy extends CostSummary {
+class TimedCost extends CostSummary {
     public function cost(Lesson $lesson) {
         return ($lesson->getDuration() * 100);
     }

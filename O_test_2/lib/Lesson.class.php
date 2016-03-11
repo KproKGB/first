@@ -20,6 +20,4 @@ abstract class Lesson {
     function getDuration() {
         return $this->duration;
     }
-
-    // Другие методы класса Lesson...
 }
