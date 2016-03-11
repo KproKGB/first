@@ -1,6 +1,6 @@
 <?php
 
 abstract class CostSummary {
-    abstract function cost( Lesson $lesson );
-    abstract function chargeType();
+    abstract public function cost( Lesson $lesson );
+    abstract public function chargeType();
 }

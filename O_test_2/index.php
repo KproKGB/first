@@ -6,7 +6,9 @@ function __autoload($class_name) {
 }
 $all_price = 0;
 $lessons[] = new Grammar( 1, new TimedCost() );
-$lessons[] = new Speaking( 1, new FixedCost() );
+$lessons[] = new Speaking( 2, new FixedCost() );
+$lessons[] = new Speaking( 3, new TimedCost() );
+$lessons[] = new Grammar( 4, new FixedCost() );
 
 foreach ( $lessons as $lesson ) {
     $all_price += $lesson->cost();

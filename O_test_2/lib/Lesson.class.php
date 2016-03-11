@@ -1,23 +1,23 @@
 <?php
 
 abstract class Lesson {
-    private   $duration;
-    private   $costStrategy;
+    public $duration;
+    public $costSummary;
 
-    function __construct( $duration, CostSummary $strategy ) {
+    public function __construct( $duration, CostSummary $set_cost ) {
         $this->duration = $duration;
-        $this->costStrategy = $strategy;
+        $this->costSummary = $set_cost;
     }
 
-    function cost() {
-        return $this->costStrategy->cost( $this );
+    public function cost() {
+        return $this->costSummary->cost( $this );
     }
 
-    function chargeType() {
-        return $this->costStrategy->chargeType( );
+    public function chargeType() {
+        return $this->costSummary->chargeType( );
     }
 
-    function getDuration() {
+    public function getDuration() {
         return $this->duration;
     }
 }

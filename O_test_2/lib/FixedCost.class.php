@@ -1,10 +1,10 @@
 <?php
 class FixedCost extends CostSummary {
-    function cost( Lesson $lesson ) {
+    public function cost( Lesson $lesson ) {
         return ($lesson->getDuration() * 200);
     }
 
-    function chargeType() {
+    public function chargeType() {
         return "Fixed payment";
     }
 }
