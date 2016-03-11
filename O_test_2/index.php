@@ -12,7 +12,7 @@ $lessons[] = new Grammar( 4, new FixedCost() );
 
 foreach ( $lessons as $lesson ) {
     $all_price += $lesson->cost();
-    print "Payment per lesson <b>{$lesson->cost()} \$</b>. ";
+    print "Payment per {$lesson->getDuration()} {$lesson->getName()} lesson <b>{$lesson->cost()} \$</b>. ";
     print "Payment type: {$lesson->chargeType()}<br>";
 }
 print "All price <b>{$all_price} \$</b>. ";
