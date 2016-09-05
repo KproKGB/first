@@ -14,6 +14,28 @@
 		- Результат должен быть следующим:
 			<span id="complex">Радио, Бауманский, Стилобат</span>
 	*/
+		$(function(){
+			var tr = $("table tbody tr");
+			var complexes = tr.map(function(index, obj){
+				return $(obj).children().eq(3).text();
+			});
+			function unique(array){
+				var tmp = [];
+				for (var i=0; i<array.length; i++){
+					if (tmp.indexOf(array[i]) == -1) {
+						tmp.push(array[i]);
+					}
+				}
+				return tmp;
+			}
+			complexes = unique(complexes);
+
+			$("span#complex").text(
+				$.map(complexes, function(obj, index){
+					return complexes[index];
+				}).join(", ")
+			);
+		});
 	</script>
 	
 </head>

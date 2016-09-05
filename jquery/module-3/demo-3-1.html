@@ -6,16 +6,16 @@
 		<script src="../lib/jquery.js" type="text/javascript"></script>
 		<script>
 			$(function(){
-				$('#toggle').click(function() {
-					if ($('#box').is(':visible')) {
-						$('#box').hide();
-					} else {
-						$('#box').show();
-					}
-				});
 				/*$('#toggle').click(function() {
-					$('#box').toggle();
+					if ($('#box').is(':visible')) {
+						$('#box').fadeOut();
+					} else {
+						$('#box').fadeIn();
+					}
 				});*/
+				$('#toggle').click(function() {
+					$('#box').fadeToggle();
+				});
 			});
 		</script>
 		<style>

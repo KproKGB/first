@@ -7,13 +7,22 @@
   <link rel="stylesheet" href="../css/style.css" type="text/css" />  
   <script src="../lib/jquery.js" type="text/javascript"></script>
 	<script>
-	/** ЗАДАНИЕ 1
-		- В таблице с id="courses" каждую четную строку выделите другим цветом
-		- В таблице с id="courses" выберите полное название курса AJAX 
-			(то есть, "AJAX. Разработка веб - приложений для Web 2.0") 
-			и добавьте его в <span> вместо строки "какой-то курс"
-			(третий <p> в <div id="news">)
-	*/
+		$(function(){
+			/** ЗАДАНИЕ 1
+			 - В таблице с id="courses" каждую четную строку выделите другим цветом
+			 - В таблице с id="courses" выберите полное название курса AJAX
+			 (то есть, "AJAX. Разработка веб - приложений для Web 2.0")
+			 и добавьте его в <span> вместо строки "какой-то курс"
+			 (третий <p> в <div id="news">)
+			 */
+
+			$('table tbody tr:odd').css('background', 'white');     //Каждый нечетный элемент таблицы меняем бекграунд
+			var txt = $("table#courses tbody td:contains('AJAX')")  //Выбрали TD содержащий слово "AJAX"
+					.eq(1).text();                                  //Выбираем тескт второго вхождения
+			txt = txt.slice(0, txt.indexOf(" ("));                  //Обрезаем строку от начала и до " ("
+			var p = $("div#content div#news p").not(":has(span.hidden)"); //Выбираем <p> и из вывобрки у которого span не hidden
+			p.children('span').text(txt);                           //ЗАменяем текст на полученный ранее.
+
 	/** ЗАДАНИЕ 2
 		- В таблице с id="courses" выберите коды всех курсов и для каждого курса 
 			- сформируйте строку вида "код.pdf", например "xml.pdf"
@@ -22,6 +31,14 @@
 			Например, у курса с кодом "XML" ссылка должна выглядеть как:
 			<a class="doc" href="xml.pdf">описание</a>	
 	*/
+	$('table tbody tr').each(function(index){
+		var str = ( $( this ).children('td').eq(0).text() ).toLowerCase() + '.pdf';
+		$('.doc').text('описание');
+		$('.doc').eq(index).attr('href', str);
+	});
+
+
+		});
 	</script>
 	
 </head>

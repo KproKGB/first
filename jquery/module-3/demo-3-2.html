@@ -6,13 +6,44 @@
 	<script src="../lib/jquery.js" type="text/javascript"></script>
 	<script>
 		$(function(){
-			
+			var content = $('div.content');
+			var winW = $(window).width() / 2 - content.outerWidth() / 2;
+			var winH = $(window).height() / 2 - content.outerHeight() / 2;
+			$('button').on('click', function(){
+				content.animate({'left':winW, 'position':'absolute'})
+						.animate({'top':winH}, {duration:500, queue:false})
+				/*
+				content.animate({
+					'font-size': '+=5',
+					'width': '+=200'
+				}, 500, 'swing', function(){console.log('stop')});
+				*/
+
+				/*
+				content.animate(
+						{'font-size': '+=5'},
+						{
+							duration: 3000,
+							complete: function(){console.log('stop')},
+							step: function(){console.log('Текущий размер: ', $(this).css('font-size'))}
+						}
+				);
+				*/
+
+				/*
+				content.animate(
+						{'font-size': '+=5'},
+						{duration: 500}
+				).animate( {'top': '500'},
+						{duration: 3000, queue: true} );
+				*/
+			});
 		});
 	</script>
 	<style>
 		.content{
 			width: 400px;
-			background: yellow;
+			background: silver;
 			padding: 2em;
 			position: relative
 		}

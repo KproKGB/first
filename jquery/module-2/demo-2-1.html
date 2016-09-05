@@ -6,6 +6,62 @@
 		<script src="../lib/jquery.js" type="text/javascript"></script>
 		<script>
 			$(function(){
+				/*function toggle(obj) {
+					obj
+						.siblings('button')
+							.removeAttr('disabled')
+						.end()
+							.attr('disabled', 'disabled')
+				}
+
+				$("#hide").on("click", function() {
+					$("#box").hide();
+					/!*$(this).attr('disabled', 'disabled');*!/
+					toggle($(this));
+				});
+
+				$('#show').on('click', function() {
+					$('#box').show();
+					/!*$(this).attr('disabled', 'disabled');*!/
+					toggle($(this));
+				});*/
+
+/*$('#toggle').on('click', function() {
+	if ($('#box').is(':visible')) {
+		$('#box').hide();
+		$(this).text('Show');
+	} else {
+		$('#box').show();
+		$(this).text('Hide');
+	}
+});*/
+				$('#toggle').on('click.foo', function() {
+					console.log('click.foo');
+					/*$('#box').toggle();*/
+				});
+				$('#toggle').on('click.bar', function() {
+					console.log('click.bar');
+				});
+				$('#box').on('click', function() {
+					$('#toggle').off('click.foo');
+				});
+/*				$('#box').on('click', function() {
+					$('#toggle').trigger('click');
+				});
+				$('#box').on('click', function() {
+					$('#toggle').off('click');
+				});*/
+
+				/**
+				 * Метод объекта event stopPropagation останавливает
+				 * "всплытие" вызова события к родительским элементам.
+				 * Выбрав *, document и window отвеняем всплытие для
+				 * всех элементов одним действием
+				 */
+				$('*').add([document, window]).on('click', function(e){
+					e.stopPropagation();
+				});
+
 			});
 		</script>
 		<style>
@@ -15,8 +71,9 @@
 	</head>
 	<body>
 	<div id="buttons">
-		<button id="hide">Hide</button>
-		<button id="show">Show</button>
+		<button id="toggle">Переключатель</button>
+		<!--<button id="hide">Hide</button>
+		<button id="show">Show</button>-->
 	<div>
 	<div id="box">
 		<h1>Привет всем!</h1>
