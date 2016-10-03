@@ -12,7 +12,7 @@ define('NUM', 'num');
 // Передача текса в кодировке UTF-8
 header('Content-type: text/plain; charset=utf-8');
 // Запрет кеширования
-header('Cache-COntrol: no-store, no-cache');
+header('Cache-Control: no-store, no-cache');
 header('Expires: ' . date('r'));
 
 // Чтение файла

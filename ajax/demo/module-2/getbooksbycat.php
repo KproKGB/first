@@ -41,5 +41,3 @@ function getChildCategoryList($categoryId, $database){
 		$result = $result . $row['id'] . ', ' . getChildCategoryList($row['id'], $database);
 	return $result;
 }
-
-?>

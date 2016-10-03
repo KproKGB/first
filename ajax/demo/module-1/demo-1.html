@@ -5,16 +5,18 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Language" content="ru" />
 	<!-- xmlhttprequest -->
-	<script type="text/javascript">
+	<script type="text/javascript" src="../xmlhttprequest.js"></script>
+	<script>
 		function showDemoSample(){
 			// Адрес текущей страницы
-			
+			var url = location.href;
 			// Объект XMLHttpRequest
-			
+			var request = getXmlHttpRequest();
 			// Запрос на сервер
-			
+			request.open("GET", url, false);
 			// Чтение ответа
-			
+			request.send(null);
+			alert(request.responseText);
 		}
 	</script>
 </head>

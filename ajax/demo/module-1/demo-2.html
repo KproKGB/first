@@ -8,27 +8,36 @@
 	<script type="text/javascript" src="../xmlhttprequest.js"></script>
 	<script type="text/javascript">
 		// URL сценария, возвращающего время
-		var url = "gettime.php?delay=3";		// Задержка в запросе:  gettime.php?delay=3
+		var url = "gettime.php?delay=3";	// Задержка в запросе:  gettime.php?delay=3
 		var request;
 
 
 		// Синхронный запрос
 		function showSyncRequest(){
 			// Запрос
-
+			request = getXmlHttpRequest();
+			request.open("GET", url, false);
+			request.send(null);
 			// Вывод ответа
-
+			var result = document.getElementById("syncResult");
+			result.firstChild.nodeValue = request.responseText;
 		}
 
 		// Асинхронный запрос
 		function showAsyncRequest(){
 			// Запрос
-
+			request = getXmlHttpRequest();
+			request.open("GET", url, true);
+			request.send(null);
+			request.onreadystatechange = showAsyncRequestComplete;
 		}
 
 		// Завершение асинхронного запроса
 		function showAsyncRequestComplete(){
-
+			if (request.readyState === 4) {
+				var result = document.getElementById("asyncResult");
+				result.firstChild.nodeValue = request.responseText;
+			}
 		}
 	</script>
 </head>

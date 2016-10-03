@@ -6,14 +6,38 @@
   <meta http-equiv="Content-Language" content="ru" />
 	<script type="text/javascript" src="../xmlhttprequest.js"></script>
 	<script type="text/javascript">
+		var req;
 		// Показ текста, полученного из файла
 		function getText(fileName){
-			
+			req = getXmlHttpRequest();
+			req.onreadystatechange = function() {
+				if (req.readyState === 4) {
+					if (req.status != 200) {
+						alert(req.status + ": " + req.statusText);
+					} else {
+						alert(req.responseText);
+					}
+				}
+			}
+			req.open("GET", fileName, true);
+			req.send(null);
 		}
 		
 		// Показ заголовков, полученных от сервера
 		function getInfo(fileName){
-			
+			req = getXmlHttpRequest();
+			req.onreadystatechange = function() {
+				if (req.readyState === 4) {
+					alert(
+							"Размер файла:\t" + req.getResponseHeader("Content-Length")
+							+ "\n" +
+							"Файл изменен:\t" + req.getResponseHeader("Last-Modified")
+					);
+					alert(req.getAllResponseHeaders());
+				}
+			}
+			req.open("GET", fileName, true);
+			req.send(null);
 		}		
 	</script>
 </head>
